@@ -116,8 +116,8 @@
 
 1. Place `appsettings.json` next to `EduPlat.exe`.
 2. Run:
-   - Windows: `./EduPlat.exe`
-   - macOS/Linux: `chmod +x EduPlat && ./EduPlat`
+   - Windows: `.\Edu_plat.exe`
+   - macOS/Linux: `chmod +x Edu_plat && ./Edu_plat`
 </details>
 
 ---
