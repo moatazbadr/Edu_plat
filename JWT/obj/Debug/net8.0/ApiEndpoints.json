@@ -761,69 +761,6 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DownloadFile",
-    "RelativePath": "api/Materials/DownloadFile/{courseCode}/{materialId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "courseCode",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "materialId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DownloadFile",
-    "RelativePath": "api/Materials/DownloadFile/{materialId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "materialId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "DownloadFiles",
-    "RelativePath": "api/Materials/DownloadFiles",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "materialIds",
-        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "GetDoctorMaterials",
-    "RelativePath": "api/Materials/Get-Doctor-Materials",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
     "Method": "GetDoctorMaterialsByTypeAndCourse",
     "RelativePath": "api/Materials/Get-Material-ByType/courseCode/typeFile",
     "HttpMethod": "GET",
@@ -886,32 +823,6 @@
         "Name": "typeFile",
         "Type": "System.String",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Edu_plat.Controllers.MaterialsController",
-    "Method": "GetCourseMaterials",
-    "RelativePath": "api/Materials/GetMaterialPassCourseTypeIdOfDoctor/{courseCode}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "courseCode",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "doctorId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "typeFile",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
