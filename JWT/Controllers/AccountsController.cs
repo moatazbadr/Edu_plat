@@ -129,7 +129,7 @@ namespace JWT.Controllers
 
             return Ok(new { success = true, message = "Registration successful. A verification code has been sent to your email." });
         }
-        #endregion
+        #endregion 
 
         #region VerifyAccount
 

@@ -4,7 +4,7 @@ namespace JWT.DTO
 {
 	public class ResetPasswordRequestDTO
 	{
-
+		// saleh sherif 
 		//[Required]
   //      public string email { get; set; }
         [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,20}$",
