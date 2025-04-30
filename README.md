@@ -6,7 +6,7 @@
 
 *Use this section as your GitHub Release **Description** when publishing the `.exe` package.*
 
-**Version 2.3.4** — *EduPlat Web API* (`EduPlat.exe`)
+**Version 2.3.4** — *EduPlat Web API* (`Edu_plat.exe`)
 
 **What's Inside:**
 
@@ -17,8 +17,7 @@
 - 📝 **Exam Engine**: CRUD for Exams, Questions (2–4 choices), scoring, and time limits.
 - 📧 **Notifications**: SMTP emails + Firebase push for registration, material uploads, and exams.
 - 🔄 **EF Core**: Auto migrations, seed data, SQL Server/Azure SQL support.
-- 🔄 **Caching**: In-memory with optional Redis integration.
-- 📚 **Swagger UI**: Explore and test all endpoints with Bearer token support.
+- 📚 **Swagger UI**: Explore and test all endpoints with Bearer token support and so on .
 
 **Before You Download:**
 
