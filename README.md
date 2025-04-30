@@ -99,28 +99,50 @@
 
 ---
 
-## 🖥️ Section 2: Pre-built Executable
+## 🖥️ Section 2: Pre-built Executable
 
-<details>
-<summary>Download & Extract</summary>
+1. **Download & Extract**
+   - Go to [Releases](https://github.com/SALEH-SHERIF/Edu_plat/releases).
+   - Download the `.zip`/`.exe` (Windows) or `.tar.gz` (macOS) file.
+   - Extract:
+     - **Windows**: right-click → Extract All...
+     - **macOS**: `tar -xzf Edu_plat_mac.tar.gz`
 
-1. Go to [Releases](https://github.com/SALEH-SHERIF/Edu_plat/releases)
-2. Download `.zip`/`.exe` (Windows) or `.tar.gz` (macOS)
-3. Extract:
-   - Windows: right-click → Extract All...
-   - macOS: `tar -xzf EduPlat_JWT_mac.tar.gz`
-</details>
+2. **Place `appsettings.json`**
+   - Place `appsettings.json` next to `Edu_plat.exe`.
 
-<details>
-<summary>Configure & Launch</summary>
+3. **Run the Application**
+   - **Windows**: Open **Command Prompt** or **PowerShell**, navigate to the folder containing `Edu_plat.exe`, and run:
+     ```bash
+     .\Edu_plat.exe
+     ```
+   - **macOS/Linux**: Open **Terminal**, navigate to the folder containing `Edu_plat`, and run:
+     ```bash
+     chmod +x Edu_plat && ./Edu_plat
+     ```
 
-1. Place `appsettings.json` next to `EduPlat.exe`.
-2. Run:
-   - Windows: `.\Edu_plat.exe`
-   - macOS/Linux: `chmod +x Edu_plat && ./Edu_plat`
-</details>
+4. **Access the API**
+   - After the API starts, it will listen on the default port. You should see a message like:
+     ```
+     Now listening on: http://0.0.0.0:7189
+     ```
+   - Open your browser and go to `http://localhost:7189` to access the API.
+
+5. **Access Swagger UI**
+   - To interact with the API using Swagger UI, navigate to:
+     ```
+     http://localhost:7189/swagger/index.html
+     ```
 
 ---
+
+> **Notes:**
+> - If you have trouble accessing the API, make sure port `7189` is not blocked by another program or firewall.
+> - To access the API from another device on the same network, replace `localhost` with the IP address of your machine, for example:
+>   ```
+>   http://192.168.1.100:7189
+>   ```
+
 
 ## 🛠️ Configuration Tips
 
