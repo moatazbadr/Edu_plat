@@ -884,5 +884,3 @@ namespace Edu_plat.Controllers
 
 	}
 }
-
-
