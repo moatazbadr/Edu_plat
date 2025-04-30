@@ -9,8 +9,6 @@
 		public bool IsOnline { get; set; } 
 		public int DurationInMin { get; set; } 
 		public int QusetionsNumber { get; set; }  
-
-		// قائمة بالأسئلة الجديدة أو المعدّلة
 		public List<ChoiceDto> Questions { get; set; }
 	}
 }
