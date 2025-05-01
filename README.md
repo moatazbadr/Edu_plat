@@ -35,8 +35,14 @@
 
 ## 🚦 Live Demo
 
-- **ngrok**: https://great-hot-impala.ngrok-free.app/swagger/index.html
-- **RunASP.net**: https://eduplat123.runasp.net/swagger/index.html
+- **Ngrok Link**  
+  [https://great-hot-impala.ngrok-free.app](https://great-hot-impala.ngrok-free.app)  
+  Temporary link hosted from my local machine using Ngrok. It will only work while my local server is running.
+
+- **MonsterHosting Link (via RunASP.net)**  
+  [https://eduplat123.runasp.net](https://eduplat123.runasp.net)  
+  Publicly hosted version on MonsterHosting. It's stable and always accessible online.
+
 
 ---
 
