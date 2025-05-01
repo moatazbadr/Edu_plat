@@ -10,7 +10,7 @@
 
 **What's Inside:**
 
-- ⚙️ **Standalone Executable**: `EduPlat.exe`—zero-dependency Windows binary.
+- ⚙️ **Standalone Executable**: `Edu_plat.exe`—zero-dependency Windows binary.
 - 🔒 **JWT Security**: Access tokens, blacklisting, and role-based access control.
 - 🗂️ **Course & Materials**: Upload/download study resources (PDF, Word, PPT) up to 300 MB.
 - 🎥 **Video Uploading**: Support for course-related videos.
@@ -27,7 +27,7 @@
 
 **Package Includes:**
 
-- `EduPlat.exe`
+- `Edu_plat.exe`
 - `appsettings.json.sample`
 - `README.md` (this guide)
 
