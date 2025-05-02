@@ -880,6 +880,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Edu_plat.Controllers.NotificationController",
+    "Method": "SendMessageAsync",
+    "RelativePath": "api/Notification",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Edu_plat.DTO.Notification.MessageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Edu_plat.Controllers.ProfileController",
     "Method": "ChangePassword",
     "RelativePath": "api/Profile/changePassword",
@@ -1333,12 +1349,33 @@
         "IsRequired": false
       },
       {
-        "Name": "Description",
+        "Name": "TypeFile",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.Videos",
+    "Method": "UploadVideo",
+    "RelativePath": "api/Videos/UploadVideo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Video",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseCode",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "TypeFile",
+        "Name": "Type",
         "Type": "System.String",
         "IsRequired": false
       }
