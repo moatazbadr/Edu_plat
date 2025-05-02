@@ -79,10 +79,18 @@ namespace JWT
             });
             #endregion
 
-            //FirebaseApp.Create(new AppOptions()
-            //{
-            //    Credential = GoogleCredential.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "notification-7d00f-firebase-adminsdk-fbsvc-56150de834.json")),
-            //});
+
+
+            var config = builder.Configuration;
+            var fileName = config["Firebase:CredentialsFileName"];
+            var fullPath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+
+            var credential = GoogleCredential.FromFile(fullPath);
+
+            FirebaseApp.Create(new AppOptions()
+            {
+                Credential = credential
+            });
 
             builder.WebHost.ConfigureKestrel(options =>
             {
@@ -121,6 +129,8 @@ namespace JWT
 				options.AddDefaultPolicy(policy =>
 				{
 					policy.AllowAnyOrigin()
+
+                        .WithOrigins("http://localhost:4200")
 						  .AllowAnyHeader()
 						  .AllowAnyMethod()
 						  .WithExposedHeaders("Content-Disposition"); // مهم لو بتتعامل مع رفع ملفات
@@ -174,7 +184,7 @@ namespace JWT
                 swagger.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "ASP.NET 6 Web API",
+                    Title = "ASP.NET 8 Web API",
                     Description = "EduPlat"
                 });
 
@@ -206,6 +216,7 @@ namespace JWT
         });
             });
             #endregion
+
             builder.Services.AddScoped<IblackListService, BlacklistService>();
 
             #region Roles For users

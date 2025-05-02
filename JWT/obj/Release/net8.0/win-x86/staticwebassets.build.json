@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hTo4oBxjLbUxV9UHlzHeH1wUIaTvXiLTfrWQXtbhN8c=",
+  "Hash": "4IcXKkL1VO5m1Gd/MBUv6NPwhz9EjMuIoNuh07iBH8Y=",
   "Source": "Edu_plat",
   "BasePath": "_content/Edu_plat",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Edu_plat\\wwwroot",
       "Source": "Edu_plat",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "materials#[.{fingerprint}]?.zip",
       "AssetKind": "All",
@@ -38,12 +38,12 @@
       "OriginalItemSpec": "wwwroot\\materials.zip"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\student Guide.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Firs Level Fall.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
-      "RelativePath": "Uploads/AdminFiles/student Guide#[.{fingerprint}]?.pdf",
+      "RelativePath": "Uploads/AdminFiles/Firs Level Fall#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,17 +52,143 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "g2g8tu3e5e",
-      "Integrity": "WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM=",
+      "Fingerprint": "qt7m24b37c",
+      "Integrity": "HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\student Guide.pdf"
+      "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\Firs Level Fall.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/AdminFiles/FirstLevelFall#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qt7m24b37c",
+      "Integrity": "HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFallllllll.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/AdminFiles/FirstLevelFallllllll#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2x87xwh84x",
+      "Integrity": "5nlBfKzlY6xleOQdUWij9HAH869B48/8vHrpZnESrY4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\FirstLevelFallllllll.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Fourth Level Fall.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/AdminFiles/Fourth Level Fall#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9e4ax17jmv",
+      "Integrity": "wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\Fourth Level Fall.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Second Level Fall.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/AdminFiles/Second Level Fall#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9ukzg277um",
+      "Integrity": "vyPkrQjTq2Ljrtu6TQH7/lHoWA9Kh++WyTvKDjae9CY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\Second Level Fall.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\StudentGuide.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/AdminFiles/StudentGuide#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c466uym7p9",
+      "Integrity": "fCo7WKsuQdVBKOMrM+mvhzDR/JfUdLPgmh4W4csSG08=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\StudentGuide.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Third Level Fall.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/AdminFiles/Third Level Fall#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4e4hcwqhsp",
+      "Integrity": "hONRiFiPJ8/JZWzB2OFZf3Xux7sCabGDRKbqUv8ND2k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\Third Level Fall.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_13#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -80,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_14#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -101,10 +227,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_15#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -122,10 +248,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_17#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -143,10 +269,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_18#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -164,10 +290,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_5#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -185,10 +311,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_6#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -206,10 +332,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_8#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -227,10 +353,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/dummy-pdf_2_9#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -248,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -269,10 +395,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions_2#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -290,10 +416,31 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\dummy-pdf_2_2.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/COMP203/dummy-pdf_2_2#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "169js90hgw",
+      "Integrity": "KVUNd4dBuLou041OIbe7yX2Ekl7sJEIqVfik1bHrmkM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\dummy-pdf_2_2.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP203/Lecture 4LanguageModel#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -311,10 +458,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP203/Lecture_2_RegExp_TextProcessing#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -332,10 +479,52 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\operating_system_final.pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/COMP203/operating_system_final#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ixgb4s7djm",
+      "Integrity": "irHJ+CsImcegVC48pxyu3Nzx322pen72JUsAE6iePtg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\operating_system_final.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_1.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/COMP203/student_degrees_COMP206_1#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kictqki5kc",
+      "Integrity": "ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_1.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Uploads/COMP206/Lecture 1Introduction&RegularExpressions#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -353,10 +542,31 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Header_Video.mp4",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Videos/COMP203/Header_Video#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9010mg6nnw",
+      "Integrity": "GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Videos\\COMP203\\Header_Video.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
       "RelativePath": "Videos/COMP203/Screen Recording 2025-03-12 214236#[.{fingerprint}]?.mp4",
       "AssetKind": "All",
@@ -372,12 +582,33 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP206\\Screen Recording 2025-04-20 182935.mp4",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Videos/COMP206/Screen Recording 2025-04-20 182935#[.{fingerprint}]?.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f02l6auiy2",
+      "Integrity": "kXS+4otBrLOwmJzk1THW9zemVVfKmoBmKKH5xufjIkw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Videos\\COMP206\\Screen Recording 2025-04-20 182935.mp4"
     }
   ],
   "Endpoints": [
     {
       "Route": "materials.zhwo3rhd04.zip",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -398,7 +629,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -422,7 +653,7 @@
     },
     {
       "Route": "materials.zip",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -443,7 +674,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -458,8 +689,8 @@
       ]
     },
     {
-      "Route": "Uploads/AdminFiles/student Guide.g2g8tu3e5e.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\student Guide.pdf",
+      "Route": "Uploads/AdminFiles/Firs Level Fall.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Firs Level Fall.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -468,7 +699,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "924594"
+          "Value": "2410270"
         },
         {
           "Name": "Content-Type",
@@ -476,56 +707,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM=\""
+          "Value": "\"HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 22 Apr 2025 08:15:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "g2g8tu3e5e"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/AdminFiles/student Guide.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/AdminFiles/student Guide.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\student Guide.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "924594"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 22 Apr 2025 08:15:20 GMT"
+          "Value": "Tue, 29 Apr 2025 18:47:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -535,13 +721,550 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WChOP1iPn1grZTjc7UWk+6pZ7RCWIRj8WuJRGYANjjM="
+          "Value": "sha256-HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/Firs Level Fall.qt7m24b37c.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Firs Level Fall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2410270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:47:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qt7m24b37c"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/Firs Level Fall.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/FirstLevelFall.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2410270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:53:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/FirstLevelFall.qt7m24b37c.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2410270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:53:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qt7m24b37c"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/FirstLevelFall.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/FirstLevelFallllllll.2x87xwh84x.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFallllllll.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "475032"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5nlBfKzlY6xleOQdUWij9HAH869B48/8vHrpZnESrY4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 19:21:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2x87xwh84x"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/FirstLevelFallllllll.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5nlBfKzlY6xleOQdUWij9HAH869B48/8vHrpZnESrY4="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/FirstLevelFallllllll.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFallllllll.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "475032"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5nlBfKzlY6xleOQdUWij9HAH869B48/8vHrpZnESrY4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 19:21:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5nlBfKzlY6xleOQdUWij9HAH869B48/8vHrpZnESrY4="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/Fourth Level Fall.9e4ax17jmv.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Fourth Level Fall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3951400"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:48:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9e4ax17jmv"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/Fourth Level Fall.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/Fourth Level Fall.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Fourth Level Fall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3951400"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:48:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/Second Level Fall.9ukzg277um.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Second Level Fall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3667744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vyPkrQjTq2Ljrtu6TQH7/lHoWA9Kh++WyTvKDjae9CY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9ukzg277um"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/Second Level Fall.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vyPkrQjTq2Ljrtu6TQH7/lHoWA9Kh++WyTvKDjae9CY="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/Second Level Fall.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Second Level Fall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3667744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vyPkrQjTq2Ljrtu6TQH7/lHoWA9Kh++WyTvKDjae9CY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vyPkrQjTq2Ljrtu6TQH7/lHoWA9Kh++WyTvKDjae9CY="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/StudentGuide.c466uym7p9.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\StudentGuide.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "280147"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fCo7WKsuQdVBKOMrM+mvhzDR/JfUdLPgmh4W4csSG08=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:49:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c466uym7p9"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/StudentGuide.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fCo7WKsuQdVBKOMrM+mvhzDR/JfUdLPgmh4W4csSG08="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/StudentGuide.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\StudentGuide.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "280147"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fCo7WKsuQdVBKOMrM+mvhzDR/JfUdLPgmh4W4csSG08=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:49:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fCo7WKsuQdVBKOMrM+mvhzDR/JfUdLPgmh4W4csSG08="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/Third Level Fall.4e4hcwqhsp.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Third Level Fall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3886809"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hONRiFiPJ8/JZWzB2OFZf3Xux7sCabGDRKbqUv8ND2k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:48:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4e4hcwqhsp"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/Third Level Fall.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hONRiFiPJ8/JZWzB2OFZf3Xux7sCabGDRKbqUv8ND2k="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/AdminFiles/Third Level Fall.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Third Level Fall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3886809"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hONRiFiPJ8/JZWzB2OFZf3Xux7sCabGDRKbqUv8ND2k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:48:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hONRiFiPJ8/JZWzB2OFZf3Xux7sCabGDRKbqUv8ND2k="
         }
       ]
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_13.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -562,7 +1285,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -586,7 +1309,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_13.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_13.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -607,7 +1330,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -623,7 +1346,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_14.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -644,7 +1367,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -668,7 +1391,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_14.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_14.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -689,7 +1412,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -705,7 +1428,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_15.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -726,7 +1449,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -750,7 +1473,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_15.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_15.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -771,7 +1494,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -787,7 +1510,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_17.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -808,7 +1531,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -832,7 +1555,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_17.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_17.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -853,7 +1576,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -869,7 +1592,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_18.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -890,7 +1613,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -914,7 +1637,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_18.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_18.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -935,7 +1658,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -951,7 +1674,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_5.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -972,7 +1695,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -996,7 +1719,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_5.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_5.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1017,7 +1740,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1033,7 +1756,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_6.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1054,7 +1777,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1078,7 +1801,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_6.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_6.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1099,7 +1822,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1115,7 +1838,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_8.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1136,7 +1859,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1160,7 +1883,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_8.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_8.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1181,7 +1904,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1197,7 +1920,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_9.169js90hgw.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1218,7 +1941,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1242,7 +1965,7 @@
     },
     {
       "Route": "Uploads/COMP201/dummy-pdf_2_9.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\dummy-pdf_2_9.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1263,7 +1986,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1279,7 +2002,7 @@
     },
     {
       "Route": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions.f3olc56krp.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1300,7 +2023,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1324,7 +2047,7 @@
     },
     {
       "Route": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1345,7 +2068,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1361,7 +2084,7 @@
     },
     {
       "Route": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions_2.f3olc56krp.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1382,7 +2105,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1406,7 +2129,7 @@
     },
     {
       "Route": "Uploads/COMP201/Lecture 1Introduction&RegularExpressions_2.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Lecture 1Introduction&RegularExpressions_2.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1427,7 +2150,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1442,8 +2165,90 @@
       ]
     },
     {
+      "Route": "Uploads/COMP203/dummy-pdf_2_2.169js90hgw.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\dummy-pdf_2_2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7478"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KVUNd4dBuLou041OIbe7yX2Ekl7sJEIqVfik1bHrmkM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 19:07:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "169js90hgw"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/COMP203/dummy-pdf_2_2.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KVUNd4dBuLou041OIbe7yX2Ekl7sJEIqVfik1bHrmkM="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/COMP203/dummy-pdf_2_2.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\dummy-pdf_2_2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7478"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KVUNd4dBuLou041OIbe7yX2Ekl7sJEIqVfik1bHrmkM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 19:07:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KVUNd4dBuLou041OIbe7yX2Ekl7sJEIqVfik1bHrmkM="
+        }
+      ]
+    },
+    {
       "Route": "Uploads/COMP203/Lecture 4LanguageModel.g8vde2dxg0.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1464,7 +2269,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1488,7 +2293,7 @@
     },
     {
       "Route": "Uploads/COMP203/Lecture 4LanguageModel.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture 4LanguageModel.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1509,7 +2314,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1525,7 +2330,7 @@
     },
     {
       "Route": "Uploads/COMP203/Lecture_2_RegExp_TextProcessing.i9785aeagn.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1546,7 +2351,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1570,7 +2375,7 @@
     },
     {
       "Route": "Uploads/COMP203/Lecture_2_RegExp_TextProcessing.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\Lecture_2_RegExp_TextProcessing.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1591,7 +2396,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1606,8 +2411,172 @@
       ]
     },
     {
+      "Route": "Uploads/COMP203/operating_system_final.ixgb4s7djm.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\operating_system_final.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"irHJ+CsImcegVC48pxyu3Nzx322pen72JUsAE6iePtg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 18:11:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ixgb4s7djm"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/COMP203/operating_system_final.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-irHJ+CsImcegVC48pxyu3Nzx322pen72JUsAE6iePtg="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/COMP203/operating_system_final.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\operating_system_final.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"irHJ+CsImcegVC48pxyu3Nzx322pen72JUsAE6iePtg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 18:11:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-irHJ+CsImcegVC48pxyu3Nzx322pen72JUsAE6iePtg="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/COMP203/student_degrees_COMP206_1.kictqki5kc.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_1.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8262"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 19:06:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kictqki5kc"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/COMP203/student_degrees_COMP206_1.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/COMP203/student_degrees_COMP206_1.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_1.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8262"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 19:06:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="
+        }
+      ]
+    },
+    {
       "Route": "Uploads/COMP206/Lecture 1Introduction&RegularExpressions.f3olc56krp.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1628,7 +2597,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1652,7 +2621,7 @@
     },
     {
       "Route": "Uploads/COMP206/Lecture 1Introduction&RegularExpressions.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1673,7 +2642,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1688,8 +2657,90 @@
       ]
     },
     {
+      "Route": "Videos/COMP203/Header_Video.9010mg6nnw.mp4",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Header_Video.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22608037"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 18:33:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9010mg6nnw"
+        },
+        {
+          "Name": "label",
+          "Value": "Videos/COMP203/Header_Video.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo="
+        }
+      ]
+    },
+    {
+      "Route": "Videos/COMP203/Header_Video.mp4",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Header_Video.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22608037"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 18:33:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo="
+        }
+      ]
+    },
+    {
       "Route": "Videos/COMP203/Screen Recording 2025-03-12 214236.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1710,7 +2761,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1726,7 +2777,7 @@
     },
     {
       "Route": "Videos/COMP203/Screen Recording 2025-03-12 214236.rv5y7itrpg.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1747,7 +2798,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 07:16:06 GMT"
+          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1766,6 +2817,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-uS5meJxTybXHkU4pnX5Kg/EQJKL3AcjCXV+rfatNhNY="
+        }
+      ]
+    },
+    {
+      "Route": "Videos/COMP206/Screen Recording 2025-04-20 182935.f02l6auiy2.mp4",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP206\\Screen Recording 2025-04-20 182935.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2681006"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kXS+4otBrLOwmJzk1THW9zemVVfKmoBmKKH5xufjIkw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 16:40:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f02l6auiy2"
+        },
+        {
+          "Name": "label",
+          "Value": "Videos/COMP206/Screen Recording 2025-04-20 182935.mp4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kXS+4otBrLOwmJzk1THW9zemVVfKmoBmKKH5xufjIkw="
+        }
+      ]
+    },
+    {
+      "Route": "Videos/COMP206/Screen Recording 2025-04-20 182935.mp4",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP206\\Screen Recording 2025-04-20 182935.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2681006"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kXS+4otBrLOwmJzk1THW9zemVVfKmoBmKKH5xufjIkw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 16:40:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kXS+4otBrLOwmJzk1THW9zemVVfKmoBmKKH5xufjIkw="
         }
       ]
     }

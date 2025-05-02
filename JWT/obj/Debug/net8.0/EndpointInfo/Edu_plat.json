@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "ASP.NET 6 Web API",
+    "title": "ASP.NET 8 Web API",
     "description": "EduPlat",
     "version": "v1"
   },
@@ -1290,97 +1290,6 @@
         }
       }
     },
-    "/api/Materials/DownloadFile/{courseCode}/{materialId}": {
-      "get": {
-        "tags": [
-          "Materials"
-        ],
-        "parameters": [
-          {
-            "name": "courseCode",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "materialId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/Materials/DownloadFile/{materialId}": {
-      "get": {
-        "tags": [
-          "Materials"
-        ],
-        "parameters": [
-          {
-            "name": "materialId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/Materials/DownloadFiles": {
-      "get": {
-        "tags": [
-          "Materials"
-        ],
-        "parameters": [
-          {
-            "name": "materialIds",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int32"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/Materials/Get-Doctor-Materials": {
-      "get": {
-        "tags": [
-          "Materials"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/Materials/Get-Material-ByType/courseCode/typeFile": {
       "get": {
         "tags": [
@@ -1389,42 +1298,6 @@
         "parameters": [
           {
             "name": "courseCode",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "typeFile",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/Materials/GetMaterialPassCourseTypeIdOfDoctor/{courseCode}": {
-      "get": {
-        "tags": [
-          "Materials"
-        ],
-        "parameters": [
-          {
-            "name": "courseCode",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "doctorId",
             "in": "query",
             "schema": {
               "type": "string"
@@ -1582,6 +1455,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Notification": {
+      "post": {
+        "tags": [
+          "Notification"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Success"
@@ -2039,6 +1943,60 @@
         }
       }
     },
+    "/api/Videos/UploadVideo": {
+      "post": {
+        "tags": [
+          "Videos"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CourseCode",
+                  "Type",
+                  "Video"
+                ],
+                "type": "object",
+                "properties": {
+                  "Video": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "CourseCode": {
+                    "maxLength": 10,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Type": {
+                    "maxLength": 6,
+                    "minLength": 0,
+                    "pattern": "^(Videos)$",
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Video": {
+                  "style": "form"
+                },
+                "CourseCode": {
+                  "style": "form"
+                },
+                "Type": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Videos/UpdateVideo": {
       "post": {
         "tags": [
@@ -2062,11 +2020,6 @@
                     "type": "string",
                     "format": "binary"
                   },
-                  "Description": {
-                    "maxLength": 500,
-                    "minLength": 0,
-                    "type": "string"
-                  },
                   "TypeFile": {
                     "maxLength": 5,
                     "minLength": 0,
@@ -2080,9 +2033,6 @@
                   "style": "form"
                 },
                 "Video": {
-                  "style": "form"
-                },
-                "Description": {
                   "style": "form"
                 },
                 "TypeFile": {
@@ -2565,6 +2515,24 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MessageRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "body": {
+            "type": "string",
+            "nullable": true
+          },
+          "courseCode": {
             "type": "string",
             "nullable": true
           }

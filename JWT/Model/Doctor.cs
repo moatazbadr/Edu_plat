@@ -14,9 +14,11 @@ namespace Edu_plat.Model
 		public ApplicationUser? applicationUser { get; set; }
 		public List<CourseDoctor> CourseDoctors { get; set; } = new List<CourseDoctor>();
 
-		// العلاقة One-to-Many مع Material
+	
 		public List<Material> Materials { get; set; } = new List<Material>();
-		// 🔹 العلاقة One-to-Many مع الامتحانات
+	
 		public List<Exam> Exams { get; set; } = new List<Exam>();
-	}
+        public ICollection<userDevice> userDevices { get; set; } = new List<userDevice>();
+
+    }
 }

@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\" />
-  <dbfullsql path="C:\Users\moataz\Desktop\GradProject\WorkingExam\Final\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\EFSQLScripts\JWT.DATA.ApplicationDbContext.sql" />
+  <IisApp path="C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\" />
 </sitemanifest>
