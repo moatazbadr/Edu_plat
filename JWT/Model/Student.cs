@@ -17,10 +17,10 @@ namespace Edu_plat.Model
 		public double ? GPA { get; set; }
 
 
-		//Navigational property for the Course Many side
 		public ICollection<Course> courses { get; set; } = new List<Course>();
-		// 🔹 العلاقة Many-to-Many مع Exam من خلال الجدول الوسيط
+	
 		public List<ExamStudent> ExamStudents { get; set; } = new List<ExamStudent>();
+        public ICollection<userDevice> userDevices { get; set; } = new List<userDevice>();
 
-	}
+    }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\Edu_plat.csproj": {}
+    "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\Edu_plat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\Edu_plat.csproj": {
+    "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\Edu_plat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+        "projectUniqueName": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\Edu_plat.csproj",
         "projectName": "Edu_plat",
-        "projectPath": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\Edu_plat.csproj",
+        "projectPath": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\Edu_plat.csproj",
         "packagesPath": "C:\\Users\\moataz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Final\\Edu_platFinal\\JWT\\obj\\publish\\win-x86\\",
+        "outputPath": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\obj\\publish\\win-x86\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.10.0, )"

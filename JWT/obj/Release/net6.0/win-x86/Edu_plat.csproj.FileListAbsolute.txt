@@ -634,3 +634,6 @@ C:\Users\moataz\Desktop\GradProject\Edu_Plat_SecondTerm\Edu_platFinal\JWT\obj\Re
 C:\Users\moataz\Desktop\GradProject\Edu_Plat_SecondTerm\Edu_platFinal\JWT\obj\Release\net6.0\win-x86\Edu_plat.pdb
 C:\Users\moataz\Desktop\GradProject\Edu_Plat_SecondTerm\Edu_platFinal\JWT\obj\Release\net6.0\win-x86\Edu_plat.genruntimeconfig.cache
 C:\Users\moataz\Desktop\GradProject\Edu_Plat_SecondTerm\Edu_platFinal\JWT\obj\Release\net6.0\win-x86\ref\Edu_plat.dll
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net6.0\win-x86\Edu_plat.dll
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net6.0\win-x86\refint\Edu_plat.dll
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net6.0\win-x86\Edu_plat.pdb

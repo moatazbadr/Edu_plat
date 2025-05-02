@@ -28,6 +28,11 @@ namespace Edu_plat.Controllers
         public async Task<IActionResult> GetProfile()
         {
             var userId = User.FindFirstValue("ApplicationUserId");
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Ok(new { success = false, message = "User not found" });
+            }
+            
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
