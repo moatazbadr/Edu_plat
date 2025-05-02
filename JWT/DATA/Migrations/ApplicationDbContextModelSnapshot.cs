@@ -479,15 +479,20 @@ namespace JWT.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("DeviceToken")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationUserId");
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("userDevice");
                 });
@@ -838,11 +843,21 @@ namespace JWT.Migrations
 
             modelBuilder.Entity("Edu_plat.Model.userDevice", b =>
                 {
-                    b.HasOne("JWT.ApplicationUser", "user")
+                    b.HasOne("Edu_plat.Model.Doctor", "Doctor")
                         .WithMany("userDevices")
-                        .HasForeignKey("ApplicationUserId");
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("user");
+                    b.HasOne("Edu_plat.Model.Student", "student")
+                        .WithMany("userDevices")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("student");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -912,6 +927,8 @@ namespace JWT.Migrations
                     b.Navigation("Exams");
 
                     b.Navigation("Materials");
+
+                    b.Navigation("userDevices");
                 });
 
             modelBuilder.Entity("Edu_plat.Model.Exams.Exam", b =>
@@ -929,6 +946,8 @@ namespace JWT.Migrations
             modelBuilder.Entity("Edu_plat.Model.Student", b =>
                 {
                     b.Navigation("ExamStudents");
+
+                    b.Navigation("userDevices");
                 });
 
             modelBuilder.Entity("JWT.ApplicationUser", b =>
@@ -940,8 +959,6 @@ namespace JWT.Migrations
                         .IsRequired();
 
                     b.Navigation("todoItems");
-
-                    b.Navigation("userDevices");
                 });
 #pragma warning restore 612, 618
         }

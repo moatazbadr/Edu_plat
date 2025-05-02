@@ -780,28 +780,29 @@ namespace Edu_plat.Controllers
 				return Unauthorized(new { message = "You are not authorized to view this exam's results." });
 			}
 
-			var examResults = await _context.ExamStudents
-				.Where(es => es.ExamId == examId)
-				.Select(es => new
-				{
+            var examResults = await _context.ExamStudents
+                .Where(es => es.ExamId == examId)
+                .Select(es => new
+                {
 
-					es.Score,
-					es.IsAbsent,
-					es.precentageExam,
-					StudentInfo = _context.Students
-						.Where(s => s.StudentId == es.StudentId)
-						.Select(s => new
-						{
-							s.applicationUser.Email,
-							s.applicationUser.UserName
-						})
-						.FirstOrDefault()
-				})
-				.ToListAsync();
+                    es.Score,
+                    es.IsAbsent,
+                    es.precentageExam,
+                    StudentName = _context.Students
+                        .Where(s => s.StudentId == es.StudentId)
+                        .Select(s => 
+                        
+                            //s.applicationUser.Email,
+                            s.applicationUser.UserName
+                        )
+                        .FirstOrDefault()
+                }
+                ).ToListAsync();
+				
 
 			if (examResults.Count == 0)
 			{
-				return NotFound(new { message = "No students have taken this exam yet." });
+				return NotFound(new {success=false, message = "No students have taken this exam yet." });
 			}
 
 			int totalStudents = examResults.Count;
@@ -810,6 +811,8 @@ namespace Edu_plat.Controllers
 
 			return Ok(new
 			{
+                success=true,
+                message="Fetched succesfully",
 				successRate = Math.Round(successRate, 2),
 				students = examResults
 			});
