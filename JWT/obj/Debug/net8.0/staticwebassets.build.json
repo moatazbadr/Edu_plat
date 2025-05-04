@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4IcXKkL1VO5m1Gd/MBUv6NPwhz9EjMuIoNuh07iBH8Y=",
+  "Hash": "jRVN6QzE4z/1rI8SpYjpgp1RPA/CJjOv9NSHOukMqxU=",
   "Source": "Edu_plat",
   "BasePath": "_content/Edu_plat",
   "Mode": "Default",
@@ -2843,7 +2843,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 16:40:59 GMT"
+          "Value": "Thu, 01 May 2025 20:24:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2888,7 +2888,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 16:40:59 GMT"
+          "Value": "Thu, 01 May 2025 20:24:02 GMT"
         },
         {
           "Name": "Cache-Control",

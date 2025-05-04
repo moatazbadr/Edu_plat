@@ -25,98 +25,135 @@ namespace Edu_plat.Controllers
             _userManager = userManager;
         }
 
+        #region Notification
+        //[HttpPost]
+        //[Authorize(Roles = "Doctor,Admin")]
+        //public async Task<IActionResult> SendMessageAsync([FromBody] MessageRequest request)
+        //{
+        //    var userId = User.FindFirstValue("ApplicationUserId");
+        //    if (string.IsNullOrEmpty(userId))
+        //        return Ok(new { success = false, message = "User not found" });
+
+        //    var user = await _userManager.FindByIdAsync(userId);
+        //    if (user == null)
+        //        return Ok(new { success = false, message = "User not found" });
+
+          
+        //    if (request == null || string.IsNullOrEmpty(request.Title) ||
+        //        string.IsNullOrEmpty(request.Body) || string.IsNullOrEmpty(request.CourseCode))
+        //    {
+        //        return Ok(new { success = false, message = "Invalid request: Title, Body and CourseCode are required" });
+        //    }
+
+
+        //    var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+        //    if (doctor == null)
+        //        return Ok(new { success = false, message = "Doctor not found" });
+
+        //    var doctorInCourse = await _context.CourseDoctors
+        //        .Include(cd => cd.Course)
+        //        .FirstOrDefaultAsync(cd => cd.DoctorId == doctor.DoctorId && cd.Course.CourseCode == request.CourseCode);
+
+        //    if (doctorInCourse == null)
+        //        return Ok(new { success = false, message = "Doctor is not registered in this course" });
+
+
+        //    var course = await _context.Courses
+        //        .Include(c => c.Students)
+        //        .ThenInclude(s => s.userDevices)
+        //        .FirstOrDefaultAsync(c => c.CourseCode == request.CourseCode);
+
+        //    if (course == null)
+        //        return Ok(new { success = false, message = "Course not found" });
+
+        //    var students = course.Students;
+        //    if (students == null || !students.Any())
+        //        return Ok(new { success = false, message = "No students found in this course" });
+        //var messaging = FirebaseMessaging.DefaultInstance;
+        //    int successCount = 0, failureCount = 0;
+
+        //    foreach (var student in students)
+        //    {
+        //        foreach (var device in student.userDevices)
+        //        {
+        //            if (string.IsNullOrWhiteSpace(device.DeviceToken))
+        //                continue;
+
+        //            var message = new Message()
+        //            {
+        //                Notification = new Notification
+        //                {
+        //                    Title = request.Title,
+        //                    Body = request.Body
+        //                },
+        //                Token = device.DeviceToken,
+        //                Data = new Dictionary<string, string>
+        //                {
+        //                    ["CourseCode"] = request.CourseCode,
+        //                    ["StudentId"] = student.StudentId.ToString()
+        //                }
+        //            };
+
+        //            try
+        //            {
+        //                var result = await messaging.SendAsync(message);
+        //                if (!string.IsNullOrEmpty(result))
+        //                    successCount++;
+        //                else
+        //                    failureCount++;
+        //            }
+        //            catch
+        //            {
+        //                failureCount++;
+                     
+        //            }
+        //        }
+        //    }
+
+        //    return Ok(new
+        //    {
+        //        success = true,
+        //        message = $"Notifications sent: {successCount} succeeded, {failureCount} failed."
+        //    });
+        //}
+
+        #endregion
+
+        #region Tyring Notification
+
         [HttpPost]
-        [Authorize(Roles ="Doctor,Admin")]
         public async Task<IActionResult> SendMessageAsync([FromBody] MessageRequest request)
         {
-
-            #region validating user
-            var userId = User.FindFirstValue("ApplicationUserId");
-            if (string.IsNullOrEmpty(userId))
+            var message = new Message()
             {
-                return Ok(new { success = false, message = "User not found" });
+                Notification = new Notification
+                {
+                    Title = request.Title,
+                    Body = request.Body,
+                },
+                Data = new Dictionary<string, string>()
+                {
+                    ["FirstName"] = "John",
+                    ["LastName"] = "Doe"
+                },
+                Token = request.DeviceToken
+            };
+
+            var messaging = FirebaseMessaging.DefaultInstance;
+            var result = await messaging.SendAsync(message);
+
+            if (!string.IsNullOrEmpty(result))
+            {
+                
+                return Ok(new { success=true,message="Message sent successfully!" });
             }
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
+            else
             {
-                return Ok(new { success = false, message = "User not found" });
-            } 
-            #endregion
 
-
-            #region validating request
-
-            if (request == null)
-            {
-                return Ok(new { success = false, message = "Request cannot be null" });
+                return Ok(new { success = false ,message="Not sent"});
             }
-            if (string.IsNullOrEmpty(request.Title))
-            {
-                return Ok(new { success = false, message = "Title cannot be null" });
-            }
-
-            if (string.IsNullOrEmpty(request.Body))
-            {
-                return Ok(new { success = false, message = "Body cannot be null" });
-            }
-
-            if (string.IsNullOrEmpty(request.CourseCode))
-            {
-                return Ok(new { success = false, message = "CourseCode cannot be null" });
-            }
-            #endregion
-
-
-            //check if the doctor is registered in this course
-            #region checking if the doctor is registered to this course 
-            var doctor = _context.Doctors.FirstOrDefault(d => d.UserId == userId);
-            if (doctor == null)
-            {
-                return Ok(new { success = false, message = "Doctor not found" });
-            }
-            var doctorInCourse = _context.CourseDoctors.Include(cd => cd.Course)
-                                                .FirstOrDefault(cd => cd.DoctorId == doctor.DoctorId && cd.Course.CourseCode == request.CourseCode);
-
-            if (doctorInCourse==null)
-            {
-                return Ok(new { success = false, message = "Doctor is not registered in this course" });
-            }
-            #endregion
-
-            #region validating Course
-
-            var requiredCourse = _context.Courses.FirstOrDefault(c => c.CourseCode == request.CourseCode);
-
-            if (requiredCourse == null)
-            {
-
-                return Ok(new { success = false, message = "Course not found" });
-            }
-           // return Ok(requiredCourse.CourseCode);
-            #endregion
-
-            #region Getting the students in that course
-            var student =_context.Courses.Include(sc=>sc.Students).Where(s=>s.CourseCode== request.CourseCode)
-                .SelectMany(s => s.Students).ToList();
-            if (student == null || student.Count == 0)
-            { return Ok(new { success = false, message = "No students found in this course" }); }
-            return Ok(student);
-
-            #endregion
-
-            //var messaging = FirebaseMessaging.DefaultInstance;
-            //var result = await messaging.SendAsync(message);
-
-            //if (!string.IsNullOrEmpty(result))
-            //{
-            //    // Message was sent successfully
-            //    return Ok("Message sent successfully!");
-            //}
-            //else
-            //{
-            //    // There was an error sending the message
-            //    throw new Exception("Error sending the message.");
-            //}
         }
+
+        #endregion
     }
 }
