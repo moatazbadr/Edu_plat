@@ -187,7 +187,7 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.AdminDashBoardController",
-    "Method": "getStats",
+    "Method": "GetStats",
     "RelativePath": "api/AdminDashBoard/GetStats",
     "HttpMethod": "GET",
     "IsController": true,
@@ -256,13 +256,13 @@
   {
     "ContainingType": "Edu_plat.Controllers.ChatController",
     "Method": "GetGroupChat",
-    "RelativePath": "api/Chat/GetGroupChat/groupChat/{courseTitle}",
+    "RelativePath": "api/Chat/GetGroupChat/groupChat/{courseCode}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "courseTitle",
+        "Name": "courseCode",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -306,6 +306,22 @@
       {
         "Name": "courseRegistrationDto",
         "Type": "Edu_plat.DTO.Course_Registration.CourseRegistrationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.CourseController",
+    "Method": "getDetailsForAdmin",
+    "RelativePath": "api/Course/AdminCourseDetails/{coursecode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "coursecode",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -881,18 +897,12 @@
   },
   {
     "ContainingType": "Edu_plat.Controllers.NotificationController",
-    "Method": "SendMessageAsync",
-    "RelativePath": "api/Notification",
-    "HttpMethod": "POST",
+    "Method": "GetNotifications",
+    "RelativePath": "api/Notification/notifications",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "Edu_plat.DTO.Notification.MessageRequest",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -1045,6 +1055,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Edu_plat.Controllers.StudentHelpController",
+    "Method": "GetAdminFiles",
+    "RelativePath": "api/StudentHelp/GetAdminFiles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

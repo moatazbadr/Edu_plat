@@ -318,3 +318,4 @@ C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Re
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\Edu_plat.genruntimeconfig.cache
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\ref\Edu_plat.dll
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\bin\Release\net8.0\notification-7d00f-firebase-adminsdk-fbsvc-b91d26b742.json
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\bin\Release\net8.0\chat-app-eb417-firebase-adminsdk-fbsvc-968137c5b9.json
