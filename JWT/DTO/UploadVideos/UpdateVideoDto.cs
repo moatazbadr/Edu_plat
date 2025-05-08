@@ -13,8 +13,8 @@ namespace Edu_plat.DTO.UploadVideos
 
 
 		
-		[StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
-		public string? Description { get; set; } // Optional: New video description
+		//[StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
+	//	public string? Description { get; set; } // Optional: New video description
 
 		
 		[RegularExpression("^(Video)$", ErrorMessage = "Type must be 'Video'")]

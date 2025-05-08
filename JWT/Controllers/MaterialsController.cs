@@ -1,9 +1,12 @@
 ﻿using Edu_plat.DTO.FileRequester;
+using Edu_plat.DTO.Notification;
 using Edu_plat.DTO.UploadFiles;
 using Edu_plat.Model;
 using Edu_plat.Model.Course_registeration;
+using Edu_plat.Model.Exams;
 using Edu_plat.Requests;
 using Edu_plat.Responses;
+using Edu_plat.Services;
 using JWT;
 using JWT.DATA;
 using JWT.Migrations;
@@ -27,35 +30,40 @@ namespace Edu_plat.Controllers
         private readonly ApplicationDbContext _context;
 		private readonly IWebHostEnvironment _hostingEnvironment;
 		private readonly UserManager<ApplicationUser> _userManager;
-        public MaterialsController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<ApplicationUser> userManager = null)
+        private readonly INotificationHandler _notificationHandler;
+        public MaterialsController
+			(
+			ApplicationDbContext context,
+			IWebHostEnvironment hostingEnvironment
+			, UserManager<ApplicationUser> userManager
+			,INotificationHandler notificationHandler
+			)
 		{
 			_context = context;
 			_hostingEnvironment = hostingEnvironment;
 			_userManager = userManager;
-		} 
+            _notificationHandler = notificationHandler;
+
+        } 
 		
         #region UploadFile
 		[HttpPost("UploadFile/Doctors")]
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> UploadMaterial([FromForm] UploadMatarielDto uploadMaterialDto)
 		{
-			// Validate the input data
 			if (!ModelState.IsValid)
 			{
 				return Ok(new { success = false, message = "Invalid data provided." });
 			}
-			// Check if the file is provided (not empty)
 			if (uploadMaterialDto.File == null || uploadMaterialDto.File.Length == 0)
 			{
 				return Ok(new { success = false, message = "No file uploaded." });
 			}
-			// Set maximum file size (10 MB)
 			var maxFileSize = 10 * 1024 * 1024; // 10 MB
 			if (uploadMaterialDto.File.Length > maxFileSize)
 			{
 				return Ok(new { success = false, message = "File size exceeds the maximum limit (10 MB)." });
 			}
-			// Allowed MIME types (ContentTypes) for PDF, Word, and PowerPoint files
 			var contentType = uploadMaterialDto.File.ContentType.ToLower();
 			var fileExtension = Path.GetExtension(uploadMaterialDto.File.FileName).ToLower();
 
@@ -66,13 +74,11 @@ namespace Edu_plat.Controllers
 		       { ".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation" }
 	         };
 
-			// Check Extension of File
 			if (!allowedContentTypes.ContainsKey(fileExtension))
 			{
 				return BadRequest(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
 			}
 
-			// Check if the course exists
 			var course = await _context.Courses
 				.Where(c => c.CourseCode == uploadMaterialDto.CourseCode)
 				.FirstOrDefaultAsync();
@@ -82,15 +88,18 @@ namespace Edu_plat.Controllers
 				return Ok(new { success = false, message = "Course not found." });
 			}
 
-			// Get UserId from token
 			var userId = User.FindFirstValue("ApplicationUserId");
+			if (string.IsNullOrEmpty(userId))
+			{
+				return Ok(new { success = false, message = "user not found" });
+
+			}
 			var user = await _userManager.FindByIdAsync(userId);
 			if (user == null)
 			{
 				return Ok(new { success = false, message = "User not found." });
 			}
 
-			// Check if the user (Doctor) has enrolled in this course
 			bool isDoctorEnrolled = await _context.CourseDoctors
 				.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
 
@@ -99,58 +108,49 @@ namespace Edu_plat.Controllers
 				return Ok( new { success = false, message = "Doctor is not enrolled in the course, so file upload is forbidden." });
 			}
 
-			// Get the doctor details from CourseDoctors table
 			var doctor = await _context.CourseDoctors
 				.Where(cd => cd.CourseId == course.Id && cd.Doctor.UserId == userId)
 				.FirstOrDefaultAsync();
 
-			// Define upload directory inside wwwroot/Uploads/{CourseCode}
+			if (doctor == null)
+			{
+				return Ok(new { success=false ,message="doctor doesn't exist"});
+			}
 			var uploadsDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "Uploads", course.CourseCode);
 
-			// Create the directory if it does not exist
+			
 			if (!Directory.Exists(uploadsDirectory))
 			{
 				Directory.CreateDirectory(uploadsDirectory);
 			}
 
-			// Generate the file name (check if the file already exists in the directory)
-			var fileBaseName = Path.GetFileNameWithoutExtension(uploadMaterialDto.File.FileName);
-			//var fileExtension = Path.GetExtension(uploadMaterialDto.File.FileName).ToLower();
-
-			// Check if a file with the same base name exists in the directory
+			
+			var fileBaseName = Path.GetFileNameWithoutExtension(uploadMaterialDto.File.FileName);	
 			var existingFiles = Directory.GetFiles(uploadsDirectory, $"{fileBaseName}*");
-
-			// If the file already exists, append a serial number to the name
 			var uniqueFileName = existingFiles.Length > 0
 				? $"{fileBaseName}_{existingFiles.Length + 1}{fileExtension}"
-				: $"{fileBaseName}{fileExtension}"; // No need for a serial number if it's the first file
+				: $"{fileBaseName}{fileExtension}"; 
 
-			// Define the final file path for saving the file
 			var filePath = Path.Combine(uploadsDirectory, uniqueFileName);
-
-			// Save the file to the specified path
+			
 			using (var stream = new FileStream(filePath, FileMode.Create))
 			{
 				await uploadMaterialDto.File.CopyToAsync(stream);
-			}
-
-			//Initialize file size variable
+			}			
 			string fileSize = "Unknown";
 
-			// Check if file exists before calculating its size
 			if (System.IO.File.Exists(filePath))
 			{
 				long fileSizeBytes = new FileInfo(filePath).Length;
-				fileSize = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; // Convert to MB
+				fileSize = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; 
 			}
-			//var materialExtension=
-
+			
 			var material = new Material
 			{
-				CourseId = course.Id,  // Use the course ID from CourseCode
+				CourseId = course.Id,  
 				CourseCode = course.CourseCode,
-				DoctorId = doctor.DoctorId,   // Use the DoctorId from the CourseDoctors table
-				FilePath = $"/Uploads/{course.CourseCode}/{uniqueFileName}",  // Final file path
+				DoctorId = doctor.DoctorId,   
+				FilePath = $"/Uploads/{course.CourseCode}/{uniqueFileName}",  
 				FileName = uniqueFileName,
 				Description = string.Empty,
 				UploadDate = DateTime.Now,
@@ -165,20 +165,18 @@ namespace Edu_plat.Controllers
 			double fileSizeInMB = uploadMaterialDto.File.Length / (1024.0 * 1024.0);
 			Console.WriteLine(fileSizeInMB);
 
-			//file Details Dto 
 
+            await _notificationHandler.SendMessageAsync(new MessageRequest
+            {
+                Title =material.CourseCode,
+                Body = $"New {material.TypeFile} uploaded  : {material.FileName} by Dr {user.UserName}  ",
+                CourseCode = material.CourseCode,
+                UserId = userId,
+                Date = DateOnly.Parse(material.UploadDate.ToString("yyyy-MM-dd")),
+            }
+			);
 
-			//"File details ":{
-			// id :
-			// path :
-			// etxenstion :
-			// date :
-			// type :
-			// courseCode :
-			//}
-
-
-			return Ok(
+            return Ok(
 			new
 			{
 				success = true,
@@ -195,7 +193,6 @@ namespace Edu_plat.Controllers
                     TypeFile = uploadMaterialDto.Type,
 
                 }
-
 			}
 			);
 		}
@@ -235,10 +232,9 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> GetDoctorMaterialsByTypeAndCourse(string courseCode,string typeFile)
 		{
-			// Get the UserId from the token
+
 			var userId = User.FindFirstValue("ApplicationUserId");
 
-			// Check if the user exists
 			var user = await _userManager.FindByIdAsync(userId);
 			if (user == null)
 			{
@@ -296,35 +292,30 @@ namespace Edu_plat.Controllers
 		}
         #endregion
 
-
         // -------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         #region Update Files 
         [HttpPut("updateFile")]
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> UpdateMaterial([FromForm] UpdateMaterialDto updateMaterialDto)
 		{
-			// Validate input data
 			if (!ModelState.IsValid)
 			{
 				return BadRequest(new { success = false, message = "Invalid data provided." });
 			}
 
-			// Check if the uploaded file exists
+			
 			if (updateMaterialDto.File == null || updateMaterialDto.File.Length == 0)
 			{
 				return BadRequest(new { success = false, message = "No file uploaded." });
 			}
 
-			// Validate file size (Max: 10MB)
-			var maxFileSize = 10 * 1024 * 1024; // 10MB
+			
+			var maxFileSize = 10 * 1024 * 1024; 
 			if (updateMaterialDto.File.Length > maxFileSize)
 			{
 				return BadRequest(new { success = false, message = "File size exceeds the maximum limit (10 MB)." });
 			}
 
-			// Validate file type
 			var fileExtension = Path.GetExtension(updateMaterialDto.File.FileName).ToLower();
 			var allowedContentTypes = new Dictionary<string, string>
 	        {
@@ -333,37 +324,34 @@ namespace Edu_plat.Controllers
 		       { ".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation" }
 	        };
 
-			//if (!allowedContentTypes.ContainsKey(fileExtension) ||
-			//	allowedContentTypes[fileExtension] != updateMaterialDto.File.ContentType.ToLower())
-			//{
-			//	return BadRequest(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
-			//}
-
-			// Get UserId from the token
 			var userId = User.FindFirstValue("ApplicationUserId");
 
-			// Check if the user exists
-			var user = await _userManager.FindByIdAsync(userId);
+			if (string.IsNullOrEmpty(userId))
+			{
+                return Unauthorized(new { success = false, message = "User not found." });
+
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
 			if (user == null)
 			{
 				return Unauthorized(new { success = false, message = "User not found." });
 			}
 
-			// Check if the material exists
 			var material = await _context.Materials.FindAsync(updateMaterialDto.Material_Id);
 			if (material == null)
 			{
 				return NotFound(new { success = false, message = "Material not found." });
 			}
 
-			// Check if the course exists
+		
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == material.CourseCode);
 			if (course == null)
 			{
 				return NotFound(new { success = false, message = "Course not found." });
 			}
 
-			// Check if the doctor is enrolled in this course
+			
 			bool isDoctorEnrolled = await _context.CourseDoctors
 				.AnyAsync(cd => cd.Doctor.UserId == userId && cd.CourseId == course.Id);
 
@@ -372,14 +360,14 @@ namespace Edu_plat.Controllers
 				return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
 			}
 
-			// Prepare file storage path
+		
 			var uploadsDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "Uploads", course.CourseCode);
 			if (!Directory.Exists(uploadsDirectory))
 			{
 				Directory.CreateDirectory(uploadsDirectory);
 			}
 
-			// Generate a unique file name based on an incremented serial number
+		
 			var fileBaseName = Path.GetFileNameWithoutExtension(updateMaterialDto.File.FileName);
 			var existingFiles = Directory.GetFiles(uploadsDirectory, $"{fileBaseName}*{fileExtension}");
 
@@ -397,40 +385,43 @@ namespace Edu_plat.Controllers
 			var uniqueFileName = maxNumber > 0
 				? $"{fileBaseName}_{maxNumber + 1}{fileExtension}"
 				: $"{fileBaseName}_1{fileExtension}";
-
 			var newFilePath = Path.Combine(uploadsDirectory, uniqueFileName);
 
-			// Save the new file
 			using (var stream = new FileStream(newFilePath, FileMode.Create))
 			{
 				await updateMaterialDto.File.CopyToAsync(stream);
 			}
-
-			// Delete the old file if it exists
 			var oldFilePath = Path.Combine(_hostingEnvironment.WebRootPath, material.FilePath.TrimStart('/'));
 			if (System.IO.File.Exists(oldFilePath))
 			{
 				System.IO.File.Delete(oldFilePath);
 			}
-			// Calculate and update file size
-			// Calculate and update file size as a string
+			
 			long fileSizeBytes = new FileInfo(newFilePath).Length;
-	    	// Update material data in the database
 			material.FileName = uniqueFileName;
 			material.FilePath = $"/Uploads/{course.CourseCode}/{uniqueFileName}";
-			//material.Description = updateMaterialDto.Description;
 			material.UploadDate = DateTime.Now;
 			material.TypeFile = updateMaterialDto.Type;
-			material.Size = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; // Convert to MB as string
+			material.Size = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; 
 			_context.Materials.Update(material);
 			await _context.SaveChangesAsync();
 
-			return Ok(
+            await _notificationHandler.SendMessageAsync(new MessageRequest
+            {
+                Title = material.CourseCode,
+                Body = $"New {material.TypeFile} updated : {material.FileName} by Dr {user.UserName}  ",
+                CourseCode = material.CourseCode,
+                UserId = userId,
+                Date = DateOnly.Parse(material.UploadDate.ToString("yyyy-MM-dd")),
+            }
+           );
+
+            return Ok(
 			new
 			{
 				success = true,
 				message = "File updated successfully.",
-            FileDetails = new
+			    FileDetails = new
             {
                 Id = material.Id,
                 FileName = material.FileName,
@@ -447,12 +438,9 @@ namespace Edu_plat.Controllers
             );
 		}
 
-
         #endregion
 
-
         //--------------------------------------------------------------------------------------------------------------------------------------------------
-
 
         #region DeleteAllFilesOfCertainDoctor [Gets The Axe]
 
@@ -884,5 +872,3 @@ namespace Edu_plat.Controllers
 
 	}
 }
-
-

@@ -13,6 +13,7 @@ using Edu_plat.Model;
 using Edu_plat.Responses;
 using Edu_plat.Requests;
 using Microsoft.VisualBasic;
+using JWT.Migrations;
 
 namespace Edu_plat.Controllers
 {
@@ -634,87 +635,112 @@ namespace Edu_plat.Controllers
 
         #endregion
 
-        #region updatecourseDetails
-        [HttpPut]
-        [Route("update/{courseCode:required}")]
+        #region Getting Course Details for Admin
 
-        [Authorize(Roles ="Admin")]
-        public async Task<IActionResult> updatecourseDetails(string courseCode, CourseRegisteration newCourse)
+        [HttpGet]
+        [Route("AdminCourseDetails/{coursecode:required}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> getDetailsForAdmin(string coursecode)
         {
-            if (string.IsNullOrEmpty(courseCode))
+            if (string.IsNullOrEmpty(coursecode))
             {
                 return Ok(new { success = false, message = "course code cannot be empty" });
             }
+
+            //where returns a list 
+            var courseRequired = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode == coursecode);
+            if (courseRequired == null)
+            {
+                return Ok(new { success = false, message = "No course with this code has been found" });
+            }
+
+            CourseRegisteration course = new CourseRegisteration()
+            {
+                CourseCode = coursecode,
+                CourseDescription = courseRequired.CourseDescription,
+                Course_hours = courseRequired.Course_hours,
+                Course_level = courseRequired.Course_level,
+
+                Course_semster = courseRequired.Course_semster,
+                has_Lab = courseRequired.has_Lab,
+                MidTerm = courseRequired.MidTerm,
+
+                Oral = courseRequired.Oral,
+                FinalExam = courseRequired.FinalExam,
+                TotalMark = courseRequired.TotalMark,
+                Lab = courseRequired.Lab
+
+
+
+            };
+            
+            if (course != null)
+            {
+                return Ok(new { success = true, message = "fetched successfully", course });
+            }
+
+            return Ok(new { success = false, message = "error in getting exam details" });
+
+
+        }
+        #endregion
+
+        #region updatecourseDetails
+        [HttpPut]
+        [Route("update/{courseCode:required}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> updatecourseDetails(string courseCode, CourseRegisteration newCourse)
+        {
+            if (string.IsNullOrEmpty(courseCode))
+                return BadRequest(new { success = false, message = "Course code cannot be empty." });
+
             var requiredCourse = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode == courseCode);
             if (requiredCourse == null)
-            {
-                return Ok(new { success = false, message = "couldn't find the course" });
-            }
+                return NotFound(new { success = false, message = "Couldn't find the course." });
 
-            if(newCourse==null || string.IsNullOrEmpty(newCourse.CourseCode))
-            {
-                return Ok(new { success = false, message = "cannot update course missing details" });
-            }
-            //Grading validation
+            if (newCourse == null || string.IsNullOrEmpty(newCourse.CourseCode))
+                return BadRequest(new { success = false, message = "Cannot update course with missing details." });
 
-            if (newCourse.Course_hours == 3 && newCourse.has_Lab == false)
+            if (newCourse.CourseCode != courseCode)
+                return BadRequest(new { success = false, message = "Course code mismatch between path and payload." });
+            if (newCourse.Course_hours == 3 && !newCourse.has_Lab)
             {
-                int sum = 0;
-
-                sum += newCourse.MidTerm;
-                sum += newCourse.Oral;
+                int sum = newCourse.MidTerm + newCourse.Oral;
                 if (sum != 45)
-                {
-                    return Ok(new { success = false, message = "grades are not adding up" });
-                }
-                if (newCourse.TotalMark != 150)
-                {
-                    return Ok(new { success = false, message = "grades are not adding up" });
-                }
-
+                    return BadRequest(new { success = false, message = "Midterm + Oral must equal 45." });
                 if (newCourse.FinalExam != 105)
-                {
-                    return Ok(new { success = false, message = "grades are not adding up" });
-
-                }
-            }
-
-            if (newCourse.Course_hours == 3 && newCourse.has_Lab == true)
-            {
-                int sum = 0;
-
-                sum += newCourse.MidTerm;
-                sum += newCourse.Oral;
-                sum += newCourse.Lab;
-                if (sum != 60)
-                {
-                    return Ok(new { success = false, message = "grades are not adding up" });
-                }
-                if (newCourse.FinalExam != 90)
-                {
-                    return Ok(new { success = false, message = "grades are not adding up" });
-
-                }
+                    return BadRequest(new { success = false, message = "Final Exam must be 105 when course has no lab." });
                 if (newCourse.TotalMark != 150)
-                {
-                    return Ok(new { success = false, message = "grades are not adding up" });
-
-                }
-
+                    return BadRequest(new { success = false, message = "Total mark must be 150." });
             }
-            //mapping
-            requiredCourse.MidTerm = newCourse.MidTerm;
+
+            if (newCourse.Course_hours == 3 && newCourse.has_Lab)
+            {
+                int sum = newCourse.MidTerm + newCourse.Oral + newCourse.Lab;
+                if (sum != 60)
+                    return BadRequest(new { success = false, message = "Midterm + Oral + Lab must equal 60." });
+                if (newCourse.FinalExam != 90)
+                    return BadRequest(new { success = false, message = "Final Exam must be 90 when course has lab." });
+                if (newCourse.TotalMark != 150)
+                    return BadRequest(new { success = false, message = "Total mark must be 150." });
+            }
+
             requiredCourse.CourseDescription = newCourse.CourseDescription;
             requiredCourse.Course_level = newCourse.Course_level;
             requiredCourse.Course_hours = newCourse.Course_hours;
             requiredCourse.has_Lab = newCourse.has_Lab;
+            requiredCourse.MidTerm = newCourse.MidTerm;
             requiredCourse.Oral = newCourse.Oral;
+            requiredCourse.Lab = newCourse.Lab;
+            requiredCourse.Course_semster = newCourse.Course_semster;
+            requiredCourse.FinalExam = newCourse.FinalExam;
+            requiredCourse.TotalMark = newCourse.TotalMark;
 
-            return Ok(new { success = false, message = "updated sucessfully" });
+            await _context.SaveChangesAsync();
 
-
-
+            return Ok(new { success = true, message = "Course updated successfully." });
         }
+
 
         #endregion
     }

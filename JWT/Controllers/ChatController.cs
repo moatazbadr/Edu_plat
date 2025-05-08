@@ -110,9 +110,9 @@ namespace Edu_plat.Controllers
 
         #region Group Chat
         [HttpGet]
-        [Route("groupChat/{courseTitle}")]
+        [Route("groupChat/{courseCode}")]
         [Authorize(Roles = "Student,Doctor")]
-        public async Task<IActionResult> GetGroupChat(string courseTitle)
+        public async Task<IActionResult> GetGroupChat(string courseCode)
         {
             var UserId = User.FindFirstValue("ApplicationUserId");
 
@@ -128,7 +128,7 @@ namespace Edu_plat.Controllers
                 .Include(c => c.CourseDoctors)
                     .ThenInclude(cd => cd.Doctor)
                         .ThenInclude(d => d.applicationUser)
-                .FirstOrDefaultAsync(c => c.CourseDescription == courseTitle);
+                .FirstOrDefaultAsync(c => c.CourseCode == courseCode);
 
             if (course == null)
             {
@@ -172,6 +172,7 @@ namespace Edu_plat.Controllers
         }
 
         #endregion
+
 
 
 

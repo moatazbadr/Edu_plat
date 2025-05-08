@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Edu_plat.DTO.AdminFiles;
+using Edu_plat.Services;
+using Edu_plat.DTO.Notification;
 
 namespace Edu_plat.Controllers
 {
@@ -17,12 +19,15 @@ namespace Edu_plat.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly INotificationHandler _notificationHandler;
 
-        public StudentHelpController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<ApplicationUser> userManager)
+        public StudentHelpController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<ApplicationUser> userManager,INotificationHandler notificationHandler)
         {
             _context = context;
             _hostingEnvironment = hostingEnvironment;
             _userManager = userManager;
+            _notificationHandler = notificationHandler;
+
         }
 
         #region Upload File
@@ -72,6 +77,14 @@ namespace Edu_plat.Controllers
             _context.AdminFiles.Add(fileRecord);
             await _context.SaveChangesAsync();
 
+            await _notificationHandler.AdminAnnouncement(
+                
+                new MessageRequest { 
+                    Title= $"📢 Important Announcement from Computer science program",
+                    Body= $"{fileDto.FileName} has been uploaded",
+                    Date=DateOnly.FromDateTime(DateTime.UtcNow)
+                }
+            , "both");
             return Ok(new
             {
                 success = true,
@@ -138,7 +151,7 @@ namespace Edu_plat.Controllers
 
         #region Get All Files
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Student,Doctor,Admin")]
         public async Task<IActionResult> GetAllFiles()
         {
             var files = await _context.AdminFiles
@@ -182,9 +195,32 @@ namespace Edu_plat.Controllers
 
             return Ok(new { success = true, message = "fetch complete", files });
 
-        } 
+        }
         #endregion
 
+        #region Getting all Files For Admin 
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAdminFiles()
+        {
+            var files = await _context.AdminFiles
+                .Select(f => new
+                {
+                    f.Id,
+                    f.FileName,
+                    f.FilePath,
+                    f.uploadeDate,
+                    f.size,
+                    f.type
+                })
+                .ToListAsync();
+
+            if (files.Count == 0)
+                return NotFound(new { success = false, message = "No files found." });
+
+            return Ok(new { files });
+        }
+        #endregion
 
 
 

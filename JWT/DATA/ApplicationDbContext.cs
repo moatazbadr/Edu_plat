@@ -102,7 +102,9 @@ namespace JWT.DATA
 		public DbSet<ExamStudent> ExamStudents { get; set; }
 		public DbSet<AdminFile> AdminFiles { get; set; }
         public DbSet<BlackListTokens> BlackListTokens { get; set; }
-		public DbSet<userDevice> userDevice { get; set; } 
+		public DbSet<userDevice> userDevice { get; set; }
+        public DbSet<UserNotification> UserNotifications { get; set; }
+
         #endregion
 
     }
