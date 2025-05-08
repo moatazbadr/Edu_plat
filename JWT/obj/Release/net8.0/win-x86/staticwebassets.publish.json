@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5XMNNzU9gx65ixwH2ViMe4tZwggNfT5hiOK79Qnzj9s=",
+  "Hash": "donjFVImXxg/aGNfghfD+iEFc5OL1hj6YOH/vLmq+Pk=",
   "Source": "Edu_plat",
   "BasePath": "_content/Edu_plat",
   "Mode": "Default",
@@ -519,6 +519,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_1.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_2.pdf",
+      "SourceId": "Edu_plat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
+      "BasePath": "_content/Edu_plat",
+      "RelativePath": "Uploads/COMP203/student_degrees_COMP206_2#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kictqki5kc",
+      "Integrity": "ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_2.pdf"
     },
     {
       "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lecture 1Introduction&RegularExpressions.pdf",
@@ -2561,6 +2582,88 @@
         {
           "Name": "Last-Modified",
           "Value": "Thu, 01 May 2025 19:06:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/COMP203/student_degrees_COMP206_2.kictqki5kc.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8262"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 19:28:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kictqki5kc"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/COMP203/student_degrees_COMP206_2.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/COMP203/student_degrees_COMP206_2.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP203\\student_degrees_COMP206_2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8262"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 19:28:58 GMT"
         },
         {
           "Name": "Cache-Control",

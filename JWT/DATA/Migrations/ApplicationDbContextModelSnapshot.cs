@@ -471,6 +471,40 @@ namespace JWT.Migrations
                     b.ToTable("TodoItems");
                 });
 
+            modelBuilder.Entity("Edu_plat.Model.UserNotification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly?>("SentAt")
+                        .HasColumnType("date");
+
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("UserNotifications");
+                });
+
             modelBuilder.Entity("Edu_plat.Model.userDevice", b =>
                 {
                     b.Property<int>("Id")
@@ -482,10 +516,10 @@ namespace JWT.Migrations
                     b.Property<string>("DeviceToken")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DoctorId")
+                    b.Property<int?>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StudentId")
+                    b.Property<int?>("StudentId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -841,19 +875,30 @@ namespace JWT.Migrations
                         .HasForeignKey("ApplicationUserId");
                 });
 
+            modelBuilder.Entity("Edu_plat.Model.UserNotification", b =>
+                {
+                    b.HasOne("Edu_plat.Model.Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId");
+
+                    b.HasOne("Edu_plat.Model.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId");
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("Edu_plat.Model.userDevice", b =>
                 {
                     b.HasOne("Edu_plat.Model.Doctor", "Doctor")
                         .WithMany("userDevices")
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DoctorId");
 
                     b.HasOne("Edu_plat.Model.Student", "student")
                         .WithMany("userDevices")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("StudentId");
 
                     b.Navigation("Doctor");
 

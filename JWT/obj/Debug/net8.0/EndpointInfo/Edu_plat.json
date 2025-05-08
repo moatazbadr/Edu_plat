@@ -449,14 +449,14 @@
         }
       }
     },
-    "/api/Chat/GetGroupChat/groupChat/{courseTitle}": {
+    "/api/Chat/GetGroupChat/groupChat/{courseCode}": {
       "get": {
         "tags": [
           "Chat"
         ],
         "parameters": [
           {
-            "name": "courseTitle",
+            "name": "courseCode",
             "in": "path",
             "required": true,
             "schema": {
@@ -750,6 +750,28 @@
       }
     },
     "/api/Course/ExamDetails/{coursecode}": {
+      "get": {
+        "tags": [
+          "Course"
+        ],
+        "parameters": [
+          {
+            "name": "coursecode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Course/AdminCourseDetails/{coursecode}": {
       "get": {
         "tags": [
           "Course"
@@ -1462,30 +1484,11 @@
         }
       }
     },
-    "/api/Notification": {
-      "post": {
+    "/api/Notification/notifications": {
+      "get": {
         "tags": [
           "Notification"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MessageRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MessageRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/MessageRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success"
@@ -1815,6 +1818,18 @@
               "type": "string"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/StudentHelp/GetAdminFiles": {
+      "get": {
+        "tags": [
+          "StudentHelp"
         ],
         "responses": {
           "200": {
@@ -2517,24 +2532,6 @@
           "password": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "MessageRequest": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "body": {
-            "type": "string",
-            "nullable": true
-          },
-          "courseCode": {
-            "type": "string",
-            "nullable": true
           },
           "deviceToken": {
             "type": "string",
@@ -2701,6 +2698,10 @@
         "type": "object",
         "properties": {
           "otp": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
             "type": "string",
             "nullable": true
           }

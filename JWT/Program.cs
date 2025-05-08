@@ -89,7 +89,8 @@ namespace JWT
 
             FirebaseApp.Create(new AppOptions()
             {
-                Credential = credential
+                Credential = credential,
+                ProjectId= "chat-app-eb417"
             });
 
             builder.WebHost.ConfigureKestrel(options =>
@@ -103,26 +104,7 @@ namespace JWT
 
             // CORS
             #region Adjusting Cors
-            //builder.Services.AddCors(options =>
-            //   {
-            //       options.AddDefaultPolicy(builder =>
-            //       {
-            //           builder.AllowAnyOrigin() // Specify your frontend URL
-            //                  .AllowAnyHeader()
-            //                  .AllowAnyMethod();
-            //       });
-            //   });
-
-            //builder.Services.AddCors(options =>
-            //{
-            //	options.AddDefaultPolicy(policy =>
-            //	{
-            //		policy.WithOrigins("http://localhost:4200")  // Replace with your frontend URL
-            //			  .AllowAnyHeader()
-            //			  .AllowAnyMethod();
-            //	});
-            //});
-
+            
 
             builder.Services.AddCors(options =>
             {
@@ -130,20 +112,12 @@ namespace JWT
                 {
                     policy.AllowAnyOrigin()
 
-                        .WithOrigins("http://localhost:4200")
                           .AllowAnyHeader()
                           .AllowAnyMethod()
                           .WithExposedHeaders("Content-Disposition"); // مهم لو بتتعامل مع رفع ملفات
                 });
             });
-            // if happen problem can use this 
-            //builder.Services.AddControllers()
-            //     .AddJsonOptions(options =>
-            //      {
-            //      options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
-            //      options.JsonSerializerOptions.WriteIndented = true;
-            //      });
-
+            
             builder.WebHost.ConfigureKestrel(serverOptions =>
             {
                 serverOptions.Limits.MaxRequestBodySize = 300 * 1024 * 1024; // 300MB
@@ -199,10 +173,9 @@ namespace JWT
                     Description = "Enter 'Bearer' followed by a space and your token.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\""
                 });
 
-                // Add Security Requirement for Swagger UI to use the Bearer token
                 swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
-        {
-            {
+                    {
+                {
                 new OpenApiSecurityScheme
                 {
                     Reference = new OpenApiReference
@@ -212,12 +185,13 @@ namespace JWT
                     }
                 },
                 Array.Empty<string>()
-            }
-        });
+                }
+                 });
             });
             #endregion
 
             builder.Services.AddScoped<IblackListService, BlacklistService>();
+            builder.Services.AddScoped<INotificationHandler, NotificationHandler>();
 
             #region Roles For users
             // Build application

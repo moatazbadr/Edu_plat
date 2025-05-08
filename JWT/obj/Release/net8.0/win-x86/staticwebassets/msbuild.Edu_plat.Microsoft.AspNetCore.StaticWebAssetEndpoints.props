@@ -288,6 +288,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"8262"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 19:06:37 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Edu_plat/Uploads/COMP203/student_degrees_COMP206_2.kictqki5kc.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\COMP203\student_degrees_COMP206_2.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"kictqki5kc"},{"Name":"integrity","Value":"sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="},{"Name":"label","Value":"_content/Edu_plat/Uploads/COMP203/student_degrees_COMP206_2.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"8262"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 05 May 2025 19:28:58 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Edu_plat/Uploads/COMP203/student_degrees_COMP206_2.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\COMP203\student_degrees_COMP206_2.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"8262"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 05 May 2025 19:28:58 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Edu_plat/Uploads/COMP206/Lecture 1Introduction&amp;RegularExpressions.f3olc56krp.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\COMP206\Lecture 1Introduction&amp;RegularExpressions.pdf'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

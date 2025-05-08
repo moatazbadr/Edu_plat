@@ -1,6 +1,8 @@
 ﻿using Azure;
 using Edu_plat.DTO.ExamDto;
+using Edu_plat.DTO.Notification;
 using Edu_plat.Model.Exams;
+using Edu_plat.Services;
 using JWT;
 using JWT.DATA;
 using JWT.Services;
@@ -19,11 +21,13 @@ namespace Edu_plat.Controllers
 	{
 		private readonly ApplicationDbContext _context;
 		private readonly UserManager<ApplicationUser> _userManager;
-		public ExamsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        private readonly INotificationHandler _notificationHandler;
+        public ExamsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, INotificationHandler notificationHandler )
 		{
 			_context = context;
 			_userManager = userManager;
-		}
+            _notificationHandler = notificationHandler;
+        }
 
         #region CreateExamOnline&Offline
 
@@ -151,7 +155,18 @@ namespace Edu_plat.Controllers
             _context.Exams.Add(exam);
             await _context.SaveChangesAsync();
 
-            return Ok(new { succes = true, message = "Exam created successfully.", examId = exam.Id });
+             await _notificationHandler.SendMessageAsync(new MessageRequest
+            {
+                Title = exam.CourseCode,
+                Body = $"New exam created and set to start at ",
+                CourseCode = exam.CourseCode,
+                UserId = userId,
+                Date= DateOnly.FromDateTime(exam.StartTime)
+             });
+
+
+
+            return Ok(new { succes = true, message = "Exam created successfully And notification sent to student", examId = exam.Id });
         }
 
         #endregion
