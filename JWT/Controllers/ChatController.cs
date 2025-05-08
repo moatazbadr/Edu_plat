@@ -110,7 +110,7 @@ namespace Edu_plat.Controllers
 
         #region Group Chat
         [HttpGet]
-        [Route("groupChat/{courseTitle}")]
+        [Route("groupChat/{courseCode}")]
         [Authorize(Roles = "Student,Doctor")]
         public async Task<IActionResult> GetGroupChat(string courseCode)
         {
@@ -172,6 +172,7 @@ namespace Edu_plat.Controllers
         }
 
         #endregion
+
 
 
 

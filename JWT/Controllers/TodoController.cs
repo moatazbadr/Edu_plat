@@ -27,6 +27,10 @@ namespace Edu_plat.Controllers
 
         private async Task<ApplicationUser> GetUserByIdAsync(string userId)
         {
+            if (string.IsNullOrEmpty(userId))
+            {
+                return null;
+            }
             return await _userManager.FindByIdAsync(userId);
         }
 

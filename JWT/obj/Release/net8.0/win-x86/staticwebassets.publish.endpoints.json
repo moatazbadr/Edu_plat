@@ -1889,6 +1889,88 @@
       ]
     },
     {
+      "Route": "Uploads/COMP203/student_degrees_COMP206_2.kictqki5kc.pdf",
+      "AssetFile": "Uploads/COMP203/student_degrees_COMP206_2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8262"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 19:28:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kictqki5kc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/COMP203/student_degrees_COMP206_2.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/COMP203/student_degrees_COMP206_2.pdf",
+      "AssetFile": "Uploads/COMP203/student_degrees_COMP206_2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8262"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 19:28:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZJFBfAJsDL/dgWTwJgApAVQiBpg7NB0vtUXN0PuXNpA="
+        }
+      ]
+    },
+    {
       "Route": "Uploads/COMP206/Lecture 1Introduction&RegularExpressions.f3olc56krp.pdf",
       "AssetFile": "Uploads/COMP206/Lecture 1Introduction&RegularExpressions.pdf",
       "Selectors": [],

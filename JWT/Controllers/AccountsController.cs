@@ -137,7 +137,9 @@ namespace JWT.Controllers
         public async Task<IActionResult> VerifyEmail([FromBody] VerifyOtpDTO dto)
         {
             // check otp 
-            var otpRecord = await _context.OtpVerification.FirstOrDefaultAsync(o => o.Otp == dto.Otp);
+            var otpRecord = await _context.OtpVerification
+               .FirstOrDefaultAsync(o => o.Otp == dto.Otp && o.Email == dto.email);
+
             if (otpRecord == null)
                 return Ok(new { success = false, message = "Invalid OTP." });
 
@@ -160,12 +162,20 @@ namespace JWT.Controllers
             {
                 UserName = tempUser.UserName,
                 Email = tempUser.Email,
+                PasswordHash = tempUser.PasswordHash,
+
                 EmailConfirmed = true
             };
 
-            var result = await _userManager.CreateAsync(newUser, tempUser.PasswordHash);
+            var result = await _userManager.CreateAsync(newUser);
             if (!result.Succeeded)
-                return Ok(new { success = false,message =" Failed to create User " });
+                return Ok(new
+                {
+                    success = false,
+                    message = "Failed to create User",
+                    errors = result.Errors.Select(e => e.Description)
+                });
+
             if (result.Succeeded)
             {
                 newUser.EmailConfirmed = true;
@@ -180,31 +190,29 @@ namespace JWT.Controllers
                 }
                 var StudentObj = new Student()
                 {
-                    UserId=newUser.Id,
-                    applicationUser=newUser,
-                    
+                    UserId = newUser.Id,
+                    applicationUser = newUser,
+
                 };
                 _context.Set<Student>().Add(StudentObj);
-                _context.SaveChanges();
-                // Assign the "Student" role to the user
+                await _context.SaveChangesAsync();
                 await _userManager.AddToRoleAsync(newUser, "Student");
+                _context.TemporaryUsers.Remove(tempUser);
+                await _context.SaveChangesAsync();
 
-                return Ok(new { success = true, message = "Email verified successfully and user created." });
+
             }
-            // delete UserTemp
-            _context.TemporaryUsers.Remove(tempUser);
-            await _context.SaveChangesAsync();
 
             return Ok(new { success = true, message = "Email verified successfully and user created." });
+
         }
+
 
         #endregion
 
         #region Login
 
         [HttpPost("Login")]
-        //add to parameters
-        //, [FromHeader] string DeviceToken
         public async Task<IActionResult> Login([FromBody] LoginUserDTO dto)
         {
             if (ModelState.IsValid)
@@ -220,7 +228,7 @@ namespace JWT.Controllers
                 if (checkPass)
                 {
                    // adding claims to Jwt 
-					#region claims
+					#region User claims
 					var UserClaims = new List<Claim>();
                     UserClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
                     UserClaims.Add(new Claim("ApplicationUserId", account.Id));
@@ -237,13 +245,50 @@ namespace JWT.Controllers
                     #endregion
 
                     #region register Device
+                    if (!string.IsNullOrWhiteSpace(dto.DeviceToken))
+                    {
+                        var student = await _context.Students.FirstOrDefaultAsync(s => s.UserId == account.Id);
+                        if (student != null)
+                        {
+                            var exists = await _context.userDevice
+                                .AnyAsync(d => d.DeviceToken == dto.DeviceToken && d.StudentId == student.StudentId);
 
-                    //var deviceDto=new DeviceTokenDto()
-                    //{
-                    //    DeviceToken = DeviceToken,
-                    //    ApplicationUserId = account.Id,
-                    //    user = account
-                    //};
+                            if (!exists)
+                            {
+                                var device = new userDevice
+                                {
+                                    DeviceToken = dto.DeviceToken,
+                                    StudentId = student.StudentId
+                                };
+                               
+                                student.userDevices.Add(device);
+                              
+                                await _context.SaveChangesAsync();
+                            }
+                        }
+                        else
+                        {
+                            var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == account.Id);
+                            if (doctor != null)
+                            {
+                                var exists = await _context.userDevice
+                                    .AnyAsync(d => d.DeviceToken == dto.DeviceToken && d.DoctorId == doctor.DoctorId);
+
+                                if (!exists)
+                                {
+                                    var device = new userDevice
+                                    {
+                                        DeviceToken = dto.DeviceToken,
+                                        DoctorId = doctor.DoctorId
+                                    };
+                                    doctor.userDevices.Add(device);
+
+                                    
+                                    await _context.SaveChangesAsync();
+                                }
+                            }
+                        }
+                    }
 
                     #endregion
 
@@ -459,6 +504,7 @@ namespace JWT.Controllers
 
             return Ok(new { success = true, message = "OTP is valid" });
         }
+
         #endregion
 
         #region ResetPassword 
@@ -480,12 +526,8 @@ namespace JWT.Controllers
             var user = await _userManager.FindByEmailAsync(otpRecord.Email);
             if (user == null)
                 return Ok(new { success = false, message = "Password or email is invalid" });
-            //if (user.Email != model.email)
-            //{
-            //    return Ok(new { success = false, message = "reset password failed" });
-            //}
+            
 
-          
             string passwordResetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
 
             var resetResult = await _userManager.ResetPasswordAsync(user, passwordResetToken, model.NewPassword);
@@ -513,7 +555,7 @@ namespace JWT.Controllers
             var jti = jwtToken.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
 
             if (string.IsNullOrEmpty(jti))
-                return BadRequest(new { success = false, message = "Invalid token" });
+                return Ok(new { success = false, message = "Invalid token" });
 
             await _blacklistService.AddTokenToBlackListAsync(jti, jwtToken.ValidTo);
 

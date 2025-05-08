@@ -1,6 +1,7 @@
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\Edu_plat.exe
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\appsettings.Development.json
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\appsettings.json
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\chat-app-eb417-firebase-adminsdk-fbsvc-968137c5b9.json
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\notification-7d00f-firebase-adminsdk-fbsvc-b91d26b742.json
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\Edu_plat.dll
 C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Release\net8.0\win-x86\PubTmp\Out\Edu_plat.runtimeconfig.json
