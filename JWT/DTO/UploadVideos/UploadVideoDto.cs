@@ -16,9 +16,9 @@ namespace Edu_plat.DTO.UploadVideos
 		   //public string? Description { get; set; } // Optional: Video description
 
 		   [Required(ErrorMessage = "Type is required.")]
-		   [RegularExpression("^(Video)$", ErrorMessage = "Type must be 'Video'")]
-		   [StringLength(5, ErrorMessage = "Type cannot exceed 5 characters.")]
-		public string TypeFile { get; set; } 
+		   [RegularExpression("^(Videos)$", ErrorMessage = "Type must be 'Videos'")]
+		   [StringLength(6, ErrorMessage = "Type cannot exceed 5 characters.")]
+		public string Type { get; set; }
 		
 	}
 }

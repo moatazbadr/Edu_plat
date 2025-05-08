@@ -18,7 +18,7 @@ using System.Text;
 
 namespace JWT
 {
- 
+
 
     public class Program
     {
@@ -26,29 +26,29 @@ namespace JWT
         {
             var builder = WebApplication.CreateBuilder(args);
 
-           
+
             builder.Services.AddControllers();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-			// chat
-			// ????? HttpClient ?? DI Container
-			builder.Services.AddHttpClient();
+            // chat
+            // ????? HttpClient ?? DI Container
+            builder.Services.AddHttpClient();
 
-			// ????? Controllers (??? ??? ?????? Controllers)
-			builder.Services.AddControllers();
+            // ????? Controllers (??? ??? ?????? Controllers)
+            builder.Services.AddControllers();
 
-			// Role Seeding (Admin Role)
-			builder.Services.AddScoped<RoleManager<IdentityRole>>();
+            // Role Seeding (Admin Role)
+            builder.Services.AddScoped<RoleManager<IdentityRole>>();
 
             // DbContext
             #region Connection string
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                {
-                    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-                }); 
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
             #endregion
 
 
@@ -59,13 +59,13 @@ namespace JWT
                 options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ ";
             })
                   .AddEntityFrameworkStores<ApplicationDbContext>()
-                  .AddDefaultTokenProviders(); 
+                  .AddDefaultTokenProviders();
             #endregion
 
             // Send Email
             #region Send Email
             builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
-            builder.Services.AddTransient<IMailingServices, MailingService>(); 
+            builder.Services.AddTransient<IMailingServices, MailingService>();
             #endregion
 
             // Session
@@ -79,10 +79,19 @@ namespace JWT
             });
             #endregion
 
-            //FirebaseApp.Create(new AppOptions()
-            //{
-            //    Credential = GoogleCredential.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "notification-7d00f-firebase-adminsdk-fbsvc-56150de834.json")),
-            //});
+
+
+            var config = builder.Configuration;
+            var fileName = config["Firebase:CredentialsFileName"];
+            var fullPath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+
+            var credential = GoogleCredential.FromFile(fullPath);
+
+            FirebaseApp.Create(new AppOptions()
+            {
+                Credential = credential,
+                ProjectId= "chat-app-eb417"
+            });
 
             builder.WebHost.ConfigureKestrel(options =>
             {
@@ -93,65 +102,40 @@ namespace JWT
 
 
 
-			// CORS
-			#region Adjusting Cors
-			//builder.Services.AddCors(options =>
-			//   {
-			//       options.AddDefaultPolicy(builder =>
-			//       {
-			//           builder.AllowAnyOrigin() // Specify your frontend URL
-			//                  .AllowAnyHeader()
-			//                  .AllowAnyMethod();
-			//       });
-			//   });
+            // CORS
+            #region Adjusting Cors
+            
 
-			//builder.Services.AddCors(options =>
-			//{
-			//	options.AddDefaultPolicy(policy =>
-			//	{
-			//		policy.WithOrigins("http://localhost:4200")  // Replace with your frontend URL
-			//			  .AllowAnyHeader()
-			//			  .AllowAnyMethod();
-			//	});
-			//});
-			
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.AllowAnyOrigin()
 
-			builder.Services.AddCors(options =>
-			{
-				options.AddDefaultPolicy(policy =>
-				{
-					policy.AllowAnyOrigin()
-						  .AllowAnyHeader()
-						  .AllowAnyMethod()
-						  .WithExposedHeaders("Content-Disposition"); // مهم لو بتتعامل مع رفع ملفات
-				});
-			});
-            // if happen problem can use this 
-			//builder.Services.AddControllers()
-	  //     .AddJsonOptions(options =>
-	  //      {
-		 //      options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
-		 //      options.JsonSerializerOptions.WriteIndented = true;
-	  //      });
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .WithExposedHeaders("Content-Disposition"); // مهم لو بتتعامل مع رفع ملفات
+                });
+            });
+            
+            builder.WebHost.ConfigureKestrel(serverOptions =>
+            {
+                serverOptions.Limits.MaxRequestBodySize = 300 * 1024 * 1024; // 300MB
+            });
 
-			builder.WebHost.ConfigureKestrel(serverOptions =>
-			{
-				serverOptions.Limits.MaxRequestBodySize = 300 * 1024 * 1024; // 300MB
-			});
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 300 * 1024 * 1024; // 300MB
+            });
 
-			builder.Services.Configure<FormOptions>(options =>
-			{
-				options.MultipartBodyLengthLimit = 300 * 1024 * 1024; // 300MB
-			});
-
-			#endregion
-			// JWT
-			#region JWT specifications
-			builder.Services.AddAuthentication(options =>
-               {
-                   options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                   options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-               })
+            #endregion
+            // JWT
+            #region JWT specifications
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
                .AddJwtBearer(options =>
                {
                    options.SaveToken = true;
@@ -164,7 +148,7 @@ namespace JWT
                        ValidAudience = builder.Configuration["JWT:AudienceIP"],
                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]))
                    };
-               }); 
+               });
             #endregion
 
             #region Swagger Setting
@@ -174,7 +158,7 @@ namespace JWT
                 swagger.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "ASP.NET 6 Web API",
+                    Title = "ASP.NET 8 Web API",
                     Description = "EduPlat"
                 });
 
@@ -189,10 +173,9 @@ namespace JWT
                     Description = "Enter 'Bearer' followed by a space and your token.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\""
                 });
 
-                // Add Security Requirement for Swagger UI to use the Bearer token
                 swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
-        {
-            {
+                    {
+                {
                 new OpenApiSecurityScheme
                 {
                     Reference = new OpenApiReference
@@ -202,67 +185,69 @@ namespace JWT
                     }
                 },
                 Array.Empty<string>()
-            }
-        });
+                }
+                 });
             });
             #endregion
+
             builder.Services.AddScoped<IblackListService, BlacklistService>();
+            builder.Services.AddScoped<INotificationHandler, NotificationHandler>();
 
             #region Roles For users
             // Build application
             var app = builder.Build();
-			app.UseStaticFiles();
+            app.UseStaticFiles();
 
-			// Seed Admin Role if not already seeded
-			    using (var scope = app.Services.CreateScope())
+            // Seed Admin Role if not already seeded
+            using (var scope = app.Services.CreateScope())
+            {
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+                var roles = new[] { "Admin", "Doctor", "Student", "SuperAdmin" };
+
+                foreach (var role in roles)
                 {
-                    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-                    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-
-                    var roles = new[] { "Admin", "Doctor", "Student" ,"SuperAdmin"};
-
-                    foreach (var role in roles)
+                    if (!await roleManager.RoleExistsAsync(role))
                     {
-                        if (!await roleManager.RoleExistsAsync(role))
-                        {
-                            await roleManager.CreateAsync(new IdentityRole(role));
-                        }
+                        await roleManager.CreateAsync(new IdentityRole(role));
                     }
+                }
 
-                    // Seed Admin User if not exists
-                    string adminEmail = "Saleh@sci.asu.edu.eg";
-                    var admin = await userManager.FindByEmailAsync(adminEmail);
-                    if (admin == null)
+                // Seed Admin User if not exists
+                string adminEmail = "Saleh@sci.asu.edu.eg";
+                var admin = await userManager.FindByEmailAsync(adminEmail);
+                if (admin == null)
+                {
+                    var adminUser = new ApplicationUser
                     {
-                        var adminUser = new ApplicationUser
-                        {
-                            UserName = adminEmail.Split('@')[0],
-                            Email = adminEmail
-                        };
-                        var result = await userManager.CreateAsync(adminUser, "Saleh@123!");
-                        if (result.Succeeded)
-                        {
-                            await userManager.AddToRoleAsync(adminUser, "SuperAdmin");
-                        }
+                        UserName = adminEmail.Split('@')[0],
+                        Email = adminEmail
+                    };
+                    var result = await userManager.CreateAsync(adminUser, "Saleh@123!");
+                    if (result.Succeeded)
+                    {
+                        await userManager.AddToRoleAsync(adminUser, "SuperAdmin");
                     }
-                    string adminEmail2 = "zezo@gmail.com";
-                    var admin2= await userManager.FindByEmailAsync(adminEmail2);
-                    if (admin2 == null)
+                }
+                string adminEmail2 = "zezo@gmail.com";
+                var admin2 = await userManager.FindByEmailAsync(adminEmail2);
+                if (admin2 == null)
+                {
+                    var adminUser2 = new ApplicationUser()
                     {
-                        var adminUser2 = new ApplicationUser()
-                        {
-                            UserName = adminEmail2.Split('@')[0],
-                            Email = adminEmail2
-                        };
-                        var result2 = await userManager.CreateAsync(adminUser2, "AMDTOP2001@s1");
-                        if (result2.Succeeded)
-                        {
-                            await userManager.AddToRoleAsync(adminUser2, "Admin");
-                        }
+                        UserName = adminEmail2.Split('@')[0],
+                        Email = adminEmail2
+                    };
+                    var result2 = await userManager.CreateAsync(adminUser2, "AMDTOP2001@s1");
+                    if (result2.Succeeded)
+                    {
+                        await userManager.AddToRoleAsync(adminUser2, "Admin");
+                    }
                 }
 
 
-                }
+            }
             #endregion
 
 
@@ -270,7 +255,7 @@ namespace JWT
             // Configure the HTTP request pipeline.
             app.UseSwagger();
             app.UseSwaggerUI();
-            
+
             app.UseMiddleware<TokenBlacklistMiddleware>();
             app.UseHttpsRedirection();
             app.UseRouting();

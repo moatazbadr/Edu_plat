@@ -28,6 +28,11 @@ namespace Edu_plat.Controllers
         public async Task<IActionResult> GetProfile()
         {
             var userId = User.FindFirstValue("ApplicationUserId");
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Ok(new { success = false, message = "User not found" });
+            }
+            
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
@@ -41,7 +46,7 @@ namespace Edu_plat.Controllers
             };
 
 
-            return Ok(userProfile);
+            return Ok(new {success=true,message="fetched successfully", userProfile });
         }
         #endregion
 
@@ -167,7 +172,7 @@ namespace Edu_plat.Controllers
             }
             var profilepic = Convert.ToBase64String(user.profilePicture);
 
-            return Ok(new { profilephoto = user.profilePicture });
+            return Ok(new { success=true,message="fetched successfully", profilephoto = user.profilePicture });
 
         }
 
@@ -186,9 +191,9 @@ namespace Edu_plat.Controllers
                 return Ok(new { success = false, message = "User not found" });
             }
             if (user.PhoneNumber==null || user.PhoneNumber.Length==0) {
-                return Ok(new { phoneNumber=user.PhoneNumber});
+                return Ok(new { success = true, message = "fetched successfully", phoneNumber =user.PhoneNumber});
             }
-            return Ok(new {  phoneNumber = user.PhoneNumber });
+            return Ok(new { success=true ,message="fetched successfully", phoneNumber = user.PhoneNumber });
         } 
         #endregion
     }
