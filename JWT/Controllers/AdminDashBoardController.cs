@@ -201,29 +201,27 @@ namespace Edu_plat.Controllers
 
         #region DeleteDoctor
         [HttpDelete("DeleteDoctor")]
-        [Authorize(Roles = "Admin,SuperAdmin")] // Only Admin or SuperAdmin can delete doctors
+        [Authorize(Roles = "Admin,SuperAdmin")] 
         public async Task<IActionResult> DeleteDoctor([FromQuery] string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 return Ok(new { success = false, message = "UserId is required" });
 
-            // Find the user by their ID
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
                 return Ok(new { success = false, message = "User not found" });
 
-            // Check if the user is in the "Doctor" role
             if (!await _userManager.IsInRoleAsync(user, "Doctor"))
                 return Ok(new { success = false, message = "User is not a doctor" });
 
-            // Remove the associated Doctor record from the database, if it exists
+         
             var doctor = await _context.Set<Doctor>().FirstOrDefaultAsync(d => d.UserId == userId);
             if (doctor != null)
             {
                 _context.Set<Doctor>().Remove(doctor);
             }
 
-            // Delete the user from Identity
+       
             var result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
@@ -240,22 +238,22 @@ namespace Edu_plat.Controllers
 
         #region DeleteAdmin
         [HttpDelete("DeleteAdmin")]
-        [Authorize(Roles = "SuperAdmin")] // Only SuperAdmin can delete Admin users
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> DeleteAdmin([FromQuery] string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 return BadRequest(new { success = false, message = "UserId is required" });
 
-            // Find the user by their ID
+            
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
                 return NotFound(new { success = false, message = "User not found" });
 
-            // Check if the user is in the "Admin" role
+            
             if (!await _userManager.IsInRoleAsync(user, "Admin"))
                 return BadRequest(new { success = false, message = "User is not an admin" });
 
-            // Delete the user from Identity
+            
             var result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
@@ -271,29 +269,28 @@ namespace Edu_plat.Controllers
 
         #region DeleteStudent
         [HttpDelete("DeleteStudent")]
-        [Authorize(Roles = "Admin,SuperAdmin")] // Only Admin or SuperAdmin can delete student users
+        [Authorize(Roles = "Admin,SuperAdmin")] 
         public async Task<IActionResult> DeleteStudent([FromQuery] string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 return BadRequest(new { success = false, message = "UserId is required" });
 
-            // Find the user by their ID
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
                 return NotFound(new { success = false, message = "User not found" });
 
-            // Check if the user is in the "Student" role
+          
             if (!await _userManager.IsInRoleAsync(user, "Student"))
                 return BadRequest(new { success = false, message = "User is not a student" });
 
-            // Remove the associated Student record from the database, if it exists
+            
             var student = await _context.Set<Student>().FirstOrDefaultAsync(s => s.UserId == userId);
             if (student != null)
             {
                 _context.Set<Student>().Remove(student);
             }
 
-            // Delete the user from Identity
+            
             var result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
@@ -310,22 +307,19 @@ namespace Edu_plat.Controllers
         #region Get eduPlat stats
         [HttpGet]
         [Route("GetStats")]
-        [Authorize(Roles ="Admin")]
-        public async Task<IActionResult> getStats()
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetStats()
         {
-            EduPlatStats stats = new EduPlatStats();
-            int noOfStudents = _context.Students.Count();
-            int noOfDoctors = _context.Doctors.Count();
-            int noOfCourses = _context.Courses.Count();
-            stats.studentsNum = noOfStudents;
-            stats.doctorNum = noOfDoctors;
-            stats.coursesNum = noOfCourses;
+            EduPlatStats stats = new EduPlatStats
+            {
+                studentsNum = await _context.Students.CountAsync(),
+                doctorNum = await _context.Doctors.CountAsync(),
+                coursesNum = await _context.Courses.CountAsync()
+            };
 
-
-            return Ok(new { success=true ,message="fetched Successfully",stats});
-
-
+            return Ok(new { success = true, message = "Fetched successfully", stats });
         }
+
 
 
         #endregion

@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Security.Claims;
 using Edu_plat.DTO.UploadFiles;
+using Edu_plat.DTO.Notification;
+using Edu_plat.Services;
 
 namespace Edu_plat.Controllers
 {
@@ -21,13 +23,16 @@ namespace Edu_plat.Controllers
 		private readonly ApplicationDbContext _context;
 		private readonly IWebHostEnvironment _hostingEnvironment;
 		private readonly UserManager<ApplicationUser> _userManager;
-
-		public Videos(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<ApplicationUser> userManager = null)
+		private readonly INotificationHandler _notificationHandler;
+        public Videos(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, UserManager<ApplicationUser> userManager ,
+			INotificationHandler notificationHandler
+			)
 		{
 			_context = context;
 			_hostingEnvironment = hostingEnvironment;
 			_userManager = userManager;
-		}
+            _notificationHandler = notificationHandler;
+        }
 
 		#region UploadVideo 
 		[HttpPost("UploadVideo")]
@@ -160,7 +165,18 @@ namespace Edu_plat.Controllers
 			_context.Materials.Add(videoMaterial);
 			await _context.SaveChangesAsync();
 
-		//	return Ok(new { success = true, message = "Video uploaded successfully.", filePath = videoMaterial.FilePath, videoMaterial.Id });
+
+            //	return Ok(new { success = true, message = "Video uploaded successfully.", filePath = videoMaterial.FilePath, videoMaterial.Id });
+
+
+            await _notificationHandler.SendMessageAsync(new MessageRequest
+            {
+                Title = videoMaterial.CourseCode,
+                Body = $"New {videoMaterial.FileName} uploaded by Dr {doctor.applicationUser.UserName}  : {videoMaterial.FileName} ",
+                CourseCode = videoMaterial.CourseCode,
+                UserId = userId,
+                Date = DateOnly.Parse(videoMaterial.UploadDate.ToString("yyyy-MM-dd")),
+            });
             return Ok(
             new
             {

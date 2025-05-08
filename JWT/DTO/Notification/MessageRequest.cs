@@ -4,8 +4,9 @@
     {
         public string? Title { get; set; }
         public string? Body { get; set; }
-    
-        // to get all stduent that are resgisterd in this course
         public string ? CourseCode { get; set; }
+        public string? UserId { get; set; }
+        public DateOnly Date { get; set; }
+
     }
 }
