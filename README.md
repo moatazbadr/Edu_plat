@@ -1,4 +1,4 @@
-![EduPlat Logo](https://placeholder-url-to-your-logo-image/EduPlat-logo.png)
+![EduPlat Logo](https://github.com/SALEH-SHERIF/EduPlat/raw/main/EduPlat.jpeg)
 
 # EduPlat Web API
 
@@ -36,3 +36,9 @@ EduPlat is a powerful educational platform built with ASP.NET Core, designed to 
 
 ### Developer-Friendly Docs
 - Interactive **Swagger UI** for testing endpoints with Bearer token authentication.
+
+## Getting Started
+
+1. Clone the repo:  
+   ```bash
+   git clone <repository-url>
