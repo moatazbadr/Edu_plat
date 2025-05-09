@@ -64,13 +64,22 @@ namespace JWT.Controllers
         public async Task<IActionResult> Register([FromBody] RegisterUserDTO dto)
         {
             if (!ModelState.IsValid)
-                return Ok(new { success = false, message = "Invalid inputs" });
+                return Ok(new { success = false, message = "Invalid inputs Data" });
+			
+            if (dto.Email.Any(c => c > 127))  
+			{
+				return Ok(new { success = false, message = "Email must be written in English characters only." });
+			}
 
-            var existingUser = await _userManager.Users.AnyAsync(u => u.Email == dto.Email);
+			var existingUser = await _userManager.Users.AnyAsync(u => u.Email == dto.Email);
             if (existingUser)
                 return Ok(new { success = false, message = "Email already registered." });
+			
+            var existingUsername = await _userManager.Users.AnyAsync(u => u.UserName == dto.UserName);
+			if (existingUsername)
+				return Ok(new { success = false, message = " UserName already registered." });
 
-            var existingTempUser = await _context.TemporaryUsers.FirstOrDefaultAsync(u => u.Email == dto.Email);
+			var existingTempUser = await _context.TemporaryUsers.FirstOrDefaultAsync(u => u.Email == dto.Email);
 
             if (existingTempUser != null)
             {
@@ -100,12 +109,13 @@ namespace JWT.Controllers
                     await _context.SaveChangesAsync();
                 }
             }
-            var tempUser = new TemporaryUser
+			var hasher = new PasswordHasher<TemporaryUser>();
+			var tempUser = new TemporaryUser
             {
                 UserName = dto.UserName,
                 Email = dto.Email,
-                PasswordHash = dto.Password
-            };
+                PasswordHash =hasher.HashPassword(null, dto.Password)
+			};
             await _context.TemporaryUsers.AddAsync(tempUser);
 
             string newOtp = GenerateOTP.GenerateOtp();
@@ -136,12 +146,14 @@ namespace JWT.Controllers
         [HttpPost("VerifyEmail")]
         public async Task<IActionResult> VerifyEmail([FromBody] VerifyOtpDTO dto)
         {
-            // check otp 
-            var otpRecord = await _context.OtpVerification
+			if (!ModelState.IsValid)
+				return Ok(new { success = false, message = "Invalid inputs Data" });
+			// check otp & email
+			var otpRecord = await _context.OtpVerification
                .FirstOrDefaultAsync(o => o.Otp == dto.Otp && o.Email == dto.email);
 
             if (otpRecord == null)
-                return Ok(new { success = false, message = "Invalid OTP." });
+                return Ok(new { success = false, message = "Invalid OTP ." });
 
             // check expire Time 
             if (DateTime.UtcNow > otpRecord.ExpirationTime)
@@ -180,8 +192,6 @@ namespace JWT.Controllers
             {
                 newUser.EmailConfirmed = true;
                 await _userManager.UpdateAsync(newUser); // Update the user in the database
-
-                // Assign the "Student" role
                 var roleExist = await _roleManager.RoleExistsAsync("Student");
                 if (!roleExist)
                 {
@@ -192,19 +202,14 @@ namespace JWT.Controllers
                 {
                     UserId = newUser.Id,
                     applicationUser = newUser,
-
                 };
                 _context.Set<Student>().Add(StudentObj);
                 await _context.SaveChangesAsync();
                 await _userManager.AddToRoleAsync(newUser, "Student");
                 _context.TemporaryUsers.Remove(tempUser);
                 await _context.SaveChangesAsync();
-
-
             }
-
             return Ok(new { success = true, message = "Email verified successfully and user created." });
-
         }
 
 
@@ -373,16 +378,21 @@ namespace JWT.Controllers
                 return Ok(new {success=false,message="Model state is invalid"});
             }
 
+
+			var existinguser = await _userManager.Users.AnyAsync(u => u.Email == dto.Email);
+			if (existinguser)
+				return Ok(new { success = false, message = "Email is already registered" });
+			var existingUsername = await _userManager.Users.AnyAsync(u => u.UserName == dto.UserName);
+			if (existingUsername)
+				return Ok(new { success = false, message = " UserName already registered." });
+			
             var doctor = new ApplicationUser
             {
                 UserName = dto.UserName,
                 Email = dto.Email
             };
-            //var existingUser = await _userManager.Users.AnyAsync(u => u.Email == dto.Email);
-            //if (existingUser)
-            //    return BadRequest(new { success = false, message = "Password or Email is incorrect" });
-
-            var result = await _userManager.CreateAsync(doctor, dto.Password);
+           
+           var result = await _userManager.CreateAsync(doctor, dto.Password);
             // Save the userId for later use
             var userId = doctor.Id;
             // Step 2: Create and Save a Doctor linked to the ApplicationUser
@@ -392,16 +402,13 @@ namespace JWT.Controllers
                 applicationUser = doctor
                 
             };
-
-            //check if the doctor already exists
-         
-
-            _context.Set<Doctor>().Add(DoctorObj);
-            _context.SaveChanges();
-            if (result.Succeeded)
+          
+             if (result.Succeeded)
             {
-                // Assign Doctor role
-                var roleResult = await _userManager.AddToRoleAsync(doctor, "Doctor");
+				_context.Set<Doctor>().Add(DoctorObj);
+				await _context.SaveChangesAsync();
+				// Assign Doctor role
+				var roleResult = await _userManager.AddToRoleAsync(doctor, "Doctor");
                 if (!roleResult.Succeeded)
                 {
                     return Ok(new { success = false, message = "Failed to assign Doctor role." });
@@ -415,7 +422,7 @@ namespace JWT.Controllers
                 ModelState.AddModelError(string.Empty, error.Description);
             }
 
-            return Ok(new { success=false ,message="failed"});
+            return Ok(new { success=false ,message="Faild Register Doctor"});
         }
 
 
@@ -436,15 +443,16 @@ namespace JWT.Controllers
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequestDTO model)
         {
             if (!ModelState.IsValid)
-                return Ok(new { success = false, message = "Invalid request." });
+                return Ok(new { success = false, message = "Invalid Input." });
 
             // Removing OTP from the registery
             var existingOtps = _context.OtpVerification
                 .Where(o => o.Email == model.Email && o.Purpose == "ResetPassword");
             _context.OtpVerification.RemoveRange(existingOtps);
+			
 
-            // checking if the user exist
-            var user = await _userManager.FindByEmailAsync(model.Email);
+			// checking if the user exist
+			var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
                 return Ok(new { success = false, message = "Incorrect Email" });
 
@@ -466,7 +474,7 @@ namespace JWT.Controllers
 
             //Sending the otp to email
             var emailBody = $@"
-<p>Hi there,</p>
+<p>Hi {user.UserName},</p>
 <p>We received a request to reset your password, and we're here to help!</p>
 <p>Your OTP (One-Time Password) to reset your password is:</p>
 <h2 style='color: #2E86C1;'>{otp}</h2>
@@ -490,7 +498,7 @@ namespace JWT.Controllers
                 return Ok(new { success = false, message = "Invalid request." });
 
             var otpRecord = await _context.OtpVerification
-                .FirstOrDefaultAsync(o => o.Otp == model.Otp && o.Purpose == "ResetPassword");
+                .FirstOrDefaultAsync(o => o.Otp == model.Otp && o.Email==model.email && o.Purpose == "ResetPassword");
 
             if (otpRecord == null)
                 return Ok(new { success = false, message = "Invalid OTP." });
@@ -515,11 +523,10 @@ namespace JWT.Controllers
             if (!ModelState.IsValid)
                 return Ok(new { success = false, message = "Invalid request." });
 
-           
-            var otpRecord = await _context.OtpVerification
-                .FirstOrDefaultAsync(o => o.IsVerified == true && o.Purpose == "ResetPassword");
 
-            if (otpRecord == null)
+		var otpRecord = await _context.OtpVerification
+	          .FirstOrDefaultAsync(o => o.IsVerified == true && o.Purpose == "ResetPassword" && o.Email == model.Email);
+		if (otpRecord == null || DateTime.UtcNow > otpRecord.ExpirationTime)
                 return Ok(new { success = false, message = "Unauthorized or expired request." });
 
           
