@@ -1,4 +1,7 @@
 # EduPlat Web API Module
+EduPlat is a comprehensive educational platform developed using ASP.NET Core, designed to provide a complete solution for managing educational resources, assessments, and communication between students and faculty members.
+
+This Web API module represents the backend engine of EduPlat, offering a set of secure and scalable RESTful APIs that power the entire platform.
 
 > [![.NET](https://img.shields.io/badge/.NET-8.0-blue)](https://dotnet.microsoft.com/download) [![GitHub release](https://img.shields.io/github/v/release/SALEH-SHERIF/Edu_plat)](https://github.com/SALEH-SHERIF/Edu_plat/releases)
 
@@ -17,7 +20,6 @@
 - 📝 **Exam Engine**: CRUD for Exams, Questions (2–4 choices), scoring, and time limits.
 - 📧 **Notifications**: SMTP emails + Firebase push for registration, material uploads, and exams.
 - 🔄 **EF Core**: Auto migrations, seed data, SQL Server/Azure SQL support.
-- 🔄 **Caching**: In-memory with optional Redis integration.
 - 📚 **Swagger UI**: Explore and test all endpoints with Bearer token support.
 
 **Before You Download:**
