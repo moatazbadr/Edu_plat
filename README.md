@@ -4,6 +4,15 @@
 
 <h1 align="center">EduPlat</h1>
 
+## 📚 Table of Contents
+
+- [Introduction](#eduplat-web-api)
+- [Key Features](#key-features)
+- [📄 Full Documentation](#-full-documentation)
+- [🚦 Live Demo](#-live-demo)
+- [Getting Started / Installation](#getting-started--installation)
+- [Pre-built Executable](#-pre-built-executable)
+- [Troubleshooting](#-troubleshooting)
 
 
 # EduPlat Web API
@@ -100,5 +109,91 @@ Before you begin, ensure that you have the following installed:
 
 This setup assumes that the project uses a SQL Server or similar database and includes the default setup for .NET 8. Let me know if there’s any specific configuration or part you want to adjust!
 
+##  Pre-built Executable
+
+1. **Download & Extract**
+   - Go to [Releases](https://github.com/SALEH-SHERIF/Edu_plat/releases).
+   - Download the `.zip`/`.exe` (Windows) or `.tar.gz` (macOS) file.
+   - Extract:
+     - *Windows*: right-click → Extract All...
+     - *macOS*:  
+       ```bash
+       tar -xzf Edu_plat_mac.tar.gz
+       ```
+
+2. **Run the Application**
+   - *Windows*: Open **Command Prompt** or **PowerShell**, navigate to the folder containing `Edu_plat.exe`, and run:
+     ```bash
+     .\Edu_plat.exe
+     ```
+   - *macOS/Linux*: Open **Terminal**, navigate to the folder containing `Edu_plat`, and run:
+     ```bash
+     chmod +x Edu_plat && ./Edu_plat
+     ```
+
+3. **Access the API**
+   - After the API starts, it will listen on the default port. You should see a message like:
+     ```
+     Now listening on: http://0.0.0.0:7189
+     ```
+
+4. **Access Swagger UI**
+   - To interact with the API using Swagger UI, navigate to:
+     [http://localhost:7189/swagger/index.html](http://localhost:7189/swagger/index.html)
 
 
+> **Notes:**
+> - If you have trouble accessing the API, make sure port `7198` is not blocked by another program or firewall.
+> - To access the API from another device on the same network, replace `localhost` with the IP address of your machine.  
+>   For example: `https://192.168.1.10:7198/api/...`
+
+
+##  Troubleshooting
+
+Here are some common issues and how to resolve them:
+
+### ❌ Database Connection Issues
+- **Problem**: Unable to connect to the database.
+- **Solution**:  
+  - Ensure the correct server name and authentication method are used in `appsettings.json`.
+  - Make sure the SQL Server service is running.
+  - Check firewall settings on your machine.
+
+### ❌ Entity Framework Migrations Not Working
+- **Problem**: Errors when applying migrations.
+- **Solution**:  
+  - Delete the `Migrations/` folder.
+  - Re-create the initial migration and apply it:
+    ```bash
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
+    ```
+
+### ❌ Port Conflict
+- **Problem**: The application port is already in use.
+- **Solution**:  
+  - Open `Properties/launchSettings.json` and change the `applicationUrl` to an available port (e.g., `https://localhost:7199`).
+
+### ❌ SSL Warnings in Browser
+- **Problem**: Browser shows warning for untrusted certificate.
+- **Solution**:  
+  - Trust the development SSL certificate using:
+    ```bash
+    dotnet dev-certs https --trust
+    ```
+
+### ❌ Upload Size Limit Exceeded
+- **Problem**: File uploads fail with large files.
+- **Solution**:  
+  - Increase `MaxRequestBodySize` in `Program.cs`, or configure limits in your reverse proxy (e.g., Nginx/IIS).
+
+### ❌ Missing Configuration Keys
+- **Problem**: JWT/SMTP/Firebase settings are missing or incorrect.
+- **Solution**:  
+  - Double-check your `appsettings.json` and `secrets.json` for required keys like `Jwt:Key`, `Smtp:Host`, etc.
+
+---
+
+> 💬 For questions, issues, or feature requests, please open a ticket here: [GitHub Issues](https://github.com/SALEH-SHERIF/Edu_plat/issues)
+
+*Enjoy building with EduPlat! 🚀*
