@@ -155,10 +155,12 @@ namespace Edu_plat.Controllers
             _context.Exams.Add(exam);
             await _context.SaveChangesAsync();
 
+            string ExamType = exam.IsOnline ? "online Exam" : "offline Exam";
+
              await _notificationHandler.SendMessageAsync(new MessageRequest
             {
                 Title = exam.CourseCode,
-                Body = $"New exam created and set to start at ",
+                Body = $"New  {ExamType} {exam.ExamTitle} created by Dr {user.UserName} and is set to start at {exam.StartTime}  ",
                 CourseCode = exam.CourseCode,
                 UserId = userId,
                 Date= DateOnly.FromDateTime(exam.StartTime)
@@ -354,7 +356,8 @@ namespace Edu_plat.Controllers
 			}
 
 			var userId = User.FindFirstValue("ApplicationUserId");
-			var doctor = await _context.Doctors.AsNoTracking().FirstOrDefaultAsync(d => d.UserId == userId);
+            var user = await _userManager.FindByIdAsync(userId);
+            var doctor = await _context.Doctors.AsNoTracking().FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
 				return Unauthorized(new { message = "Doctor profile not found." });
@@ -497,7 +500,16 @@ namespace Edu_plat.Controllers
 			}
 
 			await _context.SaveChangesAsync();
-			return Ok(new {success=true, message = "Exam updated successfully." });
+            string ExamType = exam.IsOnline ? "online Exam" : "offline Exam";
+            await _notificationHandler.SendMessageAsync(new MessageRequest
+            {
+                Title = exam.CourseCode,
+                Body = $"New {ExamType} {exam.ExamTitle} Updated by Dr {user.UserName} and is set to start at {exam.StartTime}  ",
+                CourseCode = exam.CourseCode,
+                UserId = userId,
+                Date = DateOnly.FromDateTime(exam.StartTime)
+            });
+            return Ok(new {success=true, message = "Exam updated successfully." });
 		}
         #endregion
 

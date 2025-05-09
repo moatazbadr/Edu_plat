@@ -14,7 +14,7 @@ namespace Edu_plat.DTO.UploadFiles
        // public string Description { get; set; } // Optional new description
 
 		[Required(ErrorMessage = "Type is required.")]
-		[RegularExpression("^(Lectures|Labs|Exams)$", ErrorMessage = "Type must be either 'Lectures', 'Labs', 'Exams'.")]
+		[RegularExpression("^(Lectures|Labs|Exams|Videos)$", ErrorMessage = "Type must be either 'Lectures', 'Labs', 'Exams'.")]
 		public string Type { get; set; } 
 	}
 }

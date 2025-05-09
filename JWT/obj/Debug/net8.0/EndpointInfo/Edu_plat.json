@@ -1367,7 +1367,7 @@
                   "Type": {
                     "maxLength": 500,
                     "minLength": 0,
-                    "pattern": "^(Lectures|Labs|Exams)$",
+                    "pattern": "^(Lectures|Labs|Exams|Videos)$",
                     "type": "string"
                   }
                 }
@@ -2013,7 +2013,7 @@
       }
     },
     "/api/Videos/UpdateVideo": {
-      "post": {
+      "put": {
         "tags": [
           "Videos"
         ],
@@ -2035,10 +2035,10 @@
                     "type": "string",
                     "format": "binary"
                   },
-                  "TypeFile": {
-                    "maxLength": 5,
+                  "Type": {
+                    "maxLength": 6,
                     "minLength": 0,
-                    "pattern": "^(Video)$",
+                    "pattern": "^(Videos)$",
                     "type": "string"
                   }
                 }
@@ -2050,7 +2050,7 @@
                 "Video": {
                   "style": "form"
                 },
-                "TypeFile": {
+                "Type": {
                   "style": "form"
                 }
               }
@@ -2620,6 +2620,10 @@
       "ResetPasswordRequestDTO": {
         "type": "object",
         "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
           "newPassword": {
             "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,20}$",
             "type": "string",

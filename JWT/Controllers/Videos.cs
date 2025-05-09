@@ -100,7 +100,8 @@ namespace Edu_plat.Controllers
 
 			// Get the doctor details from the token	
 			var userId = User.FindFirstValue("ApplicationUserId");
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+            var user = await _userManager.FindByIdAsync(userId);
+            var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
 				return Ok(new { success = false, message = "Doctor not found." });
@@ -172,7 +173,7 @@ namespace Edu_plat.Controllers
             await _notificationHandler.SendMessageAsync(new MessageRequest
             {
                 Title = videoMaterial.CourseCode,
-                Body = $"New {videoMaterial.FileName} uploaded by Dr {doctor.applicationUser.UserName}  : {videoMaterial.FileName} ",
+                Body = $"New {videoMaterial.FileName} uploaded by Dr {user.UserName}  : {videoMaterial.FileName} ",
                 CourseCode = videoMaterial.CourseCode,
                 UserId = userId,
                 Date = DateOnly.Parse(videoMaterial.UploadDate.ToString("yyyy-MM-dd")),
@@ -202,7 +203,7 @@ namespace Edu_plat.Controllers
 		#endregion
 
 		#region UpdateVideo
-		[HttpPost("UpdateVideo")]
+		[HttpPut("UpdateVideo")]
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> UpdateVideo([FromForm] UpdateVideoDto updateVideoDto)
 		{
