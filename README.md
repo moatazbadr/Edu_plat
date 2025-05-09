@@ -98,13 +98,13 @@ Before you begin, ensure that you have the following installed:
      <span style="font-size: 20px;">●</span> In Visual Studio, press F5 or click "Start Debugging" to run the project.
    
      <span style="font-size: 20px;">●</span> The Web API should now be running locally, typically accessible at
-     ``` https://localhost:5001 or https://localhost:5000 ```
+     ```  http://localhost:7189 ```
  
  6. **Test the API::**
   
      <span style="font-size: 20px;">●</span> You can use tools like Postman to send HTTP requests to your API endpoints.
 
-     <span style="font-size: 20px;">●</span> The API will be available at https://localhost:5001/api (or the configured port).
+     <span style="font-size: 20px;">●</span> The API will be available at http://localhost:7189/swagger/index.html(or the configured port).
 
 **Feel free to reach out if you need further clarification on any step!**
 
