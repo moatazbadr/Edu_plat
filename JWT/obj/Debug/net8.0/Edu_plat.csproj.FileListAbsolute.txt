@@ -160,3 +160,15 @@ C:\Users\Acer\OneDrive\Desktop\Edu_Plat_LastVersion\Edu_plat\JWT\obj\Debug\net8.
 C:\Users\Acer\OneDrive\Desktop\Edu_Plat_LastVersion\Edu_plat\JWT\obj\Debug\net8.0\Edu_plat.pdb
 C:\Users\Acer\OneDrive\Desktop\Edu_Plat_LastVersion\Edu_plat\JWT\obj\Debug\net8.0\Edu_plat.genruntimeconfig.cache
 C:\Users\Acer\OneDrive\Desktop\Edu_Plat_LastVersion\Edu_plat\JWT\obj\Debug\net8.0\ref\Edu_plat.dll
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.csproj.AssemblyReference.cache
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.AssemblyInfoInputs.cache
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.AssemblyInfo.cs
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.csproj.CoreCompileInputs.cache
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.sourcelink.json
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.dll
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\refint\Edu_plat.dll
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\Edu_plat.pdb
+C:\Users\moataz\Desktop\GradProject\WorkingExam\Megered\Edu_platFinal\JWT\obj\Debug\net8.0\scopedcss\bundle\Edu_plat.styles.css
