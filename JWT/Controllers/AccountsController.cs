@@ -432,23 +432,33 @@ namespace JWT.Controllers
         #endregion
 
         #region ForgetPassword
+        
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequestDTO model)
         {
             if (!ModelState.IsValid)
-                return Ok(new { success = false, message = "Invalid request." });
+                return Ok(new { success = false, message = "Invalid Input." });
 
-            // Removing OTP from the registery
-            var existingOtps = _context.OtpVerification
-                .Where(o => o.Email == model.Email && o.Purpose == "ResetPassword");
-            _context.OtpVerification.RemoveRange(existingOtps);
+            // ❌ Check if there's an active OTP (not expired)
+            var activeOtp = await _context.OtpVerification
+                .FirstOrDefaultAsync(o => o.Email == model.Email && o.Purpose == "ResetPassword" && o.ExpirationTime > DateTime.UtcNow);
 
-            // checking if the user exist
+            if (activeOtp != null)
+            {
+                return Ok(new { success = false, message = "An OTP request is already pending for this email." });
+            }
+
+            // ✅ Cleanup expired OTPs (optional but good practice)
+            var expiredOtps = _context.OtpVerification
+                .Where(o => o.Email == model.Email && o.Purpose == "ResetPassword" && o.ExpirationTime <= DateTime.UtcNow);
+            _context.OtpVerification.RemoveRange(expiredOtps);
+
+            // ✅ Check if user exists
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
                 return Ok(new { success = false, message = "Incorrect Email" });
 
-            // Creating new OTP
+            // ✅ Generate and save new OTP
             string otp = GenerateOTP.GenerateOtp();
             DateTime expirationTime = DateTime.UtcNow.AddMinutes(5);
 
@@ -464,7 +474,7 @@ namespace JWT.Controllers
             await _context.OtpVerification.AddAsync(otpVerification);
             await _context.SaveChangesAsync();
 
-            //Sending the otp to email
+            // ✅ Send Email
             var emailBody = $@"
 <p>Hi there,</p>
 <p>We received a request to reset your password, and we're here to help!</p>
@@ -479,8 +489,8 @@ namespace JWT.Controllers
 
             return Ok(new { success = true, message = "A password OTP has been sent to your email." });
         }
-
         #endregion
+
 
         #region ValidateOtp
         [HttpPost("validate-otp")]
@@ -517,7 +527,7 @@ namespace JWT.Controllers
 
            
             var otpRecord = await _context.OtpVerification
-                .FirstOrDefaultAsync(o => o.IsVerified == true && o.Purpose == "ResetPassword");
+                .FirstOrDefaultAsync(o => o.IsVerified == true && o.Email==model.email && o.Purpose == "ResetPassword");
 
             if (otpRecord == null)
                 return Ok(new { success = false, message = "Unauthorized or expired request." });

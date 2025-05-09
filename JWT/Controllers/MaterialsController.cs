@@ -169,7 +169,7 @@ namespace Edu_plat.Controllers
             await _notificationHandler.SendMessageAsync(new MessageRequest
             {
                 Title =material.CourseCode,
-                Body = $"New {material.TypeFile} uploaded  : {material.FileName} by Dr {user.UserName}  ",
+                Body = $"New {material.TypeFile} uploaded  : {material.FileName} by Dr {user.UserName}",
                 CourseCode = material.CourseCode,
                 UserId = userId,
                 Date = DateOnly.Parse(material.UploadDate.ToString("yyyy-MM-dd")),
