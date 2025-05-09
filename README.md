@@ -11,8 +11,9 @@
 - [📄 Full Documentation](#-full-documentation)
 - [🚦 Live Demo](#-live-demo)
 - [Getting Started / Installation](#getting-started--installation)
-- [Pre-built Executable](#-pre-built-executable)
-- [Troubleshooting](#-troubleshooting)
+- [Pre-built Executable](#pre-built-executable)
+- [Troubleshooting](#troubleshooting)
+
 
 
 # EduPlat Web API
