@@ -1,13 +1,22 @@
 # EduPlat Web API Module
-EduPlat is a comprehensive educational platform developed using ASP.NET Core, designed to provide a complete solution for managing educational resources, assessments, and communication between students and faculty members.
+EduPlat is a comprehensive educational platform developed using ASP.NET Core, designed to provide a complete solution for managing educational resources, assessments, and communication between students and profes.
 
 This Web API module represents the backend engine of EduPlat, offering a set of secure and scalable RESTful APIs that power the entire platform.
 
 > [![.NET](https://img.shields.io/badge/.NET-8.0-blue)](https://dotnet.microsoft.com/download) [![GitHub release](https://img.shields.io/github/v/release/SALEH-SHERIF/Edu_plat)](https://github.com/SALEH-SHERIF/Edu_plat/releases)
 
-## 📋 Release Notes
+You can try the Web API through the following links:
 
-*Use this section as your GitHub Release **Description** when publishing the `.exe` package.*
+🖥️ RunASP.net (hosted demo – always available)
+
+     https://eduplat123.runasp.net/swagger/index.html
+
+🌐 Ngrok (temporary – only works while the local server is running)
+ 
+      https://great-hot-impala.ngrok-free.app/swagger/index.html
+
+⚠️ This link is available only when the server is running locally and ngrok is active.
+## 📋 Release Notes
 
 **Version 2.3.4** — *EduPlat Web API* (`EduPlat.exe`)
 
@@ -22,6 +31,11 @@ This Web API module represents the backend engine of EduPlat, offering a set of 
 - 🔄 **EF Core**: Auto migrations, seed data, SQL Server/Azure SQL support.
 - 📚 **Swagger UI**: Explore and test all endpoints with Bearer token support.
 
+
+
+
+
+---
 **Before You Download:**
 
 1. Install **.NET 8.0 Runtime**.
@@ -33,13 +47,6 @@ This Web API module represents the backend engine of EduPlat, offering a set of 
 - `EduPlat.exe`
 - `appsettings.json.sample`
 - `README.md` (this guide)
-
----
-
-## 🚦 Live Demo
-
-- **ngrok**: https://great-hot-impala.ngrok-free.app/swagger/index.html
-- **RunASP.net**: https://eduplat123.runasp.net/swagger/index.html
 
 ---
 
@@ -110,10 +117,7 @@ This Web API module represents the backend engine of EduPlat, offering a set of 
      - **Windows**: right-click → Extract All...
      - **macOS**: `tar -xzf Edu_plat_mac.tar.gz`
 
-2. **Place `appsettings.json`**
-   - Place `appsettings.json` next to `Edu_plat.exe`.
-
-3. **Run the Application**
+2. **Run the Application**
    - **Windows**: Open **Command Prompt** or **PowerShell**, navigate to the folder containing `Edu_plat.exe`, and run:
      ```bash
      .\Edu_plat.exe
@@ -123,14 +127,14 @@ This Web API module represents the backend engine of EduPlat, offering a set of 
      chmod +x Edu_plat && ./Edu_plat
      ```
 
-4. **Access the API**
+3. **Access the API**
    - After the API starts, it will listen on the default port. You should see a message like:
      ```
      Now listening on: http://0.0.0.0:7189
      ```
    - Open your browser and go to `http://localhost:7189` to access the API.
 
-5. **Access Swagger UI**
+4. **Access Swagger UI**
    - To interact with the API using Swagger UI, navigate to:
      ```
      http://localhost:7189/swagger/index.html
