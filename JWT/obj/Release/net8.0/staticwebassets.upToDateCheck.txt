@@ -1,3 +1,36 @@
 wwwroot\materials.zip
+wwwroot\Uploads\AdminFiles\FirstLevelFall.pdf
+wwwroot\Uploads\AdminFiles\FourthLevelFall.pdf
+wwwroot\Uploads\AdminFiles\Lab Schedule.pdf
+wwwroot\Uploads\AdminFiles\Lecture Schedule.pdf
+wwwroot\Uploads\AdminFiles\SecondLevelFall.pdf
+wwwroot\Uploads\AdminFiles\student Guide.pdf
+wwwroot\Uploads\AdminFiles\studentGuide.pdf
+wwwroot\Uploads\AdminFiles\ThirdLevelFall.pdf
+wwwroot\Uploads\COMP201\New_Software_Testing_May_2024.pdf
+wwwroot\Uploads\COMP201\Software_Eng_Hanout#2_Notations_SM.pdf
+wwwroot\Uploads\COMP201\Software_Eng_Hanout#2_Notations_SM_2.pdf
+wwwroot\Uploads\COMP201\Software_Eng_Hanout#3_Requirements.pdf
+wwwroot\Uploads\COMP201\Software_Eng_Hanout#3_Requirements_2.pdf
+wwwroot\Uploads\COMP205\Data Mining 2020 Final.pdf
+wwwroot\Uploads\COMP205\Lecture 5TextClassification.pdf
+wwwroot\Uploads\COMP205\Software (Lect 7).pdf
+wwwroot\Uploads\COMP205\Software_Eng_Hanout#1.pdf
+wwwroot\Uploads\COMP206\2aa6c40645fd4bbc8410aea8123b830a_250511_143938.pdf
+wwwroot\Uploads\COMP206\FirstLevelFall.pdf
+wwwroot\Uploads\COMP206\Lect #1.pdf
+wwwroot\Uploads\COMP206\Lect #4 Which Animal Gave Us SARS - Part2.pdf
+wwwroot\Uploads\COMP206\Math 203 8_240731_074236.pdf
+wwwroot\Uploads\COMP206\Mid term Comp 404 _ Software.pdf
+wwwroot\Uploads\COMP206\Software (Lect 3&4).pdf
+wwwroot\Uploads\COMP206\Software_Eng_Hanout#1.pdf
+wwwroot\Uploads\COMP206\Software_Eng_Hanout#1_2.pdf
+wwwroot\Uploads\COMP206\Software_Eng_Hanout#3_Requirements.pdf
+wwwroot\Uploads\COMP408\Lecture 5TextClassification.pdf
+wwwroot\Uploads\COMP416\Lecture 5TextClassification.pdf
+wwwroot\Videos\COMP201\screen.mp4
+wwwroot\Videos\COMP201\screenTwo.mp4
 wwwroot\Videos\COMP203\Header_Video.mp4
 wwwroot\Videos\COMP203\Screen Recording 2025-03-12 214236.mp4
+wwwroot\Videos\COMP205\1000505076.mp4
+wwwroot\Videos\COMP206\Screen Recording 2025-05-05 211117.mp4

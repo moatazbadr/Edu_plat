@@ -1,12 +1,144 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\FirstLevelFall.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FourthLevelFall.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\FourthLevelFall.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Lab Schedule.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\Lab Schedule.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\Lecture Schedule.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\Lecture Schedule.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\SecondLevelFall.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\SecondLevelFall.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\ThirdLevelFall.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\ThirdLevelFall.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\student Guide.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\student Guide.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\studentGuide.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\AdminFiles\\studentGuide.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\New_Software_Testing_May_2024.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\New_Software_Testing_May_2024.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Software_Eng_Hanout#2_Notations_SM.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\Software_Eng_Hanout#2_Notations_SM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Software_Eng_Hanout#2_Notations_SM_2.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\Software_Eng_Hanout#2_Notations_SM_2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Software_Eng_Hanout#3_Requirements.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\Software_Eng_Hanout#3_Requirements.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP201\\Software_Eng_Hanout#3_Requirements_2.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP201\\Software_Eng_Hanout#3_Requirements_2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Data Mining 2020 Final.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP205\\Data Mining 2020 Final.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Lecture 5TextClassification.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP205\\Lecture 5TextClassification.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Software (Lect 7).pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP205\\Software (Lect 7).pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Software_Eng_Hanout#1.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP205\\Software_Eng_Hanout#1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\2aa6c40645fd4bbc8410aea8123b830a_250511_143938.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\2aa6c40645fd4bbc8410aea8123b830a_250511_143938.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\FirstLevelFall.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\FirstLevelFall.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lect #1.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\Lect #1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Lect #4 Which Animal Gave Us SARS - Part2.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\Lect #4 Which Animal Gave Us SARS - Part2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Math 203 8_240731_074236.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\Math 203 8_240731_074236.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Mid term Comp 404 _ Software.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\Mid term Comp 404 _ Software.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Software (Lect 3&4).pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\Software (Lect 3&4).pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Software_Eng_Hanout#1.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\Software_Eng_Hanout#1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Software_Eng_Hanout#1_2.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\Software_Eng_Hanout#1_2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP206\\Software_Eng_Hanout#3_Requirements.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP206\\Software_Eng_Hanout#3_Requirements.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP408\\Lecture 5TextClassification.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP408\\Lecture 5TextClassification.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP416\\Lecture 5TextClassification.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\COMP416\\Lecture 5TextClassification.pdf"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP201\\screen.mp4",
+      "PackagePath": "staticwebassets\\Videos\\COMP201\\screen.mp4"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP201\\screenTwo.mp4",
+      "PackagePath": "staticwebassets\\Videos\\COMP201\\screenTwo.mp4"
+    },
+    {
       "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Header_Video.mp4",
       "PackagePath": "staticwebassets\\Videos\\COMP203\\Header_Video.mp4"
     },
     {
       "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
       "PackagePath": "staticwebassets\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP205\\1000505076.mp4",
+      "PackagePath": "staticwebassets\\Videos\\COMP205\\1000505076.mp4"
+    },
+    {
+      "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP206\\Screen Recording 2025-05-05 211117.mp4",
+      "PackagePath": "staticwebassets\\Videos\\COMP206\\Screen Recording 2025-05-05 211117.mp4"
     },
     {
       "Id": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\materials.zip",

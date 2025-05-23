@@ -130,7 +130,7 @@ namespace Edu_plat.Controllers
             }
 
 
-            return Ok(StudentCourses);
+            return Ok(new {success=true, message="Fetched Succesfully", Courses=StudentCourses });
     
         }
 

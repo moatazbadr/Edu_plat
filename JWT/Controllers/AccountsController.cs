@@ -439,33 +439,24 @@ namespace JWT.Controllers
         #endregion
 
         #region ForgetPassword
-        
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequestDTO model)
         {
             if (!ModelState.IsValid)
                 return Ok(new { success = false, message = "Invalid Input." });
 
-            // ❌ Check if there's an active OTP (not expired)
-            var activeOtp = await _context.OtpVerification
-                .FirstOrDefaultAsync(o => o.Email == model.Email && o.Purpose == "ResetPassword" && o.ExpirationTime > DateTime.UtcNow);
+            // Removing OTP from the registery
+            var existingOtps = _context.OtpVerification
+                .Where(o => o.Email == model.Email && o.Purpose == "ResetPassword");
+            _context.OtpVerification.RemoveRange(existingOtps);
 
-            if (activeOtp != null)
-            {
-                return Ok(new { success = false, message = "An OTP request is already pending for this email." });
-            }
 
-            // ✅ Cleanup expired OTPs (optional but good practice)
-            var expiredOtps = _context.OtpVerification
-                .Where(o => o.Email == model.Email && o.Purpose == "ResetPassword" && o.ExpirationTime <= DateTime.UtcNow);
-            _context.OtpVerification.RemoveRange(expiredOtps);
-
-            // ✅ Check if user exists
+            // checking if the user exist
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
                 return Ok(new { success = false, message = "Incorrect Email" });
 
-            // ✅ Generate and save new OTP
+            // Creating new OTP
             string otp = GenerateOTP.GenerateOtp();
             DateTime expirationTime = DateTime.UtcNow.AddMinutes(5);
 
@@ -481,7 +472,7 @@ namespace JWT.Controllers
             await _context.OtpVerification.AddAsync(otpVerification);
             await _context.SaveChangesAsync();
 
-            // ✅ Send Email
+            //Sending the otp to email
             var emailBody = $@"
 <p>Hi {user.UserName},</p>
 <p>We received a request to reset your password, and we're here to help!</p>
@@ -496,6 +487,7 @@ namespace JWT.Controllers
 
             return Ok(new { success = true, message = "A password OTP has been sent to your email." });
         }
+
         #endregion
 
 
@@ -571,6 +563,44 @@ namespace JWT.Controllers
             var jwtToken = handler.ReadJwtToken(token);
             var jti = jwtToken.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
 
+            var userId = jwtToken.Claims.FirstOrDefault(c => c.Type == "ApplicationUserId")?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Ok(new { success = false, message = "Invalid token" });
+            }
+            var role = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value; 
+            if (role == "Doctor")
+            {
+                var doctor = _context.Doctors.FirstOrDefault(d => d.UserId == userId);
+                if (doctor != null)
+                {
+                    var device = await _context.userDevice
+                        .FirstOrDefaultAsync(d => d.DoctorId == doctor.DoctorId );
+                    if (device != null)
+                    {
+                        _context.userDevice.Remove(device);
+                        await _context.SaveChangesAsync();
+                    }
+                }
+                return Ok(new { success = true, message = "Logged out successfully and Doctor device token deleted " });
+
+            }
+            if (role == "Student")
+            {
+                var student = _context.Students.FirstOrDefault(d => d.UserId == userId);
+                if (student != null)
+                {
+                    var device = await _context.userDevice
+                        .FirstOrDefaultAsync(d => d.StudentId == student.StudentId );
+                    if (device != null)
+                    {
+                        _context.userDevice.Remove(device);
+                        await _context.SaveChangesAsync();
+                    }
+                }
+                return Ok(new { success = true, message = "Logged out successfully and student device token deleted " });
+
+            }
             if (string.IsNullOrEmpty(jti))
                 return Ok(new { success = false, message = "Invalid token" });
 

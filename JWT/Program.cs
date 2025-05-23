@@ -230,7 +230,7 @@ namespace JWT
 						await userManager.AddToRoleAsync(adminUser, "SuperAdmin");
 					}
 				}
-				string adminEmail2 = "zezo@gmail.com";
+				string adminEmail2 = "AdminEdu_plat@sci.asu.edu.eg";
 				var admin2 = await userManager.FindByEmailAsync(adminEmail2);
 				if (admin2 == null)
 				{
