@@ -96,7 +96,7 @@ namespace Edu_plat.Controllers
             {
                 return Ok(new { success = false, message = "Model state is invalid" });
             }
-
+            
             var doctor = new ApplicationUser
             {
                 UserName = dto.UserName,
@@ -107,6 +107,9 @@ namespace Edu_plat.Controllers
             //    return BadRequest(new { success = false, message = "Password or Email is incorrect" });
 
             var result = await _userManager.CreateAsync(doctor, dto.Password);
+
+
+
             // Save the userId for later use
             var userId = doctor.Id;
             // Step 2: Create and Save a Doctor linked to the ApplicationUser
@@ -147,7 +150,7 @@ namespace Edu_plat.Controllers
 
         #region GetUsersByType
         [HttpGet("GetUsersByType/{type}")]
-        //[Authorize(Roles = "Admin,SuperAdmin")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> GetUsersByType( string type)
         {
             if (string.IsNullOrEmpty(type))
@@ -158,17 +161,18 @@ namespace Edu_plat.Controllers
             switch (type.ToLower())
             {
                 case "admins":
-                    users = await _userManager.GetUsersInRoleAsync("Admin") as List<ApplicationUser>;
+                    users = (await _userManager.GetUsersInRoleAsync("Admin")).ToList();
                     break;
                 case "doctors":
-                    users = await _userManager.GetUsersInRoleAsync("Doctor") as List<ApplicationUser>;
+                    users = (await _userManager.GetUsersInRoleAsync("Doctor")).ToList();
                     break;
                 case "students":
-                    users = await _userManager.GetUsersInRoleAsync("Student") as List<ApplicationUser>;
+                    users = (await _userManager.GetUsersInRoleAsync("Student")).ToList();
                     break;
                 default:
                     return BadRequest(new { success = false, message = "Invalid type. Use 'Admin', 'Doctor', or 'Student'." });
             }
+
 
 
             var totalCount = users.Count;

@@ -4,10 +4,11 @@ namespace JWT.DTO
 {
 	public class RegisterUserDTO
 	{
-		[RegularExpression(@"^[a-zA-Z]{3,}$", ErrorMessage = "Username must contain at least 3 English letters.")]
-		[StringLength(15, ErrorMessage = "Username must not exceed 15 characters.")]
-		[Required(ErrorMessage = "UserName is required.")]
-		public string UserName { get; set; }
+        [RegularExpression(@"^[a-zA-Z]+(?: [a-zA-Z]+)*$", ErrorMessage = "Username must contain only English letters and single spaces, without leading or trailing spaces.")]
+        [StringLength(25, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 25 characters.")]
+        [Required(ErrorMessage = "UserName is required.")]
+
+        public string UserName { get; set; }
 
         [RegularExpression(@"^[a-zA-Z0-9._%+-]+@sci\.asu\.edu\.eg$", ErrorMessage = "Email must end with 'sci.asu.edu.eg'.")]
 		[StringLength(40, ErrorMessage = "Email must not exceed 40 characters.")]

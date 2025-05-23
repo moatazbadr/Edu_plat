@@ -34,10 +34,10 @@ namespace Edu_plat.Controllers
         [HttpPost("CreateExamOnline&Offline")]
         [Authorize(Roles = "Doctor")]
         public async Task<IActionResult> CreateExam([FromBody] CreateExamDto examDto)
-        {
+            {
             if (!ModelState.IsValid)
             {
-                return BadRequest(new
+                return Ok(new
                 {
                     succes = false,
                     errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)
@@ -98,30 +98,30 @@ namespace Edu_plat.Controllers
             {
                 if (examDto.Questions == null || examDto.Questions.Count == 0 || examDto.QuestionsNumber == null)
                 {
-                    return BadRequest(new { success = false, message = "Online exams must have at least one question." });
+                    return Ok(new { success = false, message = "Online exams must have at least one question." });
                 }
                 if (examDto.Questions.Count != examDto.QuestionsNumber)
                 {
-                    return BadRequest($"Number of questions must be exactly {examDto.QuestionsNumber}.");
+                    return Ok($"Number of questions must be exactly {examDto.QuestionsNumber}.");
                 }
                 if (examDto.Questions.Sum(q => q.TimeInMin) != examDto.DurationInMin)
                 {
-                    return BadRequest(new { succces = false, message = $"Total exam time should be exactly {examDto.DurationInMin} minutes." });
+                    return Ok(new { succces = false, message = $"Total exam time should be exactly {examDto.DurationInMin} minutes." });
                 }
                 if (examDto.Questions.Sum(q => q.Marks) != examDto.TotalMarks)
                 {
-                    return BadRequest(new { succes = false, message = $"Total marks should be exactly {examDto.TotalMarks}." });
+                    return Ok(new { succes = false, message = $"Total marks should be exactly {examDto.TotalMarks}." });
                 }
 
                 foreach (var qDto in examDto.Questions)
                 {
                     if (qDto.Choices == null || qDto.Choices.Count < 2 || qDto.Choices.Count > 5)
                     {
-                        return BadRequest(new { succes = false, message = "Each question must have between 2 to 5 choices." });
+                        return Ok(new { succes = false, message = "Each question must have between 2 to 5 choices." });
                     }
                     if (qDto.Choices.Count(c => c.IsCorrect) != 1)
                     {
-                        return BadRequest(new { succes = false, message = "Each question must have exactly one correct answer." });
+                        return Ok(new { succes = false, message = "Each question must have exactly one correct answer." });
                     }
 
                     var question = new Question
@@ -144,11 +144,11 @@ namespace Edu_plat.Controllers
             {
                 if (string.IsNullOrWhiteSpace(examDto.LocationExam))
                 {
-                    return BadRequest(new { succes = false, message = "Offline exams must have a location." });
+                    return Ok(new { succes = false, message = "Offline exams must have a location." });
                 }
                 if (examDto.Questions != null && examDto.Questions.Count > 0)
                 {
-                    return BadRequest(new { succes = false, message = "Offline exams should not have questions." });
+                    return Ok(new { succes = false, message = "Offline exams should not have questions." });
                 }
             }
 
@@ -168,7 +168,7 @@ namespace Edu_plat.Controllers
 
 
 
-            return Ok(new { succes = true, message = "Exam created successfully And notification sent to student", examId = exam.Id });
+            return Ok(new { success = true, message = "Exam created successfully And notification sent to student", examId = exam.Id });
         }
 
         #endregion
@@ -185,7 +185,7 @@ namespace Edu_plat.Controllers
 
 			if (doctor == null)
 			{
-				return Unauthorized(new { success=false,message = "Doctor profile not found." });
+				return Ok(new { success=false,message = "Doctor profile not found." });
 			}
 			var exam = await _context.Exams
 				.Include(e => e.Questions!)
@@ -194,7 +194,7 @@ namespace Edu_plat.Controllers
 
 			if (exam == null)
 			{
-				return NotFound(new { success=false,message = "Exam not found." });
+				return Ok(new { success=false,message = "Exam not found." });
 			}
 
 			bool isDoctorAssigned = await _context.CourseDoctors
@@ -202,11 +202,11 @@ namespace Edu_plat.Controllers
 
 			if (!isDoctorAssigned)
 			{
-				return Unauthorized(new { success=false,message = "You are not authorized to delete this exam." });
+				return Ok(new { success=false,message = "You are not authorized to delete this exam." });
 			}
 			if (exam.StartTime <= DateTime.UtcNow)
 			{
-				return BadRequest(new { success = false, message = "You cannot update an exam that has already started." });
+				return Ok(new { success = false, message = "You cannot update an exam that has already started." });
 			}
 
 
@@ -235,7 +235,7 @@ namespace Edu_plat.Controllers
             var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
             if (doctor == null)
             {
-                return NotFound(new { success = false, message = "Doctor profile not found." });
+                return Ok(new { success = false, message = "Doctor profile not found." });
             }
 			var Exam = await _context.Exams.Include(e => e.Questions!)
                 .ThenInclude(q => q.Choices).FirstOrDefaultAsync(x => x.Id == ExamId);
@@ -324,12 +324,12 @@ namespace Edu_plat.Controllers
 
 			if (exam == null)
 			{
-				return NotFound(new { message = "Exam not found." });
+				return Ok(new { success = false, message = "Exam not found." });
 			}
 
 			if (!exam.IsOnline)
 			{
-				return BadRequest(new { message = "Model answers are only available for online exams." });
+				return Ok(new { success = false, message = "Model answers are only available for online exams." });
 			}
 
 			var modelAnswers = exam.Questions
@@ -352,7 +352,7 @@ namespace Edu_plat.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
-				return BadRequest(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
+				return Ok(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
 			}
 
 			var userId = User.FindFirstValue("ApplicationUserId");
@@ -360,20 +360,20 @@ namespace Edu_plat.Controllers
             var doctor = await _context.Doctors.AsNoTracking().FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
-				return Unauthorized(new { message = "Doctor profile not found." });
+				return Ok(new { success = false, message = "Doctor profile not found." });
 			}
 
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == examDto.CourseCode);
 			if (course == null)
 			{
-				return NotFound(new { message = "Course not found." });
+				return Ok(new { success = false, message = "Course not found." });
 			}
 
 		
 			var isDoctorAssigned = await _context.CourseDoctors.AnyAsync(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == course.Id);
 			if (!isDoctorAssigned)
 			{
-				return Unauthorized(new { message = "Doctor is not assigned to this course." });
+				return Ok(new { success = false, message = "Doctor is not assigned to this course." });
 			}
 
 			var exam = await _context.Exams
@@ -383,12 +383,12 @@ namespace Edu_plat.Controllers
 
 			if (exam == null)
 			{
-				return NotFound(new { message = "Exam not found." });
+				return Ok(new { success = false, message = "Exam not found." });
 			}
 
 			if (exam.StartTime <= DateTime.UtcNow)
 			{
-				return BadRequest(new { success = false, message = "You cannot update an exam that has already started." });
+				return Ok(new { success = false, message = "You cannot update an exam that has already started." });
 			}
 
 
@@ -404,30 +404,30 @@ namespace Edu_plat.Controllers
 
 				if (examDto.Questions == null || examDto.Questions.Count == 0 || examDto.QuestionsNumber == null)
 				{
-					return BadRequest(new { success = false, message = "Online exams must have at least one question." });
+					return Ok(new { success = false, message = "Online exams must have at least one question." });
 				}
 				 
 				if (examDto.Questions.Count != examDto.QuestionsNumber)
 				{
-					return BadRequest($"Number of questions must be exactly {examDto.QuestionsNumber}.");
+					return Ok($"Number of questions must be exactly {examDto.QuestionsNumber}.");
 				}
 				int totalTimeFromQuestions = examDto.Questions.Sum(q => q.TimeInMin);
 				if (totalTimeFromQuestions != examDto.DurationInMin)
 				{
-					return BadRequest(new { succces = false, message = $"Total exam time should be exactly {examDto.DurationInMin} minutes, but got {totalTimeFromQuestions} minutes." });
+					return Ok(new { succces = false, message = $"Total exam time should be exactly {examDto.DurationInMin} minutes, but got {totalTimeFromQuestions} minutes." });
 				}
 
 				int totalMarksFromQuestions = examDto.Questions.Sum(q => q.Marks);
 				if (totalMarksFromQuestions != examDto.TotalMarks)
 				{
-					return BadRequest(new { succes = false, message = $"Total marks should be exactly {examDto.TotalMarks}, but got {totalMarksFromQuestions}." });
+					return Ok(new { succes = false, message = $"Total marks should be exactly {examDto.TotalMarks}, but got {totalMarksFromQuestions}." });
 				}
 
 
 				bool hasExamBeenTaken = await _context.ExamStudents.AnyAsync(se => se.ExamId == exam.Id);
 				if (hasExamBeenTaken)
 				{
-					return BadRequest(new { success = false, message = "You cannot modify questions for an exam that has already been taken by students." });
+					return Ok(new { success = false, message = "You cannot modify questions for an exam that has already been taken by students." });
 				}
 
 
@@ -520,7 +520,7 @@ namespace Edu_plat.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return Ok(ModelState);
             }
 
             var userId = User.FindFirstValue("ApplicationUserId");
@@ -530,7 +530,7 @@ namespace Edu_plat.Controllers
                 var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
                 if (doctor == null)
                 {
-                    return NotFound(new { message = "Doctor profile not found." });
+                    return Ok(new { success = false, message = "Doctor profile not found." });
                 }
 
                 var exams = await _context.Exams
@@ -539,7 +539,7 @@ namespace Edu_plat.Controllers
                     {
                         e.Id,
                         e.ExamTitle,
-                        e.StartTime,
+                        StartTime = e.StartTime.ToUniversalTime().AddHours(3),
                         e.TotalMarks,
                         e.IsOnline,
                         e.DurationInMin,
@@ -557,7 +557,7 @@ namespace Edu_plat.Controllers
                     {
                         e.Id,
                         e.ExamTitle,
-                        e.StartTime,
+                        StartTime = e.StartTime.ToUniversalTime().AddHours(3),
                         e.TotalMarks,
                         e.IsOnline,
                         e.DurationInMin,
@@ -590,7 +590,7 @@ namespace Edu_plat.Controllers
                     {
                         e.Id,
                         e.ExamTitle,
-                        e.StartTime,
+                        StartTime=e.StartTime.ToUniversalTime().AddHours(3),
                         e.TotalMarks,
                         e.IsOnline,
                         e.DurationInMin,
@@ -617,7 +617,7 @@ namespace Edu_plat.Controllers
                     {
                         e.Id,
                         e.ExamTitle,
-                     e.StartTime,
+                     StartTime=e.StartTime.ToUniversalTime().AddHours(3),
                      e.TotalMarks,
                      e.IsOnline,
                      e.DurationInMin,
@@ -644,7 +644,7 @@ namespace Edu_plat.Controllers
 		{
 			if (examId <= 0 || doctorId <= 0 || string.IsNullOrWhiteSpace(courseCode))
 			{
-				return BadRequest(new { message = "ExamId, DoctorId, and CourseCode are required and must be valid." });
+				return Ok(new {success=false, message = "ExamId, DoctorId, and CourseCode are required and must be valid." });
 			}
 			var userId = User.FindFirstValue("ApplicationUserId");
 
@@ -654,13 +654,13 @@ namespace Edu_plat.Controllers
 
 			if (student == null)
 			{
-				return NotFound(new { message = "Student profile not found." });
+                return Ok(new { success = false, message = "Student profile not found." });
 			}
 
 			var isStudentEnrolled = student.courses.Any(c => c.CourseCode == courseCode);
 			if (!isStudentEnrolled)
 			{
-				return Unauthorized(new { message = "Student is not enrolled in this course." });
+				return Ok(new { success = false, message = "Student is not enrolled in this course." });
 
 			}
 
@@ -670,7 +670,7 @@ namespace Edu_plat.Controllers
 				{
 					e.Id,
 					e.ExamTitle,
-					StartTime = e.StartTime.ToString("yyyy-MM-dd HH:mm:ss"),
+					StartTime = e.StartTime,
 					e.TotalMarks,
 					e.IsOnline,
                     QusetionsNumber=e.IsOnline ? e.QusetionsNumber :0,
@@ -699,10 +699,10 @@ namespace Edu_plat.Controllers
 
 			if (examDetails == null)
 			{
-				return NotFound(new { message = "Online exam not found." });
+				return Ok(new {success=false, message = "Online exam not found." });
 			}
 
-			return Ok(examDetails);
+			return Ok(new { success = true, message = "Fetched successfully", examDetails });
 		}
 
 		#endregion
@@ -714,7 +714,7 @@ namespace Edu_plat.Controllers
 		{
 			if (submission == null || submission.ExamId <= 0 || submission.Score < 0)
 			{
-				return BadRequest(new { message = "Invalid data. Please provide a valid ExamId and Score." });
+				return Ok(new {success=false, message = "Invalid data. Please provide a valid ExamId and Score." });
 			}
 			var userId = User.FindFirstValue("ApplicationUserId");
 			var student = await _context.Students
@@ -723,23 +723,23 @@ namespace Edu_plat.Controllers
 
 			if (student == null)
 			{
-				return NotFound(new { message = "Student profile not found." });
+				return Ok(new {success=false, message = "Student profile not found." });
 			}
 
 			var exam = await _context.Exams.FirstOrDefaultAsync(e => e.Id == submission.ExamId);
 			if (exam == null)
 			{
-				return NotFound(new { message = "Exam not found." });
+				return Ok(new {success=false, message = "Exam not found." });
 			}
 
 			bool isStudentEnrolled = student.courses.Any(c => c.CourseCode == exam.CourseCode);
 			if (!isStudentEnrolled)
 			{
-				return Unauthorized(new { message = "Student is not enrolled in this course." });
+				return Ok(new { success=false, message = "Student is not enrolled in this course." });
 			}
 			if (!exam.IsOnline)
 			{
-				return BadRequest(new { message = "You can only submit scores for online exams." });
+				return Ok(new {success=true, message = "You can only submit scores for online exams." });
 			}
 
 			var examRecord = await _context.ExamStudents
@@ -747,13 +747,13 @@ namespace Edu_plat.Controllers
 
 			if (examRecord != null)
 			{
-				return BadRequest(new { message = "Score already submitted for this exam." });
+				return Ok(new {sucess=false, message = "Score already submitted for this exam." });
 			}
 
 			DateTime calculatedEndTime = exam.StartTime.AddMinutes(exam.DurationInMin);
 			if (DateTime.UtcNow <= calculatedEndTime)
 			{
-				return BadRequest(new { message = "Exam has not finished yet. You cannot submit your score now." });
+				return Ok(new {success=true, message = "Exam has not finished yet. You cannot submit your score now." });
 			}
 
 			int percentage = (int)((submission.Score / (double)exam.TotalMarks) * 100);
@@ -770,7 +770,7 @@ namespace Edu_plat.Controllers
 			_context.ExamStudents.Add(newExamRecord);
 			await _context.SaveChangesAsync();
 
-			return Ok(new { message = "Exam score submitted successfully." });
+			return Ok(new {success=true, message = "Exam score submitted successfully." });
 		}
 
 		#endregion
@@ -782,7 +782,7 @@ namespace Edu_plat.Controllers
 		{
 			if (examId <= 0)
 			{
-				return BadRequest(new { message = "Invalid Exam ID." });
+				return Ok(new {success=false, message = "Invalid Exam ID." });
 			}
 
 			var userId = User.FindFirstValue("ApplicationUserId");
@@ -790,13 +790,13 @@ namespace Edu_plat.Controllers
 
 			if (doctor == null)
 			{
-				return Unauthorized(new { message = "Doctor profile not found." });
+				return Ok(new { success = false, message = "Doctor profile not found." });
 			}
 
 			var exam = await _context.Exams.FirstOrDefaultAsync(e => e.Id == examId);
 			if (exam == null)
 			{
-				return NotFound(new { message = "Exam not found." });
+				return Ok(new { success = false, message = "Exam not found." });
 			}
 
 			bool isDoctorAssigned = await _context.CourseDoctors
@@ -804,7 +804,7 @@ namespace Edu_plat.Controllers
 
 			if (!isDoctorAssigned)
 			{
-				return Unauthorized(new { message = "You are not authorized to view this exam's results." });
+				return Ok(new { success = false, message = "You are not authorized to view this exam's results." });
 			}
 
             var examResults = await _context.ExamStudents
@@ -817,19 +817,20 @@ namespace Edu_plat.Controllers
                     es.precentageExam,
                     StudentName = _context.Students
                         .Where(s => s.StudentId == es.StudentId)
-                        .Select(s => 
+                        .Select(s =>
                         
                             //s.applicationUser.Email,
                             s.applicationUser.UserName
                         )
                         .FirstOrDefault()
+
                 }
                 ).ToListAsync();
 				
 
 			if (examResults.Count == 0)
 			{
-				return NotFound(new {success=false, message = "No students have taken this exam yet." });
+				return Ok(new {success=false, message = "No students have taken this exam yet." , students=examResults });
 			}
 
 			int totalStudents = examResults.Count;
@@ -854,17 +855,17 @@ namespace Edu_plat.Controllers
         {
             if (examId <= 0)
             {
-                return BadRequest(new { success = false, message = "Invalid exam ID." });
+                return Ok(new { success = false, message = "Invalid exam ID." });
             }
 
-            var userId = User.FindFirstValue("ApplicationUserId");
+            var  userId = User.FindFirstValue("ApplicationUserId");
             var student = await _context.Students
                 .Include(s => s.courses)
                 .FirstOrDefaultAsync(s => s.UserId == userId);
 
             if (student == null)
             {
-                return NotFound(new { success = false, message = "Student profile not found." });
+                return Ok(new { success = false, message = "Student profile not found."});
             }
             var exam = await _context.Exams
                 .Include(e => e.Questions!)
@@ -872,19 +873,19 @@ namespace Edu_plat.Controllers
                 .FirstOrDefaultAsync(e => e.Id == examId && e.IsOnline);
             if (exam == null)
             {
-                return NotFound(new { success = false, message = "Online exam not found." });
+                return Ok(new { success = false, message = "Online exam not found." });
             }
 
             bool isStudentEnrolled = student.courses.Any(c => c.CourseCode == exam.CourseCode);
             if (!isStudentEnrolled)
             {
-                return Unauthorized(new { success = false, message = "Student is not enrolled in this course." });
+                return Ok(new { success = false, message = "Student is not enrolled in this course."  });
             }
             var examRecord = await _context.ExamStudents
                 .FirstOrDefaultAsync(es => es.StudentId == student.StudentId && es.ExamId == examId);
             if (examRecord != null)
             {
-                return BadRequest(new { success = false, message = "You have already accessed this exam." });
+                return Ok(new { success = false, message = "You have already accessed this exam."});
             }
             var currentUtcTime = DateTime.UtcNow;
             var examEndTime = exam.StartTime.AddMinutes(exam.DurationInMin);
@@ -892,11 +893,11 @@ namespace Edu_plat.Controllers
 
             if (currentUtcTime < exam.StartTime)
             {
-                return BadRequest(new { success = false, message = "The exam has not started yet." });
+                return Ok(new { success = false, message = "The exam has not started yet."  });
             }
             if (currentUtcTime > examEndTime)
             {
-                return BadRequest(new { success = false, message = "The exam has ended." });
+                return  Ok(new { success = false, message = "The exam has ended."  });
             }
             var newExamRecord = new ExamStudent
             {
@@ -912,7 +913,7 @@ namespace Edu_plat.Controllers
             {
                 exam.Id,
                 exam.ExamTitle,
-                StartTime = exam.StartTime.ToString("yyyy-MM-dd HH:mm:ss") + " UTC",
+                StartTime = exam.StartTime.ToUniversalTime(),
                 exam.TotalMarks,
                 exam.IsOnline,
                 exam.QusetionsNumber,
@@ -934,7 +935,7 @@ namespace Edu_plat.Controllers
                 }).ToList()
             };
 
-            return Ok(new { success = true, exam = examDetails });
+            return Ok(new { success = true, message="fetched successfully" ,exam = examDetails });
         }
         #endregion
 
@@ -946,13 +947,13 @@ namespace Edu_plat.Controllers
         {
             if (dto.ExamId <= 0 || dto.Answers == null || dto.Answers.Count == 0)
             {
-                return BadRequest(new { success = false, message = "Invalid data." });
+                return  Ok(new { success = false, message = "Invalid data." });
             }
 
             var userId = User.FindFirstValue("ApplicationUserId");
             var student = await _context.Students.FirstOrDefaultAsync(s => s.UserId == userId);
             if (student == null)
-                return NotFound(new { success = false, message = "Student not found." });
+                return Ok(new { success = false, message = "Student not found." });
 
             var exam = await _context.Exams
                 .Include(e => e.Questions!)
@@ -960,19 +961,19 @@ namespace Edu_plat.Controllers
                 .FirstOrDefaultAsync(e => e.Id == dto.ExamId && e.IsOnline);
 
             if (exam == null)
-                return NotFound(new { success = false, message = "Exam not found." });
+                return Ok(new { success = false, message = "Exam not found." });
 
             var examEndTime = exam.StartTime.AddMinutes(exam.DurationInMin);
             if (DateTime.UtcNow > examEndTime)
-                return BadRequest(new { success = false, message = "Time is up. Exam already ended." });
+                return Ok(new { success = false, message = "Time is up. Exam already ended." });
 
             var record = await _context.ExamStudents.FirstOrDefaultAsync(es => es.ExamId == dto.ExamId && es.StudentId == student.StudentId);
             if (record == null)
-                return BadRequest(new { success = false, message = "Exam not accessed or not allowed." });
+                return Ok(new { success = false, message = "Exam not accessed or not allowed." });
 
             // Prevent double submission
             if (record.Score > 0 || record.IsAbsent)
-                return BadRequest(new { success = false, message = "Exam already submitted." });
+                return Ok(new { success = false, message = "Exam already submitted." });
 
             int totalScore = 0;
 

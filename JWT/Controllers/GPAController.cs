@@ -93,14 +93,14 @@ namespace Edu_plat.Controllers
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                return Unauthorized(new { success = false, message = "User not found." });
+                return Ok(new { success = false, message = "User not found." });
             }
 
             // Check if the student exists
             var student = await _context.Students.FirstOrDefaultAsync(s => s.UserId == userId);
             if (student == null)
             {
-                return NotFound(new { success = false, message = "Student not found." });
+                return Ok(new { success = false, message = "Student not found." });
             }
 
             // Update the GPA
@@ -129,7 +129,7 @@ namespace Edu_plat.Controllers
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                return Unauthorized(new { success = false, message = "User not found." });
+                return Ok(new { success = false, message = "User not found." });
             }
 
             // Retrieve student data
@@ -140,10 +140,10 @@ namespace Edu_plat.Controllers
 
             if (student == null)
             {
-                return NotFound(new { success = false, message = "Student not found." });
+                return Ok(new { success = false, message = "Student not found." });
             }
 
-            return Ok(new { success = true, message=student.GPA });
+            return Ok(new { success = true, messsage="fetched successfully", gpa=student.GPA });
         }
         #endregion
     }

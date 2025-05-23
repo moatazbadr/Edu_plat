@@ -392,7 +392,7 @@ namespace Edu_plat.Controllers
             //}
 
            
-                return Ok( doctorCourses );
+                return Ok(new {success=true,message="Fetched successfully", Courses=doctorCourses } );
             
         }
         #endregion

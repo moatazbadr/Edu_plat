@@ -252,7 +252,8 @@ namespace Edu_plat.Controllers
 
 			// Get user ID from token
 			var userId = User.FindFirstValue("ApplicationUserId");
-			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+			var user = await _userManager.FindByIdAsync(userId);
+            var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
 				return Ok(new { success = false, message = "Doctor not found." });
@@ -315,7 +316,15 @@ namespace Edu_plat.Controllers
 			videoMaterial.Description ="";
 			videoMaterial.UploadDate = DateTime.Now;
 
-			await _context.SaveChangesAsync();
+            await _notificationHandler.SendMessageAsync(new MessageRequest
+            {
+                Title = videoMaterial.CourseCode,
+                Body = $"New {videoMaterial.FileName} Updated by Dr {user.UserName}  : {videoMaterial.FileName} ",
+                CourseCode = videoMaterial.CourseCode,
+                UserId = userId,
+                Date = DateOnly.Parse(videoMaterial.UploadDate.ToString("yyyy-MM-dd")),
+            });
+            await _context.SaveChangesAsync();
 
 			return Ok(new { success = true, message = "Video updated successfully.", filePath = videoMaterial.FilePath });
 		}

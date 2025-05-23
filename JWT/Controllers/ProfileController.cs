@@ -46,7 +46,10 @@ namespace Edu_plat.Controllers
             };
 
 
-            return Ok(new {success=true,message="fetched successfully", userProfile });
+            return Ok(new {success=true,message="fetched successfully",
+                user.Email,
+                user.UserName
+            });
         }
         #endregion
 
@@ -63,6 +66,14 @@ namespace Edu_plat.Controllers
                 {
                     return Ok(new { success = false, message = "User not Found" });
                 }
+                var passwordHasher = new PasswordHasher<ApplicationUser>();
+                var isSamePassword = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, passwordDto.NewPassword);
+                if (isSamePassword == PasswordVerificationResult.Success)
+                {
+                    return Ok(new { success = false, message = "New password must be different from current password." });
+                }
+
+
                 var result = await _userManager.ChangePasswordAsync(user, passwordDto.CurrentPassword, passwordDto.NewPassword);
                 if (result.Succeeded)
                 {

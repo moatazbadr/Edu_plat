@@ -76,7 +76,7 @@ namespace Edu_plat.Controllers
 
 			if (!allowedContentTypes.ContainsKey(fileExtension))
 			{
-				return BadRequest(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
+				return Ok(new { success = false, message = "Only PDF, Word, and PowerPoint files are allowed." });
 			}
 
 			var course = await _context.Courses
@@ -300,20 +300,20 @@ namespace Edu_plat.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
-				return BadRequest(new { success = false, message = "Invalid data provided." });
+				return Ok(new { success = false, message = "Invalid data provided." });
 			}
 
 			
 			if (updateMaterialDto.File == null || updateMaterialDto.File.Length == 0)
 			{
-				return BadRequest(new { success = false, message = "No file uploaded." });
+				return Ok(new { success = false, message = "No file uploaded." });
 			}
 
 			
 			var maxFileSize = 10 * 1024 * 1024; 
 			if (updateMaterialDto.File.Length > maxFileSize)
 			{
-				return BadRequest(new { success = false, message = "File size exceeds the maximum limit (10 MB)." });
+				return Ok(new { success = false, message = "File size exceeds the maximum limit (10 MB)." });
 			}
 
 			var fileExtension = Path.GetExtension(updateMaterialDto.File.FileName).ToLower();
@@ -328,27 +328,27 @@ namespace Edu_plat.Controllers
 
 			if (string.IsNullOrEmpty(userId))
 			{
-                return Unauthorized(new { success = false, message = "User not found." });
+                return Ok(new { success = false, message = "User not found." });
 
             }
 
             var user = await _userManager.FindByIdAsync(userId);
 			if (user == null)
 			{
-				return Unauthorized(new { success = false, message = "User not found." });
+				return Ok(new { success = false, message = "User not found." });
 			}
 
 			var material = await _context.Materials.FindAsync(updateMaterialDto.Material_Id);
 			if (material == null)
 			{
-				return NotFound(new { success = false, message = "Material not found." });
+				return Ok(new { success = false, message = "Material not found." });
 			}
 
 		
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == material.CourseCode);
 			if (course == null)
 			{
-				return NotFound(new { success = false, message = "Course not found." });
+				return Ok(new { success = false, message = "Course not found." });
 			}
 
 			
@@ -357,7 +357,7 @@ namespace Edu_plat.Controllers
 
 			if (!isDoctorEnrolled)
 			{
-				return StatusCode(403, new { success = false, message = "Doctor is not enrolled in this course." });
+				return Ok( new { success = false, message = "Doctor is not enrolled in this course." });
 			}
 
 		
@@ -759,21 +759,21 @@ namespace Edu_plat.Controllers
 			// Validate input parameters
 			if (string.IsNullOrEmpty(courseCode) || string.IsNullOrEmpty(userId))
 			{
-				return BadRequest(new { success = false, message = "CourseCode and UserId are required." });
+				return Ok(new { success = false, message = "CourseCode and UserId are required." });
 			}
 
 			// Get DoctorId from UserId
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
-				return NotFound(new { success = false, message = "Doctor not found for the provided UserId." });
+				return Ok(new { success = false, message = "Doctor not found for the provided UserId." });
 			}
 
 			// Check if the course exists
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
 			if (course == null)
 			{
-				return NotFound(new { success = false, message = "Course not found." });
+				return Ok(new { success = false, message = "Course not found." });
 			}
 
 			// Retrieve materials uploaded by this doctor for the given course
@@ -799,27 +799,27 @@ namespace Edu_plat.Controllers
 		#region GetDoctorMaterialsForCourseBasedOnType
 
 		[HttpGet("getDoctorMaterials/{courseCode}/{userId}/{typeFile}")]
-		[AllowAnonymous]
+		[Authorize(Roles ="Student")]
 		public async Task<IActionResult> GetDoctorMaterialsForCourse(string courseCode, string userId , string typeFile)
 		{
 			// Validate input parameters
 			if (string.IsNullOrEmpty(courseCode) || string.IsNullOrEmpty(userId))
 			{
-				return BadRequest(new { success = false, message = "CourseCode and UserId are required." });
+				return Ok(new { success = false, message = "CourseCode and UserId are required." });
 			}
 
 			// Get DoctorId from UserId
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
-				return NotFound(new { success = false, message = "Doctor not found for the provided UserId." });
+				return Ok(new { success = false, message = "Doctor not found for the provided UserId." });
 			}
 
 			// Check if the course exists
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
 			if (course == null)
 			{
-				return NotFound(new { success = false, message = "Course not found." });
+				return Ok(new { success = false, message = "Course not found." });
 			}
 
 			// Retrieve materials uploaded by this doctor for the given course

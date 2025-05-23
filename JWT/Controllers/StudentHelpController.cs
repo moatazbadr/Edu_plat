@@ -189,7 +189,7 @@ namespace Edu_plat.Controllers
             ).ToListAsync();
 
             if (files.Count == 0)
-                return Ok(new { success = true, message = $"No file found in {type}" });
+                return Ok(new { success = true, message = $"No file found in {type}" ,files });
 
 
 
