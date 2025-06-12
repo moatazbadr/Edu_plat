@@ -26,9 +26,3 @@ wwwroot\Uploads\COMP206\Software_Eng_Hanout#1_2.pdf
 wwwroot\Uploads\COMP206\Software_Eng_Hanout#3_Requirements.pdf
 wwwroot\Uploads\COMP408\Lecture 5TextClassification.pdf
 wwwroot\Uploads\COMP416\Introduction .pdf
-wwwroot\Videos\COMP201\screen.mp4
-wwwroot\Videos\COMP201\screenTwo.mp4
-wwwroot\Videos\COMP203\Header_Video.mp4
-wwwroot\Videos\COMP203\Screen Recording 2025-03-12 214236.mp4
-wwwroot\Videos\COMP205\1000505076.mp4
-wwwroot\Videos\COMP206\Screen Recording 2025-05-05 211117.mp4

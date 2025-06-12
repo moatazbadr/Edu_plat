@@ -253,22 +253,22 @@ namespace JWT
 
 
 			#region Middleware to Handel 500
-			app.UseExceptionHandler(errorApp =>
-			{
-				errorApp.Run(async context =>
-				{
-					context.Response.StatusCode = 500;
-					context.Response.ContentType = "application/json";
+			//app.UseExceptionHandler(errorApp =>
+			//{
+			//	errorApp.Run(async context =>
+			//	{
+			//		context.Response.StatusCode = 500;
+			//		context.Response.ContentType = "application/json";
 
-					var error = new
-					{
-						StatusCode = 500,
-						Message = "Something went wrong. Please try again later."
-					};
+			//		var error = new
+			//		{
+			//			StatusCode = 500,
+			//			Message = "Something went wrong. Please try again later."
+			//		};
 
-					await context.Response.WriteAsJsonAsync(error);
-				});
-			});
+			//		await context.Response.WriteAsJsonAsync(error);
+			//	});
+			//});
 			#endregion
 
 			// Configure the HTTP request pipeline.

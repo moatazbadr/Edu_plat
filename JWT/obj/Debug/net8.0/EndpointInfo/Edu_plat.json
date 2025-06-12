@@ -2445,8 +2445,8 @@
             "format": "date-time"
           },
           "totalMarks": {
-            "type": "integer",
-            "format": "int32"
+            "type": "number",
+            "format": "double"
           },
           "isOnline": {
             "type": "boolean"
@@ -2569,8 +2569,8 @@
             "nullable": true
           },
           "marks": {
-            "type": "integer",
-            "format": "int32"
+            "type": "number",
+            "format": "double"
           },
           "timeInMin": {
             "type": "integer",

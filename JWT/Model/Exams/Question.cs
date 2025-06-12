@@ -4,7 +4,7 @@
 	{
 		public int Id { get; set; }
 		public string QuestionText { get; set; }  // نص السؤال
-		public int Marks { get; set; }  // درجة السؤال
+		public double Marks { get; set; }  // درجة السؤال
 
 		public int TimeInMin { get; set; }
 		

@@ -205,38 +205,33 @@ namespace Edu_plat.Controllers
 
         #region DeleteDoctor
         [HttpDelete("DeleteDoctor")]
-        [Authorize(Roles = "Admin,SuperAdmin")] 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> DeleteDoctor([FromQuery] string userId)
         {
             if (string.IsNullOrEmpty(userId))
-                return Ok(new { success = false, message = "UserId is required" });
+                return BadRequest(new { success = false, message = "UserId is required" });
 
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
-                return Ok(new { success = false, message = "User not found" });
+                return NotFound(new { success = false, message = "User not found" });
 
             if (!await _userManager.IsInRoleAsync(user, "Doctor"))
-                return Ok(new { success = false, message = "User is not a doctor" });
+                return BadRequest(new { success = false, message = "User is not a doctor" });
 
-         
             var doctor = await _context.Set<Doctor>().FirstOrDefaultAsync(d => d.UserId == userId);
             if (doctor != null)
-            {
-                _context.Set<Doctor>().Remove(doctor);
-            }
+                _context.Set<Doctor>().Remove(doctor); // Remove from Doctor table
 
-       
-            var result = await _userManager.DeleteAsync(user);
+            await _context.SaveChangesAsync(); // Save domain deletion before identity deletion
+
+            var result = await _userManager.DeleteAsync(user); // Remove from AspNetUsers
             if (result.Succeeded)
-            {
-                await _context.SaveChangesAsync();
                 return Ok(new { success = true, message = "Doctor deleted successfully." });
-            }
             else
-            {
-                return BadRequest(new { success = false, message = "Deletion failed.", errors = result.Errors });
-            }
+                return BadRequest(new { success = false, message = "User deletion failed.", errors = result.Errors });
         }
+
+
 
         #endregion
 
@@ -273,7 +268,7 @@ namespace Edu_plat.Controllers
 
         #region DeleteStudent
         [HttpDelete("DeleteStudent")]
-        [Authorize(Roles = "Admin,SuperAdmin")] 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> DeleteStudent([FromQuery] string userId)
         {
             if (string.IsNullOrEmpty(userId))
@@ -283,29 +278,22 @@ namespace Edu_plat.Controllers
             if (user == null)
                 return NotFound(new { success = false, message = "User not found" });
 
-          
             if (!await _userManager.IsInRoleAsync(user, "Student"))
                 return BadRequest(new { success = false, message = "User is not a student" });
 
-            
             var student = await _context.Set<Student>().FirstOrDefaultAsync(s => s.UserId == userId);
             if (student != null)
-            {
-                _context.Set<Student>().Remove(student);
-            }
+                _context.Set<Student>().Remove(student); // Remove from Student table
 
-            
-            var result = await _userManager.DeleteAsync(user);
+            await _context.SaveChangesAsync(); // Save domain deletion before identity deletion
+
+            var result = await _userManager.DeleteAsync(user); // Remove from AspNetUsers
             if (result.Succeeded)
-            {
-                await _context.SaveChangesAsync();
                 return Ok(new { success = true, message = "Student deleted successfully." });
-            }
             else
-            {
-                return BadRequest(new { success = false, message = "Deletion failed.", errors = result.Errors });
-            }
+                return BadRequest(new { success = false, message = "User deletion failed.", errors = result.Errors });
         }
+
         #endregion
 
         #region Get eduPlat stats

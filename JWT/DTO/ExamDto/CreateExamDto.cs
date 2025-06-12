@@ -13,7 +13,7 @@ namespace Edu_plat.DTO.ExamDto
 		public DateTime StartTime { get; set; }
 
 		//[Range(1, int.MaxValue, ErrorMessage = "Total marks must be greater than 0.")]
-		public int TotalMarks { get; set; }
+		public double  TotalMarks { get; set; }
 
 		[Required(ErrorMessage = "Exam type (IsOnline) is required.")]
 		public bool IsOnline { get; set; }

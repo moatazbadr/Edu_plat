@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9RwO89s8OUleUgUx9Rok2tARPfrZEyxHeTsdQ3QeV08=",
+  "Hash": "S59FA2Qv9o54V21MCmbOYbWChYWyFL1OQP6r4r/2LO8=",
   "Source": "Edu_plat",
   "BasePath": "_content/Edu_plat",
   "Mode": "Default",
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "qt7m24b37c",
-      "Integrity": "HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=",
+      "Fingerprint": "9e4ax17jmv",
+      "Integrity": "wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf"
@@ -309,48 +309,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP201\\Software_Eng_Hanout#3_Requirements_2.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Data Mining 2020 Final.pdf",
-      "SourceId": "Edu_plat",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
-      "BasePath": "_content/Edu_plat",
-      "RelativePath": "Uploads/COMP205/Data Mining 2020 Final#[.{fingerprint}]?.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "rv9iyh1f6z",
-      "Integrity": "eee/56myrFeX+6BvuVWu3B18pluq3/nyF7DxQnUF958=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\COMP205\\Data Mining 2020 Final.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Lecture 5TextClassification.pdf",
-      "SourceId": "Edu_plat",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
-      "BasePath": "_content/Edu_plat",
-      "RelativePath": "Uploads/COMP205/Lecture 5TextClassification#[.{fingerprint}]?.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "m2noxi8ou7",
-      "Integrity": "MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\COMP205\\Lecture 5TextClassification.pdf"
     },
     {
       "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Software (Lect 7).pdf",
@@ -626,12 +584,12 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\COMP408\\Lecture 5TextClassification.pdf"
     },
     {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP416\\Lecture 5TextClassification.pdf",
+      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP416\\Introduction .pdf",
       "SourceId": "Edu_plat",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
       "BasePath": "_content/Edu_plat",
-      "RelativePath": "Uploads/COMP416/Lecture 5TextClassification#[.{fingerprint}]?.pdf",
+      "RelativePath": "Uploads/COMP416/Introduction #[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -640,137 +598,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "m2noxi8ou7",
-      "Integrity": "MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I=",
+      "Fingerprint": "plky7lp9vs",
+      "Integrity": "M7isKpj9TW/y6A1C04rJ76KbpkEAZW/q0LrakXu3FQA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\COMP416\\Lecture 5TextClassification.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP201\\screen.mp4",
-      "SourceId": "Edu_plat",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
-      "BasePath": "_content/Edu_plat",
-      "RelativePath": "Videos/COMP201/screen#[.{fingerprint}]?.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "lt7hxhnssw",
-      "Integrity": "J6m7vuj4q4qFOoKzRUQzLli3Enm6aQ9I6g/22ywLZ8w=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Videos\\COMP201\\screen.mp4"
-    },
-    {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP201\\screenTwo.mp4",
-      "SourceId": "Edu_plat",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
-      "BasePath": "_content/Edu_plat",
-      "RelativePath": "Videos/COMP201/screenTwo#[.{fingerprint}]?.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "p37clqznkd",
-      "Integrity": "9XumXSvybupxfdcqXKGmozFK7Ul9ZF5/1E30zcOQtXQ=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Videos\\COMP201\\screenTwo.mp4"
-    },
-    {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Header_Video.mp4",
-      "SourceId": "Edu_plat",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
-      "BasePath": "_content/Edu_plat",
-      "RelativePath": "Videos/COMP203/Header_Video#[.{fingerprint}]?.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "9010mg6nnw",
-      "Integrity": "GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Videos\\COMP203\\Header_Video.mp4"
-    },
-    {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
-      "SourceId": "Edu_plat",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
-      "BasePath": "_content/Edu_plat",
-      "RelativePath": "Videos/COMP203/Screen Recording 2025-03-12 214236#[.{fingerprint}]?.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "rv5y7itrpg",
-      "Integrity": "uS5meJxTybXHkU4pnX5Kg/EQJKL3AcjCXV+rfatNhNY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4"
-    },
-    {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP205\\1000505076.mp4",
-      "SourceId": "Edu_plat",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
-      "BasePath": "_content/Edu_plat",
-      "RelativePath": "Videos/COMP205/1000505076#[.{fingerprint}]?.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "a59dr0oo7c",
-      "Integrity": "juoTLROvzVh56kx3Kw3ty1mEpLO62am2vNypckMvr9M=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Videos\\COMP205\\1000505076.mp4"
-    },
-    {
-      "Identity": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP206\\Screen Recording 2025-05-05 211117.mp4",
-      "SourceId": "Edu_plat",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\",
-      "BasePath": "_content/Edu_plat",
-      "RelativePath": "Videos/COMP206/Screen Recording 2025-05-05 211117#[.{fingerprint}]?.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "8m42cum6cf",
-      "Integrity": "4CeN+za0gY8IA1A+DqlNmsvn27fCzaQkSZs2/8zaXV0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Videos\\COMP206\\Screen Recording 2025-05-05 211117.mp4"
+      "OriginalItemSpec": "wwwroot\\Uploads\\COMP416\\Introduction .pdf"
     }
   ],
   "Endpoints": [
@@ -857,6 +689,51 @@
       ]
     },
     {
+      "Route": "Uploads/AdminFiles/FirstLevelFall.9e4ax17jmv.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3951400"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 17:07:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9e4ax17jmv"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/AdminFiles/FirstLevelFall.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8="
+        }
+      ]
+    },
+    {
       "Route": "Uploads/AdminFiles/FirstLevelFall.pdf",
       "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf",
       "Selectors": [],
@@ -867,7 +744,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2410270"
+          "Value": "3951400"
         },
         {
           "Name": "Content-Type",
@@ -875,11 +752,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=\""
+          "Value": "\"wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 12:29:05 GMT"
+          "Value": "Fri, 23 May 2025 17:07:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -889,52 +766,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/AdminFiles/FirstLevelFall.qt7m24b37c.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\AdminFiles\\FirstLevelFall.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2410270"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 12:29:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "qt7m24b37c"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/AdminFiles/FirstLevelFall.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-HhOlcB+9A1AqUu6Swmyon4EXZktfUwgd3E24pN55wqM="
+          "Value": "sha256-wcmp3L41bIY6FskEiHMvZSSzAzyRhUvifFGNKvCD4I8="
         }
       ]
     },
@@ -1371,7 +1203,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 08:45:42 GMT"
+          "Value": "Fri, 23 May 2025 17:05:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1416,7 +1248,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 08:45:42 GMT"
+          "Value": "Fri, 23 May 2025 17:05:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1919,170 +1751,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-FFxp/w7wdhbT/xXlhi5f5hpjLmJUjruFb6NqO//EAyE="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/COMP205/Data Mining 2020 Final.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Data Mining 2020 Final.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4886779"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eee/56myrFeX+6BvuVWu3B18pluq3/nyF7DxQnUF958=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 16:19:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-eee/56myrFeX+6BvuVWu3B18pluq3/nyF7DxQnUF958="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/COMP205/Data Mining 2020 Final.rv9iyh1f6z.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Data Mining 2020 Final.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4886779"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eee/56myrFeX+6BvuVWu3B18pluq3/nyF7DxQnUF958=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 16:19:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "rv9iyh1f6z"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/COMP205/Data Mining 2020 Final.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-eee/56myrFeX+6BvuVWu3B18pluq3/nyF7DxQnUF958="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/COMP205/Lecture 5TextClassification.m2noxi8ou7.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Lecture 5TextClassification.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1450786"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 11:45:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "m2noxi8ou7"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/COMP205/Lecture 5TextClassification.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/COMP205/Lecture 5TextClassification.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP205\\Lecture 5TextClassification.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1450786"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 11:45:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I="
         }
       ]
     },
@@ -3153,8 +2821,8 @@
       ]
     },
     {
-      "Route": "Uploads/COMP416/Lecture 5TextClassification.m2noxi8ou7.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP416\\Lecture 5TextClassification.pdf",
+      "Route": "Uploads/COMP416/Introduction .pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP416\\Introduction .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3163,7 +2831,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1450786"
+          "Value": "508694"
         },
         {
           "Name": "Content-Type",
@@ -3171,56 +2839,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I=\""
+          "Value": "\"M7isKpj9TW/y6A1C04rJ76KbpkEAZW/q0LrakXu3FQA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 14:24:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "m2noxi8ou7"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/COMP416/Lecture 5TextClassification.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/COMP416/Lecture 5TextClassification.pdf",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP416\\Lecture 5TextClassification.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1450786"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 14:24:37 GMT"
+          "Value": "Fri, 23 May 2025 18:03:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3230,13 +2853,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MqyoQc8GLHfS0U84tySQ2WUrM38feBt5GZ0YXjD7i+I="
+          "Value": "sha256-M7isKpj9TW/y6A1C04rJ76KbpkEAZW/q0LrakXu3FQA="
         }
       ]
     },
     {
-      "Route": "Videos/COMP201/screen.lt7hxhnssw.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP201\\screen.mp4",
+      "Route": "Uploads/COMP416/Introduction .plky7lp9vs.pdf",
+      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Uploads\\COMP416\\Introduction .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3245,19 +2868,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3854648"
+          "Value": "508694"
         },
         {
           "Name": "Content-Type",
-          "Value": "video/mp4"
+          "Value": "application/pdf"
         },
         {
           "Name": "ETag",
-          "Value": "\"J6m7vuj4q4qFOoKzRUQzLli3Enm6aQ9I6g/22ywLZ8w=\""
+          "Value": "\"M7isKpj9TW/y6A1C04rJ76KbpkEAZW/q0LrakXu3FQA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 12:50:46 GMT"
+          "Value": "Fri, 23 May 2025 18:03:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3267,462 +2890,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lt7hxhnssw"
+          "Value": "plky7lp9vs"
         },
         {
           "Name": "label",
-          "Value": "Videos/COMP201/screen.mp4"
+          "Value": "Uploads/COMP416/Introduction .pdf"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-J6m7vuj4q4qFOoKzRUQzLli3Enm6aQ9I6g/22ywLZ8w="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP201/screen.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP201\\screen.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3854648"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"J6m7vuj4q4qFOoKzRUQzLli3Enm6aQ9I6g/22ywLZ8w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 12:50:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-J6m7vuj4q4qFOoKzRUQzLli3Enm6aQ9I6g/22ywLZ8w="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP201/screenTwo.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP201\\screenTwo.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "56247114"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"9XumXSvybupxfdcqXKGmozFK7Ul9ZF5/1E30zcOQtXQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 12:54:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-9XumXSvybupxfdcqXKGmozFK7Ul9ZF5/1E30zcOQtXQ="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP201/screenTwo.p37clqznkd.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP201\\screenTwo.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "56247114"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"9XumXSvybupxfdcqXKGmozFK7Ul9ZF5/1E30zcOQtXQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 12:54:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "p37clqznkd"
-        },
-        {
-          "Name": "label",
-          "Value": "Videos/COMP201/screenTwo.mp4"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-9XumXSvybupxfdcqXKGmozFK7Ul9ZF5/1E30zcOQtXQ="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP203/Header_Video.9010mg6nnw.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Header_Video.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22608037"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 18:33:21 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "9010mg6nnw"
-        },
-        {
-          "Name": "label",
-          "Value": "Videos/COMP203/Header_Video.mp4"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP203/Header_Video.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Header_Video.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22608037"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 18:33:21 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-GTv3bqkxqAJ6nEsm1CgX3oTSfRq/OTi6+kTElJP5/Yo="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP203/Screen Recording 2025-03-12 214236.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1392570"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uS5meJxTybXHkU4pnX5Kg/EQJKL3AcjCXV+rfatNhNY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-uS5meJxTybXHkU4pnX5Kg/EQJKL3AcjCXV+rfatNhNY="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP203/Screen Recording 2025-03-12 214236.rv5y7itrpg.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP203\\Screen Recording 2025-03-12 214236.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1392570"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uS5meJxTybXHkU4pnX5Kg/EQJKL3AcjCXV+rfatNhNY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 18:30:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "rv5y7itrpg"
-        },
-        {
-          "Name": "label",
-          "Value": "Videos/COMP203/Screen Recording 2025-03-12 214236.mp4"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-uS5meJxTybXHkU4pnX5Kg/EQJKL3AcjCXV+rfatNhNY="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP205/1000505076.a59dr0oo7c.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP205\\1000505076.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1010871"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"juoTLROvzVh56kx3Kw3ty1mEpLO62am2vNypckMvr9M=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 10:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "a59dr0oo7c"
-        },
-        {
-          "Name": "label",
-          "Value": "Videos/COMP205/1000505076.mp4"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-juoTLROvzVh56kx3Kw3ty1mEpLO62am2vNypckMvr9M="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP205/1000505076.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP205\\1000505076.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1010871"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"juoTLROvzVh56kx3Kw3ty1mEpLO62am2vNypckMvr9M=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 10:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-juoTLROvzVh56kx3Kw3ty1mEpLO62am2vNypckMvr9M="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP206/Screen Recording 2025-05-05 211117.8m42cum6cf.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP206\\Screen Recording 2025-05-05 211117.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5213478"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4CeN+za0gY8IA1A+DqlNmsvn27fCzaQkSZs2/8zaXV0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 08:27:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "8m42cum6cf"
-        },
-        {
-          "Name": "label",
-          "Value": "Videos/COMP206/Screen Recording 2025-05-05 211117.mp4"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-4CeN+za0gY8IA1A+DqlNmsvn27fCzaQkSZs2/8zaXV0="
-        }
-      ]
-    },
-    {
-      "Route": "Videos/COMP206/Screen Recording 2025-05-05 211117.mp4",
-      "AssetFile": "C:\\Users\\moataz\\Desktop\\GradProject\\WorkingExam\\Megered\\Edu_platFinal\\JWT\\wwwroot\\Videos\\COMP206\\Screen Recording 2025-05-05 211117.mp4",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5213478"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "video/mp4"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4CeN+za0gY8IA1A+DqlNmsvn27fCzaQkSZs2/8zaXV0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 08:27:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-4CeN+za0gY8IA1A+DqlNmsvn27fCzaQkSZs2/8zaXV0="
+          "Value": "sha256-M7isKpj9TW/y6A1C04rJ76KbpkEAZW/q0LrakXu3FQA="
         }
       ]
     }

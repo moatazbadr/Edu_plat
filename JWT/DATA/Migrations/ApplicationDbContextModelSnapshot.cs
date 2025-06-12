@@ -243,8 +243,8 @@ namespace JWT.Migrations
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TotalMarks")
-                        .HasColumnType("int");
+                    b.Property<double>("TotalMarks")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -266,8 +266,8 @@ namespace JWT.Migrations
                     b.Property<bool>("IsAbsent")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Score")
-                        .HasColumnType("int");
+                    b.Property<double>("Score")
+                        .HasColumnType("float");
 
                     b.Property<int>("precentageExam")
                         .HasColumnType("int");
@@ -290,8 +290,8 @@ namespace JWT.Migrations
                     b.Property<int>("ExamId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Marks")
-                        .HasColumnType("int");
+                    b.Property<double>("Marks")
+                        .HasColumnType("float");
 
                     b.Property<string>("QuestionText")
                         .IsRequired()
@@ -519,14 +519,24 @@ namespace JWT.Migrations
                     b.Property<int?>("DoctorId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("DoctorId1")
+                        .HasColumnType("int");
+
                     b.Property<int?>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StudentId1")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DoctorId");
 
+                    b.HasIndex("DoctorId1");
+
                     b.HasIndex("StudentId");
+
+                    b.HasIndex("StudentId1");
 
                     b.ToTable("userDevice");
                 });
@@ -879,11 +889,13 @@ namespace JWT.Migrations
                 {
                     b.HasOne("Edu_plat.Model.Doctor", "Doctor")
                         .WithMany()
-                        .HasForeignKey("DoctorId");
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Edu_plat.Model.Student", "Student")
                         .WithMany()
-                        .HasForeignKey("StudentId");
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Doctor");
 
@@ -893,12 +905,22 @@ namespace JWT.Migrations
             modelBuilder.Entity("Edu_plat.Model.userDevice", b =>
                 {
                     b.HasOne("Edu_plat.Model.Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Edu_plat.Model.Doctor", null)
                         .WithMany("userDevices")
-                        .HasForeignKey("DoctorId");
+                        .HasForeignKey("DoctorId1");
 
                     b.HasOne("Edu_plat.Model.Student", "student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Edu_plat.Model.Student", null)
                         .WithMany("userDevices")
-                        .HasForeignKey("StudentId");
+                        .HasForeignKey("StudentId1");
 
                     b.Navigation("Doctor");
 

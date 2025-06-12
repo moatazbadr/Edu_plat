@@ -7,7 +7,7 @@ namespace Edu_plat.Model.Exams
 		public int Id { get; set; }
 		public string ExamTitle { get; set; }  // عنوان الامتحان
 		public DateTime StartTime { get; set; }  // وقت بدء الامتحان
-		public int TotalMarks { get; set; }  // الدرجة الكلية للامتحان
+		public double TotalMarks { get; set; }  // الدرجة الكلية للامتحان
 		public bool IsOnline { get; set; }  // هل الامتحان أونلاين أم لا
 		public int? QusetionsNumber { get; set; }
 		public int DurationInMin { get; set; }

@@ -209,7 +209,7 @@ namespace Edu_plat.Controllers
                     f.Id,
                     f.FileName,
                     f.FilePath,
-                    f.uploadeDate,
+                    uploadeDate=f.uploadeDate.ToString("yyyy-MM-dd HH:mm:ss"),
                     f.size,
                     f.type
                 })

@@ -3,6 +3,7 @@ using Edu_plat.Model;
 using Edu_plat.Model.Interfaces;
 using Edu_plat.Model.OTP;
 using Edu_plat.Services;
+using Google.Api.Gax;
 using JWT.DATA;
 using JWT.DTO;
 using JWT.Model.OTP;
@@ -12,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Linq;
 using Org.BouncyCastle.Crypto.Generators;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -311,9 +313,14 @@ namespace JWT.Controllers
        
                     return Ok(new
                     {
+                        success=true,
+                        message= "Login successful",
+                        userData = new {
                         token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
-                        roles = roles,
+                         roles,
                         expiration = DateTime.Now.AddYears(1)
+                    }
+
                     });
                 }
                 else

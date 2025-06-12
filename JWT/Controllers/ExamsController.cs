@@ -166,6 +166,9 @@ namespace Edu_plat.Controllers
                 Date= DateOnly.FromDateTime(exam.StartTime)
              });
 
+            var cairoTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Egypt Standard Time");
+            var localStartTime = TimeZoneInfo.ConvertTimeFromUtc(exam.StartTime, cairoTimeZone);
+            var startTimeEgypt = localStartTime.ToString("yyyy-MM-dd HH:mm:ss");
 
 
             return Ok(new { success = true, message = "Exam created successfully And notification sent to student", examId = exam.Id });
@@ -393,11 +396,13 @@ namespace Edu_plat.Controllers
 
 
 			exam.ExamTitle = examDto.ExamTitle;
-			exam.StartTime = examDto.StartTime;
+            exam.CourseCode = examDto.CourseCode;
+            exam.StartTime = examDto.StartTime;
 			exam.TotalMarks = examDto.TotalMarks;
 			exam.IsOnline = examDto.IsOnline;
 			exam.DurationInMin = examDto.DurationInMin;
-			exam.QusetionsNumber = examDto.IsOnline ? examDto.QuestionsNumber : null;
+            exam.Location = examDto.LocationExam;
+            exam.QusetionsNumber = examDto.IsOnline ? examDto.QuestionsNumber : null;
 
 			if (examDto.IsOnline)
 			{
@@ -417,7 +422,7 @@ namespace Edu_plat.Controllers
 					return Ok(new { succces = false, message = $"Total exam time should be exactly {examDto.DurationInMin} minutes, but got {totalTimeFromQuestions} minutes." });
 				}
 
-				int totalMarksFromQuestions = examDto.Questions.Sum(q => q.Marks);
+				double totalMarksFromQuestions = examDto.Questions.Sum(q => q.Marks);
 				if (totalMarksFromQuestions != examDto.TotalMarks)
 				{
 					return Ok(new { succes = false, message = $"Total marks should be exactly {examDto.TotalMarks}, but got {totalMarksFromQuestions}." });
@@ -533,13 +538,15 @@ namespace Edu_plat.Controllers
                     return Ok(new { success = false, message = "Doctor profile not found." });
                 }
 
+
                 var exams = await _context.Exams
                     .Where(e => _context.CourseDoctors.Any(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == e.CourseId))
                     .Select(e => new
                     {
+            
                         e.Id,
                         e.ExamTitle,
-                        StartTime = e.StartTime.ToUniversalTime().AddHours(3),
+                        StartTime = DateTimeExtensions.ToEgyptTime(e.StartTime),
                         e.TotalMarks,
                         e.IsOnline,
                         e.DurationInMin,
@@ -547,7 +554,7 @@ namespace Edu_plat.Controllers
                         e.CourseCode,
                         e.Location,
                         e.DoctorId,
-                        IsFinished = e.StartTime.AddMinutes(e.DurationInMin) < DateTime.Now.AddHours(-3)
+                        IsFinished = e.StartTime.AddMinutes(e.DurationInMin) < DateTime.UtcNow
                     })
                     .ToListAsync();
 
@@ -557,7 +564,7 @@ namespace Edu_plat.Controllers
                     {
                         e.Id,
                         e.ExamTitle,
-                        StartTime = e.StartTime.ToUniversalTime().AddHours(3),
+                        StartTime =e.StartTime.ToString("yyyy-MM-dd HH:mm:ss"),
                         e.TotalMarks,
                         e.IsOnline,
                         e.DurationInMin,
@@ -590,7 +597,7 @@ namespace Edu_plat.Controllers
                     {
                         e.Id,
                         e.ExamTitle,
-                        StartTime=e.StartTime.ToUniversalTime().AddHours(3),
+                        StartTime=DateTimeExtensions.ToEgyptTime(e.StartTime),
                         e.TotalMarks,
                         e.IsOnline,
                         e.DurationInMin,
@@ -598,7 +605,7 @@ namespace Edu_plat.Controllers
                         e.CourseCode,
                         e.Location,
                         e.DoctorId,
-                        HasEnded = e.StartTime.AddMinutes(e.DurationInMin) < DateTime.Now.AddHours(-3),
+                        HasEnded = e.StartTime.AddMinutes(e.DurationInMin) < DateTime.UtcNow,
                         StudentExam = e.IsOnline ? _context.ExamStudents
                             .Where(es => es.StudentId == student.StudentId && es.ExamId == e.Id)
                             .Select(es => new
@@ -617,7 +624,7 @@ namespace Edu_plat.Controllers
                     {
                         e.Id,
                         e.ExamTitle,
-                     StartTime=e.StartTime.ToUniversalTime().AddHours(3),
+                     StartTime=e.StartTime.ToString("yyyy-MM-dd HH:mm:ss"),
                      e.TotalMarks,
                      e.IsOnline,
                      e.DurationInMin,
@@ -975,7 +982,7 @@ namespace Edu_plat.Controllers
             if (record.Score > 0 || record.IsAbsent)
                 return Ok(new { success = false, message = "Exam already submitted." });
 
-            int totalScore = 0;
+            double totalScore = 0;
 
             foreach (var answer in dto.Answers)
             {
