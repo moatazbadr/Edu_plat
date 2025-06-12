@@ -136,7 +136,7 @@ namespace Edu_plat.Controllers
             var courses = await _context.Courses
                 .Include(c => c.CourseDoctors)
                 .ThenInclude(cd => cd.Doctor)
-                .ThenInclude(d => d.applicationUser) // To get the username from ApplicationUser
+                .ThenInclude(d => d.applicationUser) 
                 .Select(c => new
                 {
                     CourseCode = c.CourseCode,
@@ -308,13 +308,13 @@ namespace Edu_plat.Controllers
                     continue;
                 }
 
-                // Count how many doctors are already registered for this course
+                
                 int registeredDoctors = await _context.CourseDoctors
                     .CountAsync(cd => cd.CourseId == course.Id);
 
                 if (registeredDoctors >= 2)
                 {
-                    fullCourses.Add(courseCode); // Course is full
+                    fullCourses.Add(courseCode); 
                     continue;
                 }
 
@@ -567,13 +567,13 @@ namespace Edu_plat.Controllers
 
             var courseRequired = await _context.Courses
                                         .Include(c => c.CourseDoctors)
-                                        .ThenInclude(cd => cd.Doctor)  // Load doctor details in one query
+                                        .ThenInclude(cd => cd.Doctor)  
                                         .FirstOrDefaultAsync(c => c.CourseCode == CourseCode);
 
             if (courseRequired == null)
                 return NotFound(new { success = false, message = "No course with that code was found" });
 
-            // Fetch user details for doctors in one query instead of looping
+           
             var doctorUserIds = courseRequired.CourseDoctors
                                               .Select(cd => cd.Doctor.UserId)
                                               .Where(userId => !string.IsNullOrEmpty(userId))
@@ -605,7 +605,7 @@ namespace Edu_plat.Controllers
                 return Ok(new { success = false, message = "course code cannot be empty" });
             }
 
-            //where returns a list 
+             
             var courseRequired = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode==coursecode);
             if (courseRequired == null)
             {
@@ -647,7 +647,7 @@ namespace Edu_plat.Controllers
                 return Ok(new { success = false, message = "course code cannot be empty" });
             }
 
-            //where returns a list 
+            
             var courseRequired = await _context.Courses.FirstOrDefaultAsync(x => x.CourseCode == coursecode);
             if (courseRequired == null)
             {

@@ -1,7 +1,7 @@
 ﻿using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using MailKit.Net.Smtp;  // Ensure you use the correct namespace for SmtpClient
+using MailKit.Net.Smtp;  
 using System.Threading.Tasks;
 using JWT.DTO;
 using JWT.Model.Settings;
@@ -12,7 +12,7 @@ namespace JWT.Services
 	{
 		private readonly MailSettings _mailSettings;
 
-		// Constructor for dependency injection of mail settings
+	
 		public MailingService(IOptions<MailSettings> mailSettings)
 		{
 			_mailSettings = mailSettings.Value;

@@ -39,19 +39,19 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> UploadVideo([FromForm] UploadVideoDto uploadVideoDto)
 		{
-			// Validate the request data
+			
 			if (!ModelState.IsValid)
 			{
 				return Ok(new { success = false, message = "Invalid data provided." });
 			}
 
-			// Check if a video file is provided
+			
 			if (uploadVideoDto.Video == null || uploadVideoDto.Video.Length == 0)
 			{
 				return	Ok(new { success = false, message = "No video uploaded." });
 			}
 
-			// Set maximum allowed video file size (e.g., 100MB)
+			
 			var maxFileSize = 100 * 1024 * 1024; // 100MB
 			if (uploadVideoDto.Video.Length > maxFileSize)
 			{
@@ -59,14 +59,14 @@ namespace Edu_plat.Controllers
 			}
 
 
-				// Allowed video file extensions
+				
 				var allowedExtensions = new[] { ".mp4", ".avi", ".mov", ".mkv" };
 			var fileExtension = Path.GetExtension(uploadVideoDto.Video.FileName).ToLower();
 			if (!allowedExtensions.Contains(fileExtension))
 			{
 				return Ok(new { success = false, message = "Only MP4, AVI, MOV, and MKV videos are allowed." });
 			}
-			// Allowed video file extensions and MIME types
+			
 			var allowedMimeTypes = new Dictionary<string, string>
 			{
 					{ ".mp4", "video/mp4" },
@@ -75,10 +75,10 @@ namespace Edu_plat.Controllers
 					{ ".mkv", "video/x-matroska" }
 			};
 
-			//var fileExtension = Path.GetExtension(uploadVideoDto.Video.FileName).ToLower();
+			
 			var contentType = uploadVideoDto.Video.ContentType.ToLower();
 
-			// Check if the file extension is allowed
+			
 			if (!allowedMimeTypes.ContainsKey(fileExtension))
 			{
 				return Ok(new { success = false, message = "Only MP4, AVI, MOV, and MKV videos are allowed." });
@@ -91,14 +91,14 @@ namespace Edu_plat.Controllers
 			//}
 
 
-			// Check if the course exists
+			
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == uploadVideoDto.CourseCode);
 			if (course == null)
 			{
 				return Ok(new { success = false, message = "Course not found." });
 			}
 
-			// Get the doctor details from the token	
+				
 			var userId = User.FindFirstValue("ApplicationUserId");
             var user = await _userManager.FindByIdAsync(userId);
             var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
@@ -107,57 +107,53 @@ namespace Edu_plat.Controllers
 				return Ok(new { success = false, message = "Doctor not found." });
 			}
 
-			// Check if the doctor is enrolled in the course 
+			 
 			bool isDoctorEnrolled = await _context.CourseDoctors.AnyAsync(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == course.Id);
 			if (!isDoctorEnrolled)
 			{
 				return Ok( new { success = false, message = "Doctor is not enrolled in this course." });
 			}
 
-			// Define the directory path for storing videos
+			
 			var videoDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "Videos", course.CourseCode);
 			if (!Directory.Exists(videoDirectory))
 			{
 				Directory.CreateDirectory(videoDirectory);
 			}
 
-			// Generate the video file name
-			//var fileName = string.IsNullOrWhiteSpace(uploadVideoDto.FileName)
-			//	? Path.GetFileName(uploadVideoDto.Video.FileName)
-			//	: uploadVideoDto.FileName + Path.GetExtension(uploadVideoDto.Video.FileName); ;
-
+			
 
 			var fileName = Path.GetFileName(uploadVideoDto.Video.FileName);
 
 
 			var filePath = Path.Combine(videoDirectory, fileName);
 
-			// Save the video file to the server
+			
 			using (var stream = new FileStream(filePath, FileMode.Create))
 			{
 				await uploadVideoDto.Video.CopyToAsync(stream);
 			}
 
-			//Initialize file size variable
+			
 			string fileSize = "Unknown";
 
-			// Check if file exists before calculating its size
+			
 			if (System.IO.File.Exists(filePath))
 			{
 				long fileSizeBytes = new FileInfo(filePath).Length;
-				fileSize = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; // Convert to MB
+				fileSize = (fileSizeBytes / (1024.0 * 1024.0)).ToString("F2") + " MB"; 
 			}
 
-			// Save video details in the database
+			
 			var videoMaterial = new Material
 			{
-				CourseId = course.Id, // Course ID
-				CourseCode = course.CourseCode, // Course Code
-				DoctorId = doctor.DoctorId, // Doctor ID
-				FilePath = $"/Videos/{course.CourseCode}/{fileName}", // File path in the server
-				FileName = fileName, // File name
-				Description = "", // Video description
-				UploadDate = DateTime.Now, // Upload timestamp
+				CourseId = course.Id, 
+				CourseCode = course.CourseCode,
+				DoctorId = doctor.DoctorId, 
+				FilePath = $"/Videos/{course.CourseCode}/{fileName}", 
+				FileName = fileName, 
+				Description = "", 
+				UploadDate = DateTime.Now, 
 				TypeFile = "Videos",
 				Size = fileSize
 
@@ -167,7 +163,7 @@ namespace Edu_plat.Controllers
 			await _context.SaveChangesAsync();
 
 
-            //	return Ok(new { success = true, message = "Video uploaded successfully.", filePath = videoMaterial.FilePath, videoMaterial.Id });
+          
 
 
             await _notificationHandler.SendMessageAsync(new MessageRequest
@@ -207,26 +203,26 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles = "Doctor")]
 		public async Task<IActionResult> UpdateVideo([FromForm] UpdateVideoDto updateVideoDto)
 		{
-			// Validate the input data
+			
 			if (!ModelState.IsValid)
 			{
 				return Ok(new { success = false, message = "Invalid data provided." });
 			}
 
-			// Ensure that the video is provided
+			
 			if (updateVideoDto.Video == null || updateVideoDto.Video.Length == 0)
 			{
 				return Ok(new { success = false, message = "No video uploaded." });
 			}
 
-			// Check file size limit (100MB)
+			
 			var maxFileSize = 100 * 1024 * 1024;
 			if (updateVideoDto.Video.Length > maxFileSize)
 			{
 				return Ok(new { success = false, message = "Video size exceeds the maximum limit (100MB)." });
 			}
 
-			// Allowed video types
+			
 	   		var allowedMimeTypes = new Dictionary<string, string>
 	        {
 		       { ".mp4", "video/mp4" },
@@ -243,14 +239,14 @@ namespace Edu_plat.Controllers
 				return Ok(new { success = false, message = "Invalid video file format." });
 			}
 
-			// Retrieve video record
+			
 			var videoMaterial = await _context.Materials.FindAsync(updateVideoDto.VideoId);
 			if (videoMaterial == null)
 			{
 				return Ok(new { success = false, message = "Video not found." });
 			}
 
-			// Get user ID from token
+			
 			var userId = User.FindFirstValue("ApplicationUserId");
 			var user = await _userManager.FindByIdAsync(userId);
             var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
@@ -259,20 +255,20 @@ namespace Edu_plat.Controllers
 				return Ok(new { success = false, message = "Doctor not found." });
 			}
 
-			// Ensure the doctor is the one who uploaded the video
+			
 			if (videoMaterial.DoctorId != doctor.DoctorId)
 			{
 				return Ok( new { success = false, message = "You are not authorized to update this video." });
 			}
 
-			// Get course
+			
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == videoMaterial.CourseCode);
 			if (course == null)
 			{
 				return NotFound(new { success = false, message = "Course not found." });
 			}
 
-			// Check if the doctor is enrolled in the course 
+			
 			bool isDoctorEnrolled = await _context.CourseDoctors.AnyAsync(cd => cd.DoctorId == doctor.DoctorId && cd.CourseId == course.Id);
 			if (!isDoctorEnrolled)
 			{
@@ -281,36 +277,33 @@ namespace Edu_plat.Controllers
 
 
 
-			// Define the video directory
+			
 			var videoDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "Videos", course.CourseCode);
 			if (!Directory.Exists(videoDirectory))
 			{
 				Directory.CreateDirectory(videoDirectory);
 			}
 
-			// Generate file name
-			//var fileName = string.IsNullOrWhiteSpace(updateVideoDto.FileName)
-			//	? Path.GetFileName(updateVideoDto.Video.FileName)
-			//	: updateVideoDto.FileName + Path.GetExtension(updateVideoDto.Video.FileName);
 		
 			var fileName = Path.GetFileName(updateVideoDto.Video.FileName);
 
 
 			var filePath = Path.Combine(videoDirectory, fileName);
 
-			// Delete old file
+			
 			if (System.IO.File.Exists(filePath))
 			{
 				System.IO.File.Delete(filePath);
 			}
 
-			// Save new file
+			
 			using (var stream = new FileStream(filePath, FileMode.Create))
 			{
 				await updateVideoDto.Video.CopyToAsync(stream);
 			}
 
-			// Update database
+			
+
 			videoMaterial.FilePath = $"/Videos/{course.CourseCode}/{fileName}";
 			videoMaterial.FileName = fileName;
 			videoMaterial.Description ="";
@@ -540,14 +533,12 @@ namespace Edu_plat.Controllers
 		[HttpGet("getAllVideosOfDoctor/{courseCode}/{doctorId}")]
 		public async Task<IActionResult> GetAllVideosOfSpecificDoctor(string courseCode, int doctorId)
 		{
-			// التحقق من وجود الدكتور
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.DoctorId == doctorId);
 			if (doctor == null)
 			{
 				return Ok(new { success = false, message = "Doctor not found." });
 			}
 
-			// التحقق من وجود الكورس
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
 			if (course == null)
 			{
@@ -597,30 +588,30 @@ namespace Edu_plat.Controllers
 
 		[HttpGet("getDoctorMaterials/{courseCode}/{userId}/{typeFile}")]
 		[AllowAnonymous]
-		// Token Student
+		
 		public async Task<IActionResult> GetDoctorMaterialsForCourse(string courseCode, string userId, string typeFile)
 		{
-			// Validate input parameters
+			
 			if (string.IsNullOrEmpty(courseCode) || string.IsNullOrEmpty(userId))
 			{
 				return Ok(new { success = false, message = "CourseCode and UserId are required." });
 			}
 
-			// Get DoctorId from UserId
+			
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
 				return Ok(new { success = false, message = "Doctor not found for the provided UserId." });
 			}
 
-			// Check if the course exists
+			
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
 			if (course == null)
 			{
 				return Ok(new { success = false, message = "Course not found." });
 			}
 
-			// Retrieve materials uploaded by this doctor for the given course
+			
 			var materials = await _context.Materials
 				.Where(m => m.CourseCode == courseCode && m.DoctorId == doctor.DoctorId && m.TypeFile == "Video")
 				.ToListAsync();

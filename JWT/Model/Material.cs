@@ -9,7 +9,7 @@ namespace Edu_plat.Model
 		public string Description { get; set; }
 		public string FilePath { get; set; }
 		public string FileName { get; set; }
-		public string TypeFile { get; set; } // lecture or lab 
+		public string TypeFile { get; set; } 
 		public DateTime UploadDate { get; set; }
 		public string Size { get; set; }
 

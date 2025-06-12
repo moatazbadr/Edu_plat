@@ -241,7 +241,7 @@ namespace Edu_plat.Controllers
 				return Ok(new { success = true, message = "User not found." });
 			}
 
-			// Validate that the typeFile and courseCode are provided
+			
 			if (string.IsNullOrEmpty(typeFile) || string.IsNullOrEmpty(courseCode))
 			{
 				return Ok(new { success = true, message = "TypeFile and CourseCode are required." });
@@ -261,7 +261,7 @@ namespace Edu_plat.Controllers
 			}
 
 		
-			// Retrieve materials based on the provided typeFile and courseCode
+			
 			var doctorMaterials = await _context.Materials
 				.Where(m => m.Doctor.UserId == userId
 							&& m.TypeFile.ToLower() == typeFile.ToLower()
@@ -280,7 +280,7 @@ namespace Edu_plat.Controllers
 				})
 				.ToListAsync();
 		
-			// 🔹 Check if there are any materials for the given typeFile and courseCode
+			
 			if (!doctorMaterials.Any())
 			{
 				return Ok(new { success = true, message = $"No {typeFile}  found for this doctor in course {courseCode}.", materials = new List<object>() });
@@ -748,7 +748,7 @@ namespace Edu_plat.Controllers
  
 //--------------------------------------------------------------------------------------------------------------------------------------------------	
 		
-		// For Student
+		
 
 		#region GetDoctorMaterialsForCourse
 
@@ -756,27 +756,27 @@ namespace Edu_plat.Controllers
 		[AllowAnonymous]
 		public async Task<IActionResult> GetDoctorMaterialsForCourse(string courseCode, string userId)
 		{
-			// Validate input parameters
+			
 			if (string.IsNullOrEmpty(courseCode) || string.IsNullOrEmpty(userId))
 			{
 				return Ok(new { success = false, message = "CourseCode and UserId are required." });
 			}
 
-			// Get DoctorId from UserId
+			
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
 				return Ok(new { success = false, message = "Doctor not found for the provided UserId." });
 			}
 
-			// Check if the course exists
+			
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
 			if (course == null)
 			{
 				return Ok(new { success = false, message = "Course not found." });
 			}
 
-			// Retrieve materials uploaded by this doctor for the given course
+			
 			var materials = await _context.Materials
 				.Where(m => m.CourseCode == courseCode && m.DoctorId == doctor.DoctorId)
 				.ToListAsync();
@@ -802,27 +802,27 @@ namespace Edu_plat.Controllers
 		[Authorize(Roles ="Student")]
 		public async Task<IActionResult> GetDoctorMaterialsForCourse(string courseCode, string userId , string typeFile)
 		{
-			// Validate input parameters
+			
 			if (string.IsNullOrEmpty(courseCode) || string.IsNullOrEmpty(userId))
 			{
 				return Ok(new { success = false, message = "CourseCode and UserId are required." });
 			}
 
-			// Get DoctorId from UserId
+			
 			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 			if (doctor == null)
 			{
 				return Ok(new { success = false, message = "Doctor not found for the provided UserId." });
 			}
 
-			// Check if the course exists
+			
 			var course = await _context.Courses.FirstOrDefaultAsync(c => c.CourseCode == courseCode);
 			if (course == null)
 			{
 				return Ok(new { success = false, message = "Course not found." });
 			}
 
-			// Retrieve materials uploaded by this doctor for the given course
+			
 			var materials = await _context.Materials
 				.Where(m => m.CourseCode == courseCode && m.DoctorId == doctor.DoctorId && m.TypeFile==typeFile)
 				.ToListAsync();

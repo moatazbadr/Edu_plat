@@ -8,7 +8,7 @@ namespace Edu_plat.DTO.AdminFiles
         public IFormFile File { get; set; }
 
         [Required]
-        public string FileName { get; set; } // Admin provides the custom file name
+        public string FileName { get; set; } 
         public string type { get; set; }
 
        // public int level { get; set; } 

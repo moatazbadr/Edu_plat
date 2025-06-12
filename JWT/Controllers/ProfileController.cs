@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
 using System.Security.Claims;
 
-// api change phone (constrain on phone)
+
 namespace Edu_plat.Controllers
 {
     [Route("api/[controller]")]
@@ -106,13 +106,14 @@ namespace Edu_plat.Controllers
                 return Ok(new { success = false, message = "No file uploaded." });
             }
 
-            // Validate file size (max 2 MB)
+            
             if (profilePicDto.profilePicturee.Length > 2 * 1024 * 1024)
             {
                 return Ok(new { success = false, message = "File size exceeds the limit of 2MB." });
             }
 
-            // Validate file extension (only jpeg, jpg, png)
+            
+
             var fileExtension = Path.GetExtension(profilePicDto.profilePicturee.FileName).ToLower();
             var allowedExtensions = new[] { ".jpeg", ".jpg", ".png" };
             if (!allowedExtensions.Contains(fileExtension))

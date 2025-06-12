@@ -28,7 +28,7 @@ namespace JWT.DATA
 			modelBuilder.Entity<ApplicationUser>().HasOne(a => a.Student).WithOne(s => s.applicationUser).HasForeignKey<Student>(s => s.UserId).OnDelete(DeleteBehavior.NoAction);
 			modelBuilder.Entity<ApplicationUser>().HasOne(a => a.Doctor).WithOne(s => s.applicationUser).HasForeignKey<Doctor>(s => s.UserId).OnDelete(DeleteBehavior.NoAction);
 
-			// Doctor - Course (Many-to-Many)
+			
 			modelBuilder.Entity<CourseDoctor>()
 				.HasKey(dc => new { dc.DoctorId, dc.CourseId });
 
@@ -42,14 +42,14 @@ namespace JWT.DATA
 				.WithMany(c => c.CourseDoctors)
 				.HasForeignKey(dc => dc.CourseId);
 
-			// Doctor - Material (One-to-Many)
+			
 			modelBuilder.Entity<Material>()
 				.HasOne(m => m.Doctor)
 				.WithMany(d => d.Materials)
 				.HasForeignKey(m => m.DoctorId)
 				.OnDelete(DeleteBehavior.Cascade);
 
-			// Course - Material (One-to-Many)
+			
 			modelBuilder.Entity<Material>()
 				.HasOne(m => m.Course)
 				.WithMany(c => c.Materials)
@@ -59,8 +59,8 @@ namespace JWT.DATA
        //.HasOne(u => u.Doctor)
        //.WithOne(d => d.applicationUser)
        //.HasForeignKey<Doctor>(d => d.UserId)
-       //.IsRequired(false)               // allow users without a Doctor
-       //.OnDelete(DeleteBehavior.Cascade); // auto-delete Doctor when User is deleted
+       //.IsRequired(false)               
+       //.OnDelete(DeleteBehavior.Cascade); 
 
             // similarly for Student if you have that relationship
             //modelBuilder.Entity<ApplicationUser>()
@@ -72,39 +72,39 @@ namespace JWT.DATA
 
 
             modelBuilder.Entity<Exam>()
-			   .HasOne(e => e.Course)   // امتحان له كورس واحد
-			   .WithMany(c => c.Exams)  // كورس له عدة امتحانات
-			   .HasForeignKey(e => e.CourseId) // مفتاح أجنبي
-			   .OnDelete(DeleteBehavior.Cascade); // 
+			   .HasOne(e => e.Course)   
+			   .WithMany(c => c.Exams)  
+			   .HasForeignKey(e => e.CourseId) 
+			   .OnDelete(DeleteBehavior.Cascade); 
 			modelBuilder.Entity<Question>()
 			   .HasOne(q => q.Exam)
 			   .WithMany(e => e.Questions)
 			   .HasForeignKey(q => q.ExamId)
 			   .OnDelete(DeleteBehavior.Cascade);
-			// 🔹 تحديد العلاقة بين Choice و Question
+			
 			modelBuilder.Entity<Choice>()
 				.HasOne(c => c.Question)
 				.WithMany(q => q.Choices)
 				.HasForeignKey(c => c.QuestionId)
 				.OnDelete(DeleteBehavior.Cascade);
-			// 🔹 العلاقة بين Exam و Doctor
+			
 			modelBuilder.Entity<Exam>()
 				.HasOne(e => e.Doctor)
 				.WithMany(d => d.Exams)
 				.HasForeignKey(e => e.DoctorId)
 				.OnDelete(DeleteBehavior.Cascade);
-			// 🔹 إعداد العلاقة Many-to-Many بين Student و Exam
+	
 			modelBuilder.Entity<ExamStudent>()
-				.HasKey(es => new { es.StudentId, es.ExamId }); // مفتاح مركب
+				.HasKey(es => new { es.StudentId, es.ExamId }); 
             modelBuilder.Entity<userDevice>()
            .HasOne(ud => ud.student)
-           .WithMany() // No navigation from Student to userDevice
+           .WithMany()
            .HasForeignKey(ud => ud.StudentId)
-           .OnDelete(DeleteBehavior.Cascade);  // ✅ Delete devices when student is deleted
+           .OnDelete(DeleteBehavior.Cascade);  
 
             modelBuilder.Entity<userDevice>()
                 .HasOne(ud => ud.Doctor)
-                .WithMany() // No navigation from Doctor to userDevice
+                .WithMany() 
                 .HasForeignKey(ud => ud.DoctorId)
                 .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<UserNotification>()

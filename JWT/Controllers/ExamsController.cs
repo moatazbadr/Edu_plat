@@ -160,7 +160,7 @@ namespace Edu_plat.Controllers
              await _notificationHandler.SendMessageAsync(new MessageRequest
             {
                 Title = exam.CourseCode,
-                Body = $"New  {ExamType} {exam.ExamTitle} created by Dr {user.UserName} and is set to start at {exam.StartTime}  ",
+                Body = $"New  {ExamType} {exam.ExamTitle} created by Dr {user.UserName} and is set to start at {exam.StartTime.ToString("yyyy-MM-dd HH:mm:ss")}  ",
                 CourseCode = exam.CourseCode,
                 UserId = userId,
                 Date= DateOnly.FromDateTime(exam.StartTime)
@@ -509,7 +509,7 @@ namespace Edu_plat.Controllers
             await _notificationHandler.SendMessageAsync(new MessageRequest
             {
                 Title = exam.CourseCode,
-                Body = $"New {ExamType} {exam.ExamTitle} Updated by Dr {user.UserName} and is set to start at {exam.StartTime}  ",
+                Body = $"New {ExamType} {exam.ExamTitle} Updated by Dr {user.UserName} and is set to start at {exam.StartTime.ToString("yyyy-MM-dd HH:mm:ss")}  ",
                 CourseCode = exam.CourseCode,
                 UserId = userId,
                 Date = DateOnly.FromDateTime(exam.StartTime)
@@ -978,7 +978,7 @@ namespace Edu_plat.Controllers
             if (record == null)
                 return Ok(new { success = false, message = "Exam not accessed or not allowed." });
 
-            // Prevent double submission
+            
             if (record.Score > 0 || record.IsAbsent)
                 return Ok(new { success = false, message = "Exam already submitted." });
 

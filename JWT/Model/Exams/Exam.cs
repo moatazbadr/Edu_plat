@@ -5,10 +5,10 @@ namespace Edu_plat.Model.Exams
 	public class Exam
 	{
 		public int Id { get; set; }
-		public string ExamTitle { get; set; }  // عنوان الامتحان
-		public DateTime StartTime { get; set; }  // وقت بدء الامتحان
-		public double TotalMarks { get; set; }  // الدرجة الكلية للامتحان
-		public bool IsOnline { get; set; }  // هل الامتحان أونلاين أم لا
+		public string ExamTitle { get; set; }  
+		public DateTime StartTime { get; set; }  
+		public double TotalMarks { get; set; } 
+		public bool IsOnline { get; set; } 
 		public int? QusetionsNumber { get; set; }
 		public int DurationInMin { get; set; }
 		public string CourseCode { get; set; }
@@ -31,17 +31,17 @@ namespace Edu_plat.Model.Exams
 
 		#region RelationShips
 
-		// 🔹 العلاقة One-to-Many مع Course
-		public int CourseId { get; set; }  // مفتاح أجنبي يشير إلى الكورس
-		public Course Course { get; set; }  // خاصية التنقل (Navigation Property)
+	
+		public int CourseId { get; set; }  
+		public Course Course { get; set; }  
 
-		// 🔹 العلاقة One-to-Many مع الأسئلة
+		
 		public List<Question>? Questions { get; set; } = new List<Question>();
 
-		// 🔹 العلاقة مع الدكتور (امتحان واحد مرتبط بدكتور واحد)
+	
 		public int DoctorId { get; set; }
 		public Doctor Doctor { get; set; }
-		// 🔹 العلاقة Many-to-Many مع Student
+		
 		public List<ExamStudent> ExamStudents { get; set; } = new List<ExamStudent>(); 
 		#endregion
 

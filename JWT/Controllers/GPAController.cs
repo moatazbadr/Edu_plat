@@ -76,34 +76,34 @@ namespace Edu_plat.Controllers
         }
         #endregion
 
-        // Endpoint 1: Update the GPA
+        
         #region Update GPA
         [HttpPost("UpdateGPA")]
         [Authorize(Roles = "Student")]
         public async Task<IActionResult> UpdateGPA([FromBody] StudentUpdateGpa gpa)
         {
 
-            // Get the UserId from the token
+            
             var userId = User.FindFirstValue("ApplicationUserId");
             if (string.IsNullOrEmpty(userId))
             {
                 return Ok(new { success = false, message = "Invalid User credentials" });
             }
-            // Check if the user exists
+            
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 return Ok(new { success = false, message = "User not found." });
             }
 
-            // Check if the student exists
+            
             var student = await _context.Students.FirstOrDefaultAsync(s => s.UserId == userId);
             if (student == null)
             {
                 return Ok(new { success = false, message = "Student not found." });
             }
 
-            // Update the GPA
+            
             student.GPA = gpa.GPA;
             _context.Students.Update(student);
             await _context.SaveChangesAsync();
@@ -113,26 +113,25 @@ namespace Edu_plat.Controllers
 
         #endregion
 
-        // Endpoint 2: Retrieve the GPA
         #region Get GPA
         [HttpGet("GetGPA")]
         [Authorize(Roles = "Student")]
         public async Task<IActionResult> GetGPA()
         {
-            // Get the UserId from the token
+            
             var userId = User.FindFirstValue("ApplicationUserId");
             if (string.IsNullOrEmpty(userId))
             {
                 return Ok(new { success = false, message = "Invalid User credentials" });
             }
-            // Check if the user exists
+            
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 return Ok(new { success = false, message = "User not found." });
             }
 
-            // Retrieve student data
+            
             var student = await _context.Students
                 .Where(s => s.UserId == userId)
                 .Select(s => new { s.StudentId, s.GPA })

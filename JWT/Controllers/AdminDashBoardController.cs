@@ -22,10 +22,9 @@ namespace Edu_plat.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IMailingServices _mailService;
         private readonly ApplicationDbContext _context;
-        // Declare a dictionary where key is a string (email), and value is a tuple (OTP, expiration time, TemporaryUserDTO user)
+        
         private static readonly Dictionary<string, (string Otp, DateTime ExpirationTime, TemporaryUserDTO TempUser)> _otpStore = new Dictionary<string, (string, DateTime, TemporaryUserDTO)>();
 
-        // Declare a dictionary where key is a string (email), and value is a tuple (OTP, expiration time)
         private static readonly Dictionary<string, (string Otp, DateTime ExpirationTime)> _otpStoreFR = new Dictionary<string, (string, DateTime)>();
 
         #region Dependency Injection
@@ -48,7 +47,7 @@ namespace Edu_plat.Controllers
 
         #region RegisterAdmin
 
-        //// Admin registration (for demo purposes)
+        
         [HttpPost("RegisterAdmin")]
         [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> RegisterAdmin([FromBody] RegisterUserDTO dto)
@@ -67,7 +66,7 @@ namespace Edu_plat.Controllers
             var result = await _userManager.CreateAsync(admin, dto.Password);
             if (result.Succeeded)
             {
-                // Assign Admin role
+                
                 var roleExist = await _roleManager.RoleExistsAsync("Admin");
                 if (!roleExist)
                 {
@@ -87,9 +86,9 @@ namespace Edu_plat.Controllers
         #endregion
 
         #region RegisterDoctor 
-        // Register Doctor (Only Admin can use this endpoint)
+        
         [HttpPost("RegisterDoctor")]
-        [Authorize(Roles = "Admin,SuperAdmin")] // Only Admins can register Doctors
+        [Authorize(Roles = "Admin,SuperAdmin")] 
         public async Task<IActionResult> RegisterDoctor([FromBody] RegisterDoctorDTO dto)
         {
             if (!ModelState.IsValid)
@@ -108,26 +107,19 @@ namespace Edu_plat.Controllers
 
             var result = await _userManager.CreateAsync(doctor, dto.Password);
 
-
-
-            // Save the userId for later use
             var userId = doctor.Id;
-            // Step 2: Create and Save a Doctor linked to the ApplicationUser
+            
             var DoctorObj = new Doctor
             {
-                UserId = userId, // Foreign key linking to ApplicationUser
+                UserId = userId, 
                 applicationUser = doctor
 
             };
-
-            //check if the doctor already exists
-
-
             _context.Set<Doctor>().Add(DoctorObj);
             _context.SaveChanges();
             if (result.Succeeded)
             {
-                // Assign Doctor role
+                
                 var roleResult = await _userManager.AddToRoleAsync(doctor, "Doctor");
                 if (!roleResult.Succeeded)
                 {
@@ -220,11 +212,11 @@ namespace Edu_plat.Controllers
 
             var doctor = await _context.Set<Doctor>().FirstOrDefaultAsync(d => d.UserId == userId);
             if (doctor != null)
-                _context.Set<Doctor>().Remove(doctor); // Remove from Doctor table
+                _context.Set<Doctor>().Remove(doctor); 
 
-            await _context.SaveChangesAsync(); // Save domain deletion before identity deletion
+            await _context.SaveChangesAsync(); 
 
-            var result = await _userManager.DeleteAsync(user); // Remove from AspNetUsers
+            var result = await _userManager.DeleteAsync(user); 
             if (result.Succeeded)
                 return Ok(new { success = true, message = "Doctor deleted successfully." });
             else
@@ -283,11 +275,11 @@ namespace Edu_plat.Controllers
 
             var student = await _context.Set<Student>().FirstOrDefaultAsync(s => s.UserId == userId);
             if (student != null)
-                _context.Set<Student>().Remove(student); // Remove from Student table
+                _context.Set<Student>().Remove(student); 
 
-            await _context.SaveChangesAsync(); // Save domain deletion before identity deletion
+            await _context.SaveChangesAsync(); 
 
-            var result = await _userManager.DeleteAsync(user); // Remove from AspNetUsers
+            var result = await _userManager.DeleteAsync(user); 
             if (result.Succeeded)
                 return Ok(new { success = true, message = "Student deleted successfully." });
             else

@@ -35,10 +35,10 @@ namespace JWT.Controllers
 
         private readonly IMailingServices _mailService;
         private readonly ApplicationDbContext _context;
-        // Declare a dictionary where key is a string (email), and value is a tuple (OTP, expiration time, TemporaryUserDTO user)
+        
         private static readonly Dictionary<string, (string Otp, DateTime ExpirationTime, TemporaryUserDTO TempUser)> _otpStore = new Dictionary<string, (string, DateTime, TemporaryUserDTO)>();
 
-        // Declare a dictionary where key is a string (email), and value is a tuple (OTP, expiration time)
+        
         private static readonly Dictionary<string, (string Otp, DateTime ExpirationTime)> _otpStoreFR = new Dictionary<string, (string, DateTime)>();
        
         #region Dependency Injection
@@ -224,7 +224,6 @@ namespace JWT.Controllers
         {
             if (ModelState.IsValid)
             {
-                // check => account Exist
 
                 var account = await _userManager.FindByEmailAsync(dto.email);
                 if (account == null)
@@ -234,7 +233,7 @@ namespace JWT.Controllers
                 var checkPass = await _userManager.CheckPasswordAsync(account, dto.Password);
                 if (checkPass)
                 {
-                   // adding claims to Jwt 
+                   
 					#region User claims
 					var UserClaims = new List<Claim>();
                     UserClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
@@ -336,7 +335,7 @@ namespace JWT.Controllers
 
         #region RegisterAdmin
 
-        //// Admin registration (for demo purposes)
+        
         [HttpPost("RegisterAdmin")]
         [Authorize(Roles= "SuperAdmin")]
         public async Task<IActionResult> RegisterAdmin([FromBody] RegisterUserDTO dto)
@@ -355,7 +354,7 @@ namespace JWT.Controllers
             var result = await _userManager.CreateAsync(admin, dto.Password);
             if (result.Succeeded)
             {
-                // Assign Admin role
+                
                 var roleExist = await _roleManager.RoleExistsAsync("Admin");
                 if (!roleExist)
                 {
@@ -375,9 +374,9 @@ namespace JWT.Controllers
         #endregion
 
         #region RegisterDoctor 
-        // Register Doctor (Only Admin can use this endpoint)
+        
         [HttpPost("RegisterDoctor")]
-        [Authorize(Roles = "Admin,SuperAdmin")] // Only Admins can register Doctors
+        [Authorize(Roles = "Admin,SuperAdmin")] 
         public async Task<IActionResult> RegisterDoctor([FromBody] RegisterDoctorDTO dto)
         {
             if (!ModelState.IsValid)
@@ -400,12 +399,12 @@ namespace JWT.Controllers
             };
            
            var result = await _userManager.CreateAsync(doctor, dto.Password);
-            // Save the userId for later use
+            
             var userId = doctor.Id;
-            // Step 2: Create and Save a Doctor linked to the ApplicationUser
+            
             var DoctorObj = new Doctor
             {
-                UserId = userId, // Foreign key linking to ApplicationUser
+                UserId = userId, 
                 applicationUser = doctor
                 
             };
@@ -414,7 +413,7 @@ namespace JWT.Controllers
             {
 				_context.Set<Doctor>().Add(DoctorObj);
 				await _context.SaveChangesAsync();
-				// Assign Doctor role
+				
 				var roleResult = await _userManager.AddToRoleAsync(doctor, "Doctor");
                 if (!roleResult.Succeeded)
                 {
@@ -452,18 +451,18 @@ namespace JWT.Controllers
             if (!ModelState.IsValid)
                 return Ok(new { success = false, message = "Invalid Input." });
 
-            // Removing OTP from the registery
+            
             var existingOtps = _context.OtpVerification
                 .Where(o => o.Email == model.Email && o.Purpose == "ResetPassword");
             _context.OtpVerification.RemoveRange(existingOtps);
 
 
-            // checking if the user exist
+            
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
                 return Ok(new { success = false, message = "Incorrect Email" });
 
-            // Creating new OTP
+            
             string otp = GenerateOTP.GenerateOtp();
             DateTime expirationTime = DateTime.UtcNow.AddMinutes(5);
 
@@ -514,7 +513,7 @@ namespace JWT.Controllers
             if (DateTime.UtcNow > otpRecord.ExpirationTime)
                 return Ok(new { success = false, message = "OTP has expired." });
 
-            // change the status of the otp
+            
             otpRecord.IsVerified = true;
             await _context.SaveChangesAsync();
 

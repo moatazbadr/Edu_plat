@@ -5,7 +5,7 @@ namespace Edu_plat.DTO.UploadVideos
 	public class UpdateVideoDto
 	{
 		[Required(ErrorMessage = "Video Id is required.")]
-		public int VideoId { get; set; } // The ID of the video to be updated
+		public int VideoId { get; set; } 
 
 		[Required(ErrorMessage = "Video is required.")]
 		
@@ -13,8 +13,6 @@ namespace Edu_plat.DTO.UploadVideos
 
 
 		
-		//[StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
-	//	public string? Description { get; set; } // Optional: New video description
 
 		
 		[RegularExpression("^(Videos)$", ErrorMessage = "Type must be 'Videos'")]

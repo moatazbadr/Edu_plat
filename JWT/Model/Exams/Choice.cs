@@ -3,10 +3,10 @@
 	public class Choice
 	{
 		public int Id { get; set; }
-		public string Text { get; set; }  // نص الاختيار
-		public bool IsCorrect { get; set; }  // هل هذا الاختيار صحيح أم لا؟
+		public string Text { get; set; }  
+		public bool IsCorrect { get; set; }  
 
-		// 🔹 العلاقة مع السؤال
+	
 		public int QuestionId { get; set; }
 		public Question Question { get; set; }
 	}

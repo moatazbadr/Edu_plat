@@ -13,7 +13,7 @@ namespace Edu_plat.DTO
 
 		[RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,15}$",
 		ErrorMessage = "Password must be 8-20 characters long, with at least one uppercase letter, one lowercase letter, one digit, and one special character.")]
-		public string Password { get; set; }  // with at least one uppercase letter, one lowercase letter, one digit, and one special character
+		public string Password { get; set; }  
 	
 		[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
 		public string ConfirmPassword { get; set; }

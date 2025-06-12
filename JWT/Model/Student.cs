@@ -7,7 +7,7 @@ namespace Edu_plat.Model
 {
 	public class Student
 	{
-		// pk 
+		
 		public int StudentId { get; set; }
 
 		[ForeignKey("applicationUser")]
